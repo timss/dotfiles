@@ -1,0 +1,25 @@
+#---------------#
+# Pastel colors #
+#---------------#
+
+F1F1E0  # Foreground    White
+1B1A1A  # Background    Black
+454545  # Color 1       Gray
+D44A40  # Color 2       Red
+98CB3C  # Color 3       Green
+D4BE66  # Color 4       Yellow
+43648E  # Color 5       Blue
+BA5680  # Color 6       Magenta
+5ACBBE  # Color 7       Cyan
+C5C5C5  # Color 8       White
+
+DCDCCC  # Foreground    White   Intense
+2C2C2C  # Background    Black   Intense
+727272  # Color 1       Gray    Intense
+D4746A  # Color 2       Red     Intense
+AFCB66  # Color 3       Green   Intense
+E6D593  # Color 4       Yellow  Intense
+5A89C9  # Color 5       Blue    Intense
+C46497  # Color 6       Magenta Intense
+84CBBE  # Color 7       Cyan    Intense
+CFCFCF  # Color 8       White   Intense
