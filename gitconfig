@@ -1,0 +1,39 @@
+[core]
+    editor = vim
+	excludesfile = /home/tim/.gitignore_global
+[user]
+    name = timss
+    email = timsateroy@gmail.com
+[color]
+    ui = true
+    branch = true
+[credential]
+    helper = cache --timeout=3600
+[push]
+    default = simple
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[alias]
+    # listing aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+
+    # misc
+    s = status
+    
+    # fancy log views that'll blow your mind
+    ls  = log --pretty=format:'%C(bold blue)%ad %C(bold magenta)%an %C(reset)%C(white)%s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --decorate --date=relative
+    lg  = log --graph --all --format=format:'%C(bold blue)%ad %C(bold magenta)%an %C(reset)%C(white)%s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --decorate --date=short
+    lg1 = log --graph --all --format=format:'%C(bold green)%h %C(bold blue)%ad %C(bold magenta)%an %C(reset)%C(white)%s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --decorate --date=short
+    lg2 = log --graph --all --format=format:'%C(bold green)%h%C(reset) %C(bold blue)%ad%C(bold white) %C(bold magenta)%an%C(reset)%C(bold yellow)%d%C(reset)%n''%w(79)%C(white)%s%C(reset) %C(reset)' --abbrev-commit --date=short
+
+    # inspect last commit
+    dl = "!git lg2 -1"
+    dlc = diff --cached HEAD^
+
+    # finding file
+    f = "!git ls-files | grep -i"
+
+    # diff with vim
+    d = difftool
