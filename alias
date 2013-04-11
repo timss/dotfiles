@@ -1,3 +1,7 @@
+#------------#
+# Alias file #
+#------------#
+
 # use vim as a pager, supports stdin
 export PAGER=/usr/bin/vimpager
 alias less=$PAGER
