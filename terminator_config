@@ -1,0 +1,25 @@
+[global_config]
+  tab_position = hidden
+[keybindings]
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#454545:#d44a40:#98cb3c:#d3be66:#43648e:#ba5680:#5acbbe:#c5c5c5:#727272:#d4746a:#afcb66:#e6d593:#5a89c9:#c46497:#84cbbe:#cfcfcf"
+    background_darkness = 0.96
+    scrollback_lines = 5000
+    use_system_font = False
+    cursor_color = "#676767"
+    foreground_color = "#d7d7d7"
+    show_titlebar = False
+    font = DejaVu Sans Mono 8
+    background_color = "#191919"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

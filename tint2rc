@@ -1,0 +1,94 @@
+---------------------------------------------
+# TINT2 CONFIG FILE
+#---------------------------------------------
+#---------------------------------------------
+# CUSTOM
+#---------------------------------------------
+#strut_policy = follow_size
+panel_layer = top
+#---------------------------------------------
+# BACKGROUND AND BORDER
+#---------------------------------------------
+#panels
+rounded = 0
+border_width = 0
+background_color = #191919 100
+border_color = #272C30 100
+#border_color = #0F0F0F 100
+#active task button
+rounded = 0
+border_width = 0
+#background_color = #191919 100
+#background_color = #262626 100
+background_color = #0F0F0F 100
+border_color = #272C30 20
+#non active task button
+rounded = 0
+border_width = 0
+background_color = #191919 100
+border_color = #272C30 0
+#---------------------------------------------
+# PANEL
+#---------------------------------------------
+panel_monitor = all
+panel_position = top center
+panel_size = 100% 22
+panel_margin = 0 0
+panel_padding = 0 0
+font_shadow = 0
+panel_background_id = 0
+#---------------------------------------------
+# TASKBAR
+#---------------------------------------------
+taskbar_mode = multi_desktop
+taskbar_padding = 0 0 0
+taskbar_background_id = 1
+#---------------------------------------------
+# TASKS
+#---------------------------------------------
+task_icon = 0
+task_text = 1
+task_width = 140
+task_centered = 0
+task_padding = 6 2
+task_font = Sans 8
+task_font_color = #D7D7D7 70
+task_active_font_color = #D7D7D7 85
+task_background_id = 3
+task_active_background_id = 2
+#---------------------------------------------
+# SYSTRAYBAR
+#---------------------------------------------
+systray = 1
+systray_icon_size = 0
+systray_padding = 4 2 3
+systray_background_id = 1
+#---------------------------------------------
+# CLOCK
+#---------------------------------------------
+time1_format = %a, %b %d, %H:%M
+time1_font =  Sans 8
+clock_font_color = #ffffff 76
+clock_padding = 4 4
+clock_background_id = 1
+clock_lclick_command = gsimplecal
+clock_rclick_command = gsimplecal
+#---------------------------------------------
+# BATTERY
+#---------------------------------------------
+#battery = 1
+battery_low_status = 7
+battery_low_cmd = notify-send "battery low"
+bat1_font = Sans 8
+bat2_font = sans 0
+battery_font_color = #ffffff 76
+#battery_padding = 1 0
+battery_padding = 0 1
+battery_background_id = 1
+#---------------------------------------------
+# MOUSE ACTION ON TASK
+#---------------------------------------------
+mouse_middle = none
+mouse_right = none
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify
