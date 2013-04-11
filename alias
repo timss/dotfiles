@@ -23,7 +23,7 @@ alias rsync="rsync --progress"
 
 # general
 alias aliases="vim ~/.alias"
-alias bashrc=" ~/.bashrc"
+alias bashrc="~/.bashrc"
 alias df="df -h"
 alias diff="colordiff"
 alias du="du -sh"
