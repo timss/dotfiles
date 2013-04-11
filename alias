@@ -1,0 +1,34 @@
+# use vim as a pager, supports stdin
+export PAGER=/usr/bin/vimpager
+alias less=$PAGER
+alias zless=$PAGER 
+
+# programs
+alias cal="cal -m"
+alias g++="g++ -Wall -Wextra -pedantic -O3 -std=c++0x"
+alias vi="vim"
+alias v="vim"
+
+# file handling and moving around
+alias cd..="cd .."
+alias cp="cp -i"
+alias grep="grep -i"
+alias ls="ls -h --color=auto --group-directories-first --time-style='+%d.%m.%y %H:%M'"
+alias mv="mv -i"
+alias rsync="rsync --progress"
+
+# general
+alias aliases="vim ~/.alias"
+alias bashrc=" ~/.bashrc"
+alias df="df -h"
+alias diff="colordiff"
+alias du="du -sh"
+alias speedtest="wget http://cachefly.cachefly.net/100mb.test --delete-after"
+alias sudo="sudo "
+alias tree="tree -C"
+alias vimrc="vim ~/.vimrc"
+
+# source local
+if [ -f ~/.alias.local ]; then
+    . ~/.alias.local
+fi
