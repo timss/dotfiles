@@ -8,3 +8,4 @@ set -e
 # Should be more elegant in the future...
 ln -s "bashrc" "$HOME/.bashrc"
 ln -s "alias" "$HOME/.alias"
+ln -s "tmux.conf" "$HOME/.tmux.conf"
