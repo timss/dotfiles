@@ -25,6 +25,11 @@
         HISTFILESIZE="10000"
         export LANG=en_US.UTF-8
         export GIT_PAGER=/usr/bin/less
+        ### Set PATH so it includes user's private bin if it exists {{{
+            if [ -d "$HOME/bin" ] ; then
+                PATH="$HOME/bin:$PATH"
+            fi
+        ### }}}
     ### }}}
     ### History {{{
         HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups  # don't duplicate
