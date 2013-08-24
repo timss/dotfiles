@@ -6,9 +6,11 @@
 set -e
 
 # Should be more elegant in the future...
-# More to come. Maybe.
-ln -s "bashrc" "$HOME/.bashrc"
-ln -s "alias" "$HOME/.alias"
-ln -s "gitconfig" "$HOME/.gitconfig"
-ln -s "gitignore_global" "$HOME/.gitignore_global"
-ln -s "tmux.conf" "$HOME/.tmux.conf"
+ipath=`pwd`
+
+for f in alias bashrc gitconfig gitignore_global screenrc tmux.conf vimperatorrc; do
+    ln -s "$ipath/$f" "$HOME/.$f"
+done
+
+mkdir -p $HOME/.config/terminator/
+ln -s "$ipath/terminator_config" "$HOME/.config/terminator/config"
