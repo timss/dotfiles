@@ -1,19 +1,17 @@
-"3.5 (created: 2012/08/04 00:41:20)
+"3.7.1 (created: 2013/05/22 20:32:57)
 
-"command! -nargs=? -description="Pin the given tab" pin javascript config.tabbrowser.pinTab(tabs.getTab(<args>))
-"command! -nargs=? -description="Unpin the given tab" unpin javascript config.tabbrowser.unpinTab(tabs.getTab(<args>))
 highlight Bell border: 0 none; background-color: #191919;
-highlight CmdLine background: #191919; color: #afafaf; font-size: 8pt;
-highlight CompDesc color: #c6c6c6; width: 50%; font-size: 8pt;
+highlight CmdLine background: #191919; color: #afafaf; font-size: 9pt;
+highlight CompDesc color: #c6c6c6; width: 50%; font-size: 9pt;
 highlight CompItem[selected] background: #666666; color: #afafaf; 
-highlight CompResult width: 45%; overflow: hidden;font-size: 10pt; font-family: monospace; font-weight: normal;
+highlight CompResult width: 45%; overflow: hidden;font-size: 9pt; font-family: monospace; font-weight: normal;
 highlight CompTitle color: #afafaf; background: #191919; font-weight: bold;
 highlight CompTitle>* padding: 0 .5ex;
 highlight ErrorMsg color: #ffffff; background: red; font-weight: bold;
 highlight Filter font-weight: bold;color: #afafaf;
 highlight FrameIndicator background-color: #191919; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
 highlight Function color: lightgreen; background: #191919;
-highlight Hint font-size:12px;color:white;background-color:red;padding:2px;
+highlight Hint font-size: 12px; color: white; background-color: red; padding: 2px;
 highlight HintActive background: blue; color: #f6e9e9;
 highlight HintElem background-color: #191919; color: #f6e9e9;
 highlight InfoMsg color: #afafaf; background: #191919;
@@ -24,7 +22,7 @@ highlight NonText color: lightblue; min-height: 16px; padding-left: 2px;
 highlight Normal color: #afafaf; background: #191919;
 highlight Number color: tan; background: #191919
 highlight Question color: #ffffff; background: #191919; font-weight: bold;
-highlight StatusLine color: #F1F1E0; background: #191919; "font-size: 8pt;
+highlight StatusLine color: #F1F1E0; background: #191919; "font-size: 9pt;
 highlight String color: #191919; background: #afafaf;
 highlight Tag color: #191919; background: #afafaf;
 highlight Title color: #191919; background: #afafaf; font-weight: bold;
@@ -32,10 +30,13 @@ highlight URL text-decoration: none; color: lightblue; background: inherit;
 highlight WarningMsg color: red; background: #191919;
 map d <C-d>
 map s <C-u>
-nmap gp :set apptab
-nmap gu :set noapptab
+nmap gp :set<Space>apptab<Return>
+nmap gu :set<Space>noapptab<Return>
+nnoremap <F1> <Nop>
 noremap <C-c> <C-v><C-c>
 noremap <C-v> <C-v><C-v>
+set defsearch=g
+set hintchars=qwertyasdfg
 source! /home/tim/.vimperatorrc.local
 
-" vim: set ft=vimperator:
+" vim: set ft=vim:
