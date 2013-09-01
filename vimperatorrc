@@ -30,6 +30,8 @@ highlight URL text-decoration: none; color: lightblue; background: inherit;
 highlight WarningMsg color: red; background: #191919;
 map d <C-d>
 map s <C-u>
+map j <C-d>
+map k <C-u>
 nmap gp :set<Space>apptab<Return>
 nmap gu :set<Space>noapptab<Return>
 nnoremap <F1> <Nop>
