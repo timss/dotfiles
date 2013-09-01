@@ -12,6 +12,8 @@ alias ls="ls -h --color=auto --group-directories-first --time-style='+%d.%m.%y %
 alias mkdir="mkdir -p"
 alias mv="mv -i"
 alias rsync="rsync --progress"
+alias sudoedit="sudoedit -E "
+alias unp="unp -u"
 
 # General
 alias aliases="vim ~/.alias"
