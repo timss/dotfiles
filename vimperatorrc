@@ -35,7 +35,7 @@ nmap gu :set<Space>noapptab<Return>
 nnoremap <F1> <Nop>
 noremap <C-c> <C-v><C-c>
 noremap <C-v> <C-v><C-v>
-set defsearch=g
+set defsearch=google
 set hintchars=qwertyasdfg
 source! /home/tim/.vimperatorrc.local
 
