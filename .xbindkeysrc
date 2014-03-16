@@ -1,0 +1,7 @@
+# Back
+"xte 'keydown Alt_L' 'key Left' 'keyup Alt_L'"
+  b:8
+
+# Forward
+"xte 'keydown Alt_L' 'key Right' 'keyup Alt_L'"
+  b:9

@@ -12,6 +12,10 @@ alias ls="ls -h --color=auto --group-directories-first --time-style='+%d.%m.%y %
 alias mkdir="mkdir -p"
 alias mv="mv -i"
 alias rsync="rsync --progress"
+<<<<<<< HEAD
+=======
+alias sudoedit="sudoedit -E "
+>>>>>>> b506aef9929de4a0b6dcee8874724948d720f0c4
 alias unp="unp -u"
 
 # General
@@ -20,6 +24,8 @@ alias bashrc="~/.bashrc"
 alias df="df -h"
 alias diff="colordiff"
 alias du="du -sh"
+alias myip="wget ipecho.net/plain -O - -q; echo"
+alias ping="ping -c 5"
 alias speedtest="wget http://cachefly.cachefly.net/100mb.test --delete-after"
 alias sudo="sudo "
 alias tree="tree -C"
