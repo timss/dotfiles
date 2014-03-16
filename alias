@@ -12,10 +12,7 @@ alias ls="ls -h --color=auto --group-directories-first --time-style='+%d.%m.%y %
 alias mkdir="mkdir -p"
 alias mv="mv -i"
 alias rsync="rsync --progress"
-<<<<<<< HEAD
-=======
 alias sudoedit="sudoedit -E "
->>>>>>> b506aef9929de4a0b6dcee8874724948d720f0c4
 alias unp="unp -u"
 
 # General
