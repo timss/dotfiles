@@ -39,4 +39,4 @@ set defsearch=google
 set hintchars=qwertyasdfg
 source! /home/tim/.vimperatorrc.local
 
-" vim: set ft=vim:
+" vim: set ft=vimperator:
