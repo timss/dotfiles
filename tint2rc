@@ -13,6 +13,7 @@ panel_layer = top
 rounded = 0
 border_width = 0
 background_color = #191919 100
+#background_color = #323738 100
 border_color = #272C30 100
 #border_color = #0F0F0F 100
 #active task button
@@ -32,7 +33,7 @@ border_color = #272C30 0
 #---------------------------------------------
 panel_monitor = all
 panel_position = top center
-panel_size = 100% 22
+panel_size = 100% 26
 panel_margin = 0 0
 panel_padding = 0 0
 font_shadow = 0
