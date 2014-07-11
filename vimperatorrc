@@ -1,5 +1,3 @@
-"3.7.1 (created: 2013/05/22 20:32:57)
-
 highlight Bell border: 0 none; background-color: #191919;
 highlight CmdLine background: #191919; color: #afafaf; font-size: 9pt;
 highlight CompDesc color: #c6c6c6; width: 50%; font-size: 9pt;
