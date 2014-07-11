@@ -37,6 +37,7 @@ noremap <C-c> <C-v><C-c>
 noremap <C-v> <C-v><C-v>
 set defsearch=google
 set hintchars=qwertyasdfg
+set focuscontent
 source! /home/tim/.vimperatorrc.local
 
 " vim: set ft=vimperator:
