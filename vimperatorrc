@@ -1,43 +1,113 @@
-highlight Bell border: 0 none; background-color: #191919;
-highlight CmdLine background: #191919; color: #afafaf; font-size: 9pt;
-highlight CompDesc color: #c6c6c6; width: 50%; font-size: 9pt;
-highlight CompItem[selected] background: #666666; color: #afafaf; 
-highlight CompResult width: 45%; overflow: hidden;font-size: 9pt; font-family: monospace; font-weight: normal;
-highlight CompTitle color: #afafaf; background: #191919; font-weight: bold;
-highlight CompTitle>* padding: 0 .5ex;
-highlight ErrorMsg color: #ffffff; background: red; font-weight: bold;
-highlight Filter font-weight: bold;color: #afafaf;
-highlight FrameIndicator background-color: #191919; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
-highlight Function color: lightgreen; background: #191919;
-highlight Hint font-family: monospace; font-size: 14px; font-weight: bold; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px; 
-highlight HintActive background: blue; color: #f6e9e9;
-highlight HintElem background-color: #191919; color: #f6e9e9;
-highlight InfoMsg color: #afafaf; background: #191919;
-highlight LineNr color: #afafaf; background: #191919;
-highlight ModeMsg color: #afafaf; background: #191919; "CmdLine when Not in Use
-highlight MoreMsg color: #afafaf; background: #191919;
-highlight NonText color: lightblue; min-height: 16px; padding-left: 2px;
-highlight Normal color: #afafaf; background: #191919;
-highlight Number color: tan; background: #191919
-highlight Question color: #ffffff; background: #191919; font-weight: bold;
-highlight StatusLine color: #F1F1E0; background: #191919; "font-size: 9pt;
-highlight String color: #191919; background: #afafaf;
-highlight Tag color: #191919; background: #afafaf;
-highlight Title color: #191919; background: #afafaf; font-weight: bold;
-highlight URL text-decoration: none; color: lightblue; background: inherit;
-highlight WarningMsg color: red; background: #191919;
-map d <C-d>
-map s <C-u>
-map j <C-d>
-map k <C-u>
-nmap gp :set<Space>apptab<Return>
-nmap gu :set<Space>noapptab<Return>
-nnoremap <F1> <Nop>
-noremap <C-c> <C-v><C-c>
-noremap <C-v> <C-v><C-v>
-set defsearch=google
-set hintchars=qwertyasdfg
-set focuscontent
-source! /home/tim/.vimperatorrc.local
+""" Keybindings {{{
+    " Useless.
+    nnoremap <F1> <Nop>
 
-" vim: set ft=vimperator:
+    " Move around more efficiently
+    map d <C-d>
+    map s <C-u>
+    map j <C-d>
+    map k <C-u>
+
+    " Pin tabs easily
+    nmap gp :set<Space>apptab<Return>
+    nmap gu :set<Space>noapptab<Return>
+
+    " Traditional copy/paste, no matter the mode
+    noremap <C-c> <C-v><C-c>
+    noremap <C-v> <C-v><C-v>
+""" }}}
+""" Firefox settings
+    " General preferences, i.e. about:config entries
+    set! accessibility.blockautorefresh=true
+    set! browser.display.show_image_placeholders=false
+    set! browser.download.useDownloadDir=false
+    set! browser.newtabpage.enabled=false
+    set! browser.sessionsstore.restore_on_demand=false
+    set! browser.showQuitWarning=true
+    set! browser.startup.page=3
+    set! browser.tabs.insertRelatedAfterCurrent=false
+    set! general.autoScroll=true
+    set! general.smoothScroll=false
+    set! general.warnOnAboutConfig=false
+    set! geo.enabled=false
+    set! layout.spellcheckDefault=0
+    set! network.http.pipelining=true
+    set! network.http.proxy.pipelining=true
+    set! privacy.donottrackheader.enabled=true
+
+    " Firefox CSS, instead of stylish/userChrome.css/user.css
+    style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; }
+
+    """ Extensions {{{
+        set! extensions.vimperator.firsttime=false
+
+        " TreeStyleTabs
+        set! extensions.treestyletab.autoCollapseExpandSubtreeOnAttach=false
+        set! extensions.treestyletab.autoCollapseExpandSubtreeOnSelect=false
+        set! extensions.treestyletab.tabbar.fixed.vertical=true
+
+        " FireBug
+        set! extensions.firebug.hideDefaultInspector=true
+
+        " NoScript
+        set! noscript.allowedMimeRegExp=FONT@https?://netdna\\.bootstrapcdn\\.com
+        set! noscript.collapseObject=true
+        set! noscript.notify=false
+        set! noscript.showAbout=false
+        set! noscript.showAllowPage=false
+        set! noscript.showBlockedObjects=false
+        set! noscript.showDistrust=false
+        set! noscript.showGlobal=false
+        set! noscript.showRecentlyBlocked=false
+        set! noscript.showRevokeTemp=false
+        set! noscript.showTemp=false
+        set! noscript.showTempAllowPage=false
+        set! noscript.showTempToPerm=false
+        set! noscript.showUntrusted=false
+        set! noscript.smartCLickToPlay=false
+    """ }}}
+""" }}}
+""" Vimperator
+    " General settings
+    set defsearch=google
+    set hintchars=qwertyasdfg
+    set focuscontent
+    set toolbars=nonavigation
+
+    " Commands
+    command! backgroundimage :js let (doc = content.document) let (m = doc.defaultView.getComputedStyle(doc.body, '').backgroundImage.match(/url\s*\(\s*['"](.+)['"]\s*\)/)) m ? liberator.open(m[1], liberator.NEW_TAB) : liberator.echoerr('background image not found')
+""" }}}
+""" Colorscheme based off darkness.vimp {{{
+    highlight Bell border: 0 none; background-color: #191919;
+    highlight CmdLine background: #191919; color: #afafaf; font-size: 9pt;
+    highlight CompDesc color: #c6c6c6; width: 50%; font-size: 9pt;
+    highlight CompItem[selected] background: #666666; color: #afafaf;
+    highlight CompResult width: 45%; overflow: hidden;font-size: 9pt; font-family: monospace; font-weight: normal;
+    highlight CompTitle color: #afafaf; background: #191919; font-weight: bold;
+    highlight CompTitle>* padding: 0 .5ex;
+    highlight ErrorMsg color: #ffffff; background: red; font-weight: bold;
+    highlight Filter font-weight: bold;color: #afafaf;
+    highlight FrameIndicator background-color: #191919; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+    highlight Function color: lightgreen; background: #191919;
+    highlight Hint font-family: monospace; font-size: 14px; font-weight: bold; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px; 
+    highlight HintActive background: blue; color: #f6e9e9;
+    highlight HintElem background-color: #191919; color: #f6e9e9;
+    highlight InfoMsg color: #afafaf; background: #191919;
+    highlight LineNr color: #afafaf; background: #191919;
+    highlight ModeMsg color: #afafaf; background: #191919; "CmdLine when Not in Use
+    highlight MoreMsg color: #afafaf; background: #191919;
+    highlight NonText color: lightblue; min-height: 16px; padding-left: 2px;
+    highlight Normal color: #afafaf; background: #191919;
+    highlight Number color: tan; background: #191919
+    highlight Question color: #ffffff; background: #191919; font-weight: bold;
+    highlight StatusLine color: #F1F1E0; background: #191919; "font-size: 9pt;
+    highlight String color: #191919; background: #afafaf;
+    highlight Tag color: #191919; background: #afafaf;
+    highlight Title color: #191919; background: #afafaf; font-weight: bold;
+    highlight URL text-decoration: none; color: lightblue; background: inherit;
+    highlight WarningMsg color: red; background: #191919;
+""" }}}
+
+source! ~/.vimperatorrc.local
+
+" vim: set ft=vim
