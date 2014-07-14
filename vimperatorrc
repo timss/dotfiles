@@ -15,6 +15,9 @@
     " Traditional copy/paste, no matter the mode
     noremap <C-c> <C-v><C-c>
     noremap <C-v> <C-v><C-v>
+
+    " Go to last used tab
+    nnoremap gf <C-^>
 """ }}}
 """ Firefox settings
     " General preferences, i.e. about:config entries
