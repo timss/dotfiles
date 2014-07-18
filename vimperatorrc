@@ -113,4 +113,4 @@
 
 source! ~/.vimperatorrc.local
 
-" vim: set ft=vim
+" vim:ft=vim
