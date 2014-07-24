@@ -5,8 +5,6 @@
     " Move around more efficiently
     map d <C-d>
     map s <C-u>
-    map j <C-d>
-    map k <C-u>
 
     " Pin tabs easily
     nmap gp :set<Space>apptab<Return>
