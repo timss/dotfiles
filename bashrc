@@ -9,13 +9,6 @@ export PS1='\[\033[0;36m\]\W\[\033[0;32m\]$(__git_ps1 " (%s)") \[\033[0;34m\]>\[
         . /etc/bash_completion
     fi
 
-    # Autocomplete for SSH
-    if [ -f $HOME/.ssh/known_hosts ]; then
-        SSH_COMPLETE=( $(cut -d , -f 1 $HOME/.ssh/known_hosts | cut -f1 -d ' ' | uniq) )
-        complete -o default -W '${SSH_COMPLETE[*]}' ssh
-        complete -o default -W '${SSH_COMPLETE[*]}' scp
-    fi
-
     complete -cf sudo man type
     bind "set completion-ignore-case on"
 ### }}}
