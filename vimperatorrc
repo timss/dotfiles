@@ -23,7 +23,7 @@
     set! browser.display.show_image_placeholders=false
     set! browser.download.useDownloadDir=false
     set! browser.newtabpage.enabled=false
-    set! browser.sessionsstore.restore_on_demand=false
+    set! browser.sessionstore.restore_on_demand=false
     set! browser.showQuitWarning=true
     set! browser.startup.page=3
     set! browser.tabs.insertRelatedAfterCurrent=false
