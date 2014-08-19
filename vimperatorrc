@@ -72,7 +72,6 @@
     " General settings
     set defsearch=google
     set hintchars=qwertyasdfg
-    set focuscontent
     set toolbars=nonavigation
 
     " Commands
