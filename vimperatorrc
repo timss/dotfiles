@@ -36,6 +36,10 @@
     set! network.http.proxy.pipelining=true
     set! privacy.donottrackheader.enabled=true
 
+    " Does not work for everything, for example html5 videos using play()
+    " https://bugzilla.mozilla.org/show_bug.cgi?id=659285
+    set! media.autoplay.enabled=false
+
     " Firefox CSS, instead of stylish/userChrome.css/user.css
     style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; }
 
