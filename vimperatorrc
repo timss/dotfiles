@@ -5,8 +5,6 @@
     " Move around more efficiently
     map d <C-d>
     map s <C-u>
-    map j <C-d>
-    map k <C-u>
 
     " Pin tabs easily
     nmap gp :set<Space>apptab<Return>
@@ -25,7 +23,7 @@
     set! browser.display.show_image_placeholders=false
     set! browser.download.useDownloadDir=false
     set! browser.newtabpage.enabled=false
-    set! browser.sessionsstore.restore_on_demand=false
+    set! browser.sessionstore.restore_on_demand=false
     set! browser.showQuitWarning=true
     set! browser.startup.page=3
     set! browser.tabs.insertRelatedAfterCurrent=false
@@ -37,6 +35,10 @@
     set! network.http.pipelining=true
     set! network.http.proxy.pipelining=true
     set! privacy.donottrackheader.enabled=true
+
+    " Does not work for everything, for example html5 videos using play()
+    " https://bugzilla.mozilla.org/show_bug.cgi?id=659285
+    set! media.autoplay.enabled=false
 
     " Firefox CSS, instead of stylish/userChrome.css/user.css
     style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; }
@@ -74,7 +76,6 @@
     " General settings
     set defsearch=google
     set hintchars=qwertyasdfg
-    set focuscontent
     set toolbars=nonavigation
 
     " Commands
@@ -113,4 +114,4 @@
 
 source! ~/.vimperatorrc.local
 
-" vim:ft=vim
+" vim: ft=vim
