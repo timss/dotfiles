@@ -1,4 +1,12 @@
+# 256 color support
 term screen-256color
+
+# Allow bold
 attrcolor b ".I"
+
+# Tell screen how to set colors. AB = background, AF=foregroun
+# Necessary for 256 color support in Vim
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-defbce "on"
+
+# Autodetach session on hangup instead of terminating screen completely
+autodetach on
