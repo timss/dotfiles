@@ -1,4 +1,5 @@
-! Caps lock => ESC
+! Caps Lock => compose
+! <caps>2s => ²
 remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
+keysym Caps_Lock = Multi_key
 add Lock = Caps_Lock
