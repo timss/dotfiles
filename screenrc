@@ -14,3 +14,7 @@ autodetach on
 # Prevent screen resizing when using xterm, for example with PuTTY
 termcap xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 terminfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+# Disable visual (screen flash) and audible bell
+vbell off
+bell_msg ""
