@@ -1,0 +1,58 @@
+# mpd
+mpd_host = "192.168.1.4"
+mpd_port = "6600"
+mpd_crossfade_time = "1"
+
+# General
+mouse_support = "no"
+incremental_seeking = "yes"
+allow_physical_files_deletion = "yes"
+allow_physical_directories_deletion = "no"
+external_editor = "vim"
+
+# Interface
+user_interface = "alternative"
+progressbar_look = "─╼ "
+titles_visibility = "no"
+header_visibility = "no"
+display_bitrate = "yes"
+playlist_display_mode = "columns" (classic/columns)
+browser_display_mode = "classic" (classic/columns)
+search_engine_display_mode = "columns" (classic/columns)
+selected_item_prefix = "$0"
+selected_item_suffix = "$9"
+song_list_format = "{$4%a$9 - }{$8%t$9}|{$0%f$9} - {$7(%l)$9}"
+song_library_format = "{$4%n$9 - }{$0%t$9}|{$4%f$9}"
+song_status_format = "{(%l) }{%a - }{%t}|{%f}"
+song_window_title_format = "MPD: {%a > }{%t}{ [%b{ Disc %d}]}|{%f}"
+song_columns_list_format = "(6f)[blue]{l} (25)[red]{a} (40)[green]{t|f} (30)[yellow]{b}"
+tag_editor_album_format = "{$4(%y)$9 }$7%b$9"
+browser_playlist_prefix = "$8playlist$9 "
+
+# Colors
+colors_enabled = "yes"
+color1 = "white"
+color2 = "green"
+active_column_color = "yellow"
+empty_tag_color = "yellow"
+header_window_color = "white"
+main_window_color = "white"
+main_window_highlight_color = "green"
+progressbar_color = "white"
+state_flags_color = "white"
+state_line_color = "white"
+statusbar_color = "white"
+volume_color = "white"
+
+# Vim like bindings
+key_move_song_up = 'K'
+key_move_song_down = 'J'
+key_next_found_position = 'n'
+key_prev_found_position = 'N'
+key_prev_column = 260 'h'
+key_next_column = 261 'l'
+key_lyrics = '.'
+key_home = 262 'g'
+key_end = 360 'G'
+
+# vim: ft=config
