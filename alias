@@ -14,6 +14,8 @@ alias mv="mv -i"
 alias rsync="rsync --progress"
 alias sudoedit="sudoedit -E "
 alias unp="unp -u"
+alias fixdir="find . -type d -exec chmod 755 {} +"
+alias fixfiles="find . -type f -exec chmod 644 {} +"
 
 # General
 alias aliases="vim ~/.alias"
