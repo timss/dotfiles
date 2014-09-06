@@ -6,7 +6,7 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#454545:#d44a40:#98cb3c:#d3be66:#43648e:#ba5680:#5acbbe:#c5c5c5:#727272:#d4746a:#afcb66:#e6d593:#5a89c9:#c46497:#84cbbe:#cfcfcf"
+    palette = "#454545:#d45d55:#a0cb51:#d3c27a:#516c8e:#ba688b:#6ecbc1:#c5c5c5:#727272:#d4877f:#b5cb7a:#e6daaa:#6e95c9:#c478a0:#98cbc2:#cfcfcf"
     background_image = None
     background_darkness = 0.96
     scrollback_lines = 5000
