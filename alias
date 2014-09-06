@@ -5,6 +5,7 @@ alias v="vim"
 alias vi="vim"
 alias xclip="xclip -selection c"
 alias youtubemp3="youtube-dl -i -x --audio-quality 0 --audio-format mp3"
+alias ssh="cat ~/.ssh/config.d/* > ~/.ssh/config; ssh"
 
 # File handling and moving around
 alias cd..="cd .."

@@ -1,3 +1,10 @@
+# location:    ~/.ssh/config.d/default or similar
+# in use with: ~/.ssh/config.d/local or similar
+# with alias:  alias ssh="cat ~/.ssh/config.d/* > ~/.ssh/config; ssh"
+
 Host *
     ServerAliveInterval 60
     GSSAPIAuthentication no
+
+# vim: ft=sshconfig
+
