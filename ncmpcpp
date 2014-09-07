@@ -17,6 +17,7 @@ progressbar_look = "─╼ "
 titles_visibility = "no"
 header_visibility = "no"
 display_bitrate = "yes"
+autocenter_mode = "yes"
 playlist_display_mode = "columns" (classic/columns)
 browser_display_mode = "classic" (classic/columns)
 search_engine_display_mode = "columns" (classic/columns)
