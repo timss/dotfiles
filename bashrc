@@ -10,6 +10,7 @@ export PS1='\[\033[0;36m\]\W\[\033[0;32m\]$(__git_ps1 " (%s)") \[\033[0;34m\]>\[
     fi
 
     complete -cf sudo man type
+    complete -W "+%H:%M +%d.%m.%y_%H:%M" date
     bind "set completion-ignore-case on"
 ### }}}
 
