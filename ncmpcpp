@@ -8,7 +8,7 @@ mpd_crossfade_time = "1"
 mouse_support = "no"
 incremental_seeking = "yes"
 allow_physical_files_deletion = "yes"
-allow_physical_directories_deletion = "no"
+allow_physical_directories_deletion = "yes"
 external_editor = "vim"
 
 # Interface
