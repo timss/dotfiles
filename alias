@@ -4,7 +4,7 @@ alias g++="g++ -Wall -Wextra -pedantic -O3 -std=c++0x"
 alias v="vim"
 alias vi="vim"
 alias xclip="xclip -selection c"
-alias youtubemp3="youtube-dl -i -x --audio-quality 0 --audio-format mp3"
+alias ymp3="youtube-dl -i -x --audio-quality 0 --audio-format mp3"
 alias ssh="cat ~/.ssh/config.d/* > ~/.ssh/config; ssh"
 
 # File handling and moving around
