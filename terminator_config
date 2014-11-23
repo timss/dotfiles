@@ -1,6 +1,7 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   tab_position = hidden
+  handle_size = 1
   inactive_color_offset = 0.99
 [keybindings]
 [profiles]
