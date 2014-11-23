@@ -46,7 +46,7 @@
     """ Extensions {{{
         set! extensions.vimperator.firsttime=false
 
-        " TreeStyleTabs
+        " TreeStyleTabs - http://piro.sakura.ne.jp/xul/xpi/nightly/treestyletab.xpi
         set! extensions.treestyletab.autoCollapseExpandSubtreeOnAttach=false
         set! extensions.treestyletab.autoCollapseExpandSubtreeOnSelect=false
         set! extensions.treestyletab.tabbar.fixed.vertical=true
