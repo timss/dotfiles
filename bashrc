@@ -23,6 +23,11 @@ export HISTFILESIZE="10000"
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups  # don't duplicate
 shopt -s histappend                                        # append, not write
 
+# Editor and pager
+# https://github.com/rkitover/vimpager
+export EDITOR=vim
+export PAGER=/usr/local/bin/vimpager
+
 ### Functions {{{
     # Calculator, math 100/2*10 {{{
     function math() {
