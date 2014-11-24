@@ -14,7 +14,7 @@ export PS1='\[\033[0;36m\]\W\[\033[0;32m\]$(__git_ps1 " (%s)") \[\033[0;34m\]>\[
     bind "set completion-ignore-case on"
 ### }}}
 
-# Environment variables
+# Always use UTF8
 export LANG=en_US.UTF-8
 
 # History
