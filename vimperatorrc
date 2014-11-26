@@ -34,7 +34,7 @@
     set! layout.spellcheckDefault=0
     set! network.http.pipelining=true
     set! network.http.proxy.pipelining=true
-    set! privacy.donottrackheader.enabled=true
+    set! privacy.donottrackheader.enabled=false
 
     " Does not work for everything, for example html5 videos using play()
     " https://bugzilla.mozilla.org/show_bug.cgi?id=659285
@@ -58,6 +58,7 @@
         set! noscript.allowedMimeRegExp=FONT@https?://netdna\\.bootstrapcdn\\.com
         set! noscript.collapseObject=true
         set! noscript.notify=false
+        set! noscript.doNotTrack.enabled=false
         set! noscript.showAbout=false
         set! noscript.showAllowPage=false
         set! noscript.showBlockedObjects=false
