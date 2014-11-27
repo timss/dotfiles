@@ -19,65 +19,65 @@
 """ }}}
 """ Firefox settings
     " General preferences, i.e. about:config entries
-    set! accessibility.blockautorefresh=true
-    set! browser.display.show_image_placeholders=false
-    set! browser.download.useDownloadDir=false
-    set! browser.newtabpage.enabled=false
-    set! browser.sessionstore.restore_on_demand=false
-    set! browser.showQuitWarning=true
-    set! browser.startup.page=3
-    set! browser.tabs.insertRelatedAfterCurrent=false
-    set! general.autoScroll=true
-    set! general.smoothScroll=false
-    set! general.warnOnAboutConfig=false
-    set! geo.enabled=false
-    set! layout.spellcheckDefault=0
-    set! network.http.pipelining=true
-    set! network.http.proxy.pipelining=true
-    set! privacy.donottrackheader.enabled=false
+    set! accessibility.blockautorefresh="true"
+    set! browser.display.show_image_placeholders="false"
+    set! browser.download.useDownloadDir="false"
+    set! browser.newtabpage.enabled="false"
+    set! browser.sessionstore.restore_on_demand="false"
+    set! browser.showQuitWarning="true"
+    set! browser.startup.page="3"
+    set! browser.tabs.insertRelatedAfterCurrent="false"
+    set! general.autoScroll="true"
+    set! general.smoothScroll="false"
+    set! general.warnOnAboutConfig="false"
+    set! geo.enabled="false"
+    set! layout.spellcheckDefault="0"
+    set! network.http.pipelining="true"
+    set! network.http.proxy.pipelining="true"
+    set! privacy.donottrackheader.enabled="false"
 
     " Does not work for everything, for example html5 videos using play()
-    " https://bugzilla.mozilla.org/show_bug.cgi?id=659285
-    set! media.autoplay.enabled=false
+    " - https://bugzilla.mozilla.org/show_bug.cgi?id=659285
+    set! media.autoplay.enabled="false"
 
     " Firefox CSS, instead of stylish/userChrome.css/user.css
     style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; }
 
     """ Extensions {{{
-        set! extensions.vimperator.firsttime=false
+        set! extensions.vimperator.firsttime="false"
 
         " TreeStyleTabs - http://piro.sakura.ne.jp/xul/xpi/nightly/treestyletab.xpi
-        set! extensions.treestyletab.autoCollapseExpandSubtreeOnAttach=false
-        set! extensions.treestyletab.autoCollapseExpandSubtreeOnSelect=false
-        set! extensions.treestyletab.tabbar.fixed.vertical=true
+        set! extensions.treestyletab.autoCollapseExpandSubtreeOnAttach="false"
+        set! extensions.treestyletab.autoCollapseExpandSubtreeOnSelect="false"
+        set! extensions.treestyletab.tabbar.fixed.vertical="true"
 
         " FireBug
-        set! extensions.firebug.hideDefaultInspector=true
+        set! extensions.firebug.hideDefaultInspector="true"
 
         " NoScript
-        set! noscript.allowedMimeRegExp=FONT@https?://netdna\\.bootstrapcdn\\.com
-        set! noscript.collapseObject=true
-        set! noscript.notify=false
-        set! noscript.doNotTrack.enabled=false
-        set! noscript.showAbout=false
-        set! noscript.showAllowPage=false
-        set! noscript.showBlockedObjects=false
-        set! noscript.showDistrust=false
-        set! noscript.showGlobal=false
-        set! noscript.showRecentlyBlocked=false
-        set! noscript.showRevokeTemp=false
-        set! noscript.showTemp=false
-        set! noscript.showTempAllowPage=false
-        set! noscript.showTempToPerm=false
-        set! noscript.showUntrusted=false
-        set! noscript.smartCLickToPlay=false
+        set! noscript.allowedMimeRegExp="FONT@https?://netdna\\.bootstrapcdn\\.com"
+        set! noscript.collapseObject="true"
+        set! noscript.notify="false"
+        set! noscript.doNotTrack.enabled="false"
+        set! noscript.showAbout="false"
+        set! noscript.showAllowPage="false"
+        set! noscript.showBlockedObjects="false"
+        set! noscript.showDistrust="false"
+        set! noscript.showGlobal="false"
+        set! noscript.showRecentlyBlocked="false"
+        set! noscript.showRevokeTemp="false"
+        set! noscript.showTemp="false"
+        set! noscript.showTempAllowPage="false"
+        set! noscript.showTempToPerm="false"
+        set! noscript.showUntrusted="false"
+        set! noscript.smartCLickToPlay="false"
     """ }}}
 """ }}}
 """ Vimperator
     " General settings
-    set defsearch=google
-    set hintchars=qwertyasdfg
-    set toolbars=nonavigation
+    set defsearch="google"
+    set hintchars="qwertyasdfg"
+    set toolbars="nonavigation"
 
     " Commands
     command! backgroundimage :js let (doc = content.document) let (m = doc.defaultView.getComputedStyle(doc.body, '').backgroundImage.match(/url\s*\(\s*['"](.+)['"]\s*\)/)) m ? liberator.open(m[1], liberator.NEW_TAB) : liberator.echoerr('background image not found')
