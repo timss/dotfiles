@@ -70,7 +70,7 @@
         set! noscript.showTempAllowPage="false"
         set! noscript.showTempToPerm="false"
         set! noscript.showUntrusted="false"
-        set! noscript.smartCLickToPlay="false"
+        set! noscript.smartClickToPlay="false"
     """ }}}
 """ }}}
 """ Vimperator
