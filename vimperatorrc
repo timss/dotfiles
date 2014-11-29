@@ -1,5 +1,5 @@
 """ Keybindings {{{
-    " Useless.
+    " Unbind help
     nnoremap <F1> <Nop>
 
     " Move around more efficiently
