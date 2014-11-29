@@ -70,6 +70,7 @@
 
         " NoScript
         set! noscript.allowedMimeRegExp="FONT@https?://netdna\\.bootstrapcdn\\.com"
+        set! noscript.autoReload.allTabs="false"
         set! noscript.collapseObject="true"
         set! noscript.notify="false"
         set! noscript.doNotTrack.enabled="false"
@@ -85,6 +86,7 @@
         set! noscript.showTempToPerm="false"
         set! noscript.showUntrusted="false"
         set! noscript.smartClickToPlay="false"
+        set! noscript.stickyUI.liveReload="true"
     """ }}}
 """ }}}
 """ Vimperator
