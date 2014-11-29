@@ -2,7 +2,7 @@
     " Unbind help
     nnoremap <F1> <Nop>
 
-    " Move around more efficiently
+    " Scroll up/down lines from 'scroll' option, default half a screen
     map d <C-d>
     map s <C-u>
 
