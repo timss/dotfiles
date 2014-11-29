@@ -36,6 +36,20 @@
     set! network.http.proxy.pipelining="true"
     set! privacy.donottrackheader.enabled="false"
 
+    " Attempt to reduce browser fingerprint uniqueness. To test use Panopticlick:
+    " - https://panopticlick.eff.org
+    " Inspired by the addon Blender:
+    " - https://addons.mozilla.org/en-US/firefox/addon/blender-1/
+    " TODO: buildID changed to integer if not previously set, should be string
+    "       works in ff using :set!, but not in rc file with set!
+    set! general.appname.override="Netscape"
+    set! general.appversion.override="5.0 (Windows)"
+    set! general.buildID.override="20141113143407"
+    set! general.oscpu.override="Windows NT 6.1; WOW64"
+    set! general.platform.override="Win32"
+    set! general.useragent.override="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0"
+    set! intl.accept_languages="en-US, en"
+
     " Does not work for everything, for example html5 videos using play()
     " - https://bugzilla.mozilla.org/show_bug.cgi?id=659285
     set! media.autoplay.enabled="false"
