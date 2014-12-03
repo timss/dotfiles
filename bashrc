@@ -14,11 +14,11 @@ fi
 # Always use UTF8
 export LANG=en_US.UTF-8
 
-# History
+# History, ignore duplicates, append
 export HISTSIZE="10000"
 export HISTFILESIZE="10000"
-export HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups  # don't duplicate
-shopt -s histappend                                        # append, not write
+export HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
+shopt -s histappend
 
 # Editor and pager, https://github.com/rkitover/vimpager
 # Git uses less if `git diff` etc has too many lines to print in terminal
