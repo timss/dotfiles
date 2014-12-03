@@ -1,0 +1,8 @@
+if isdirectory($HOME."/.vim/bundle/jellybeans.vim")
+    set rtp+=$HOME/.vim/bundle/jellybeans.vim
+    colorscheme jellybeans
+    highlight Normal ctermbg=NONE
+    highlight nonText ctermbg=NONE
+endif
+
+" vim: ft=vim
