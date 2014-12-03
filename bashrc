@@ -26,20 +26,13 @@ export EDITOR=vim
 export PAGER=vimpager
 export GIT_PAGER=less
 
-### Functions {{{
-    # Calculator, math 100/2*10 {{{
-    function math() {
-        echo "scale=2 ; $*" | sed -e "s:x:*:g" | sed -e "s:,::g" | bc
-    }
-
-    # Preserve environment when doing "sudo vim [..]"
-    function sudo() {
-        case $* in
-            vim* ) shift 1; command sudo -E vim "$@" ;;
-            * ) command sudo "$@" ;;
-        esac
-    }
-### }}}
+# Preserve environment when doing "sudo vim [..]"
+function sudo() {
+    case $* in
+        vim* ) shift 1; command sudo -E vim "$@" ;;
+        * ) command sudo "$@" ;;
+    esac
+}
 
 # Source additional files
 if [ -f $HOME/.alias ]; then . $HOME/.alias; fi
