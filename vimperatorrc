@@ -129,6 +129,6 @@
     highlight WarningMsg color: red; background: #191919;
 """ }}}
 
-source! ~/.vimperatorrc.local
+source! $HOME/.vimperatorrc.local
 
 " vim: ft=vim

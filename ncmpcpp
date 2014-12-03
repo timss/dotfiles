@@ -1,7 +1,7 @@
 # mpd
 mpd_host = "localhost"
 mpd_port = "6600"
-mpd_music_dir = "~/Music"
+mpd_music_dir = "$HOME/Music"
 mpd_crossfade_time = "1"
 
 # General

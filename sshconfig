@@ -1,6 +1,6 @@
-# location:    ~/.ssh/config.d/default or similar
-# in use with: ~/.ssh/config.d/local or similar
-# with alias:  alias ssh="cat ~/.ssh/config.d/* > ~/.ssh/config; ssh"
+# location:    $HOME/.ssh/config.d/default or similar
+# in use with: $HOME/.ssh/config.d/local or similar
+# with alias:  alias ssh="cat $HOME/.ssh/config.d/* > $HOME/.ssh/config; ssh"
 
 Host *
     ServerAliveInterval 60
