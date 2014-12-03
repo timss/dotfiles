@@ -1,15 +1,16 @@
 # Programs
 alias cal="cal -m"
 alias g++="g++ -Wall -Wextra -pedantic -O3 -std=c++0x"
-alias v="vim"
+alias ssh="cat $HOME/.ssh/config.d/* > $HOME/.ssh/config; ssh"
 alias vi="vim"
 alias xclip="xclip -selection c"
 alias ymp3="youtube-dl -i -x --audio-quality 0 --audio-format mp3"
-alias ssh="cat ~/.ssh/config.d/* > ~/.ssh/config; ssh"
 
 # File handling and moving around
 alias cd..="cd .."
 alias cp="cp -i"
+alias fixdir="find . -type d -exec chmod 755 {} +"
+alias fixfiles="find . -type f -exec chmod 644 {} +"
 alias grep="grep -i"
 alias ll="ls -lA"
 alias ls="ls -h --color=auto --group-directories-first --time-style='+%d.%m.%y %H:%M'"
@@ -18,12 +19,8 @@ alias mv="mv -i"
 alias rsync="rsync --progress"
 alias sudoedit="sudoedit -E "
 alias unp="unp -u"
-alias fixdir="find . -type d -exec chmod 755 {} +"
-alias fixfiles="find . -type f -exec chmod 644 {} +"
 
 # General
-alias aliases="vim ~/.alias"
-alias bashrc="~/.bashrc"
 alias df="df -h"
 alias diff="colordiff"
 alias du="du -sh"
@@ -32,4 +29,8 @@ alias ping="ping -c 5"
 alias speedtest="wget http://cachefly.cachefly.net/100mb.test --delete-after"
 alias sudo="sudo "
 alias tree="tree -C"
-alias vimrc="vim ~/.vimrc"
+
+# Shorthand for editing dotfiles
+alias aliases="vim $HOME/.alias"
+alias bashrc="vim $HOME/.bashrc"
+alias vimrc="vim $HOME/.vimrc"
