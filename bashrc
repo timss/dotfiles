@@ -34,9 +34,7 @@ function sudo() {
     esac
 }
 
-# Source additional files
-if [ -f $HOME/.alias ]; then . $HOME/.alias; fi
-
-# Source locals, don't add to git repo
+# Source additional files; alias + local non-git versions of bashrc/alias
+if [ -f $HOME/.alias ]; then source $HOME/.alias; fi
 if [ -f $HOME/.bashrc.local ]; then source $HOME/.bashrc.local; fi
 if [ -f $HOME/.alias.local ]; then source $HOME/.alias.local; fi
