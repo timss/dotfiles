@@ -5,6 +5,9 @@
     " Disable Ctrl+q
     map <C-q> <Nop>
 
+    " Go back in history with backspace
+    nmap <BS> :back<CR>
+
     " Scroll up/down lines from 'scroll' option, default half a screen
     map d <C-d>
     map s <C-u>
