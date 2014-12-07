@@ -8,6 +8,9 @@
     " Go back in history with backspace
     nmap <BS> :back<CR>
 
+    " Disable highlighted search matches
+    map <C-7> :noh<CR>
+
     " Scroll up/down lines from 'scroll' option, default half a screen
     map d <C-d>
     map s <C-u>
