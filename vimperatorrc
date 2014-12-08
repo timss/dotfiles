@@ -45,6 +45,7 @@
     set! layout.spellcheckDefault="0"
     set! network.http.pipelining="true"
     set! network.http.proxy.pipelining="true"
+    set! network.http.pipelining.ssl="true"
     set! privacy.donottrackheader.enabled="false"
 
     " Attempt to reduce browser fingerprint uniqueness. To test use Panopticlick:
