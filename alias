@@ -33,3 +33,5 @@ alias tree="tree -C"
 alias aliases="vim $HOME/.alias"
 alias bashrc="vim $HOME/.bashrc"
 alias vimrc="vim $HOME/.vimrc"
+
+# vim: ft=sh

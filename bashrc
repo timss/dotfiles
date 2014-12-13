@@ -38,3 +38,5 @@ function sudo() {
 if [ -f $HOME/.alias ]; then source $HOME/.alias; fi
 if [ -f $HOME/.bashrc.local ]; then source $HOME/.bashrc.local; fi
 if [ -f $HOME/.alias.local ]; then source $HOME/.alias.local; fi
+
+# vim: ft=sh
