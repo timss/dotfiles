@@ -42,6 +42,7 @@
     set! browser.showQuitWarning="true"
     set! browser.startup.page="3"
     set! browser.tabs.insertRelatedAfterCurrent="false"
+    set! dom.event.clipboardevents.enabled="false
     set! general.autoScroll="true"
     set! general.smoothScroll="false"
     set! general.warnOnAboutConfig="false"
