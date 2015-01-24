@@ -82,9 +82,6 @@
         set! extensions.treestyletab.autoCollapseExpandSubtreeOnSelect="false"
         set! extensions.treestyletab.tabbar.fixed.vertical="true"
 
-        " FireBug
-        set! extensions.firebug.hideDefaultInspector="true"
-
         " NoScript
         set! noscript.allowedMimeRegExp="FONT@https?://netdna\\.bootstrapcdn\\.com"
         set! noscript.autoReload.allTabs="false"
