@@ -87,7 +87,9 @@
     """ Extensions {{{
         set! extensions.vimperator.firsttime="false"
 
-        " TreeStyleTabs - http://piro.sakura.ne.jp/xul/xpi/nightly/treestyletab.xpi
+        " TreeStyleTabs
+        " http://piro.sakura.ne.jp/xul/xpi/nightly/treestyletab.xpi
+        " https://github.com/piroor/treestyletab/pull/816
         set! extensions.treestyletab.autoCollapseExpandSubtreeOnAttach="false"
         set! extensions.treestyletab.autoCollapseExpandSubtreeOnSelect="false"
         set! extensions.treestyletab.tabbar.autoHide.mode.toggle=1
