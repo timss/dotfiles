@@ -71,9 +71,18 @@
     " - https://bugzilla.mozilla.org/show_bug.cgi?id=659285
     set! media.autoplay.enabled="false"
 
-    " Firefox CSS, instead of stylish/userChrome.css/user.css
-    style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; }
+    """ Userstyles, instead of Stylish/userChrome.css/user.css {{{
+        " Hide and tweak parts of Firefox tabs
+        style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; }
 
+        " Remove background for transparent images (.png)
+        " http://rideag.uk/#tranbg
+        " https://github.com/RiDeag/dotfiles/pull/1
+        style -name transpng * body > img.decoded, body > img.transparent { background: none !important; } body > img.decoded:hover, body > img.transparent:hover { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABlBMVEV7e3sAAAD2vrKOAAAAAnRSTlM7O/sqyyQAAAAfSURBVHja1c6hAQAAAAFB9l9aYwGBj5ceie4bZ0ZaKKW0AMmwXSJmAAAAAElFTkSuQmCC) !important; }
+
+        " Remove Ekstra banner on diskusjon.no
+        style -name diskusjon diskusjon.no .author_info .tekstra-banner.ipsUserPhoto { display: none!important; }
+    """ }}}
     """ Extensions {{{
         set! extensions.vimperator.firsttime="false"
 
