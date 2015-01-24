@@ -30,7 +30,7 @@
     " Go to last used tab
     nnoremap gf <C-^>
 """ }}}
-""" Firefox settings
+""" Firefox settings {{{
     " General preferences, i.e. about:config entries
     set! accessibility.blockautorefresh="true"
     set! browser.display.show_image_placeholders="false"
