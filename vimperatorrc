@@ -83,6 +83,7 @@
         " Remove Ekstra banner on diskusjon.no
         style -name diskusjon diskusjon.no .author_info .tekstra-banner.ipsUserPhoto { display: none!important; }
     """ }}}
+
     """ Extensions {{{
         set! extensions.vimperator.firsttime="false"
 
