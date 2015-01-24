@@ -40,14 +40,14 @@
     set! browser.preferences.inContent="true"
     set! browser.sessionstore.restore_on_demand="false"
     set! browser.showQuitWarning="true"
-    set! browser.startup.page="3"
+    set! browser.startup.page=3
     set! browser.tabs.insertRelatedAfterCurrent="false"
     set! dom.event.clipboardevents.enabled="false"
     set! general.autoScroll="true"
     set! general.smoothScroll="false"
     set! general.warnOnAboutConfig="false"
     set! geo.enabled="false"
-    set! layout.spellcheckDefault="0"
+    set! layout.spellcheckDefault=0
     set! network.http.pipelining="true"
     set! network.http.proxy.pipelining="true"
     set! network.http.pipelining.ssl="true"
@@ -95,7 +95,7 @@
         set! extensions.treestyletab.tabbar.autoHide.mode.toggle=1
         set! extensions.treestyletab.tabbar.fixed.vertical="true"
         set! extensions.treestyletab.tabbar.shrunkenWidth=24
-        set! extensions.treestyletab.tabbar.style=flat
+        set! extensions.treestyletab.tabbar.style="flat"
 
         " NoScript
         set! noscript.allowedMimeRegExp="FONT@https?://netdna\\.bootstrapcdn\\.com"
@@ -122,7 +122,7 @@
     " General settings
     set defsearch="google"
     set hintchars="qwertyasdfg"
-    set status=input,location,bookmark,history,tabcount,ssl
+    set status="input,location,bookmark,history,tabcount,ssl"
     set toolbars="nonavigation"
 
     " Commands
