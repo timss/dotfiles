@@ -80,7 +80,10 @@
         " TreeStyleTabs - http://piro.sakura.ne.jp/xul/xpi/nightly/treestyletab.xpi
         set! extensions.treestyletab.autoCollapseExpandSubtreeOnAttach="false"
         set! extensions.treestyletab.autoCollapseExpandSubtreeOnSelect="false"
+        set! extensions.treestyletab.tabbar.autoHide.mode.toggle=1
         set! extensions.treestyletab.tabbar.fixed.vertical="true"
+        set! extensions.treestyletab.tabbar.shrunkenWidth=24
+        set! extensions.treestyletab.tabbar.style=flat
 
         " NoScript
         set! noscript.allowedMimeRegExp="FONT@https?://netdna\\.bootstrapcdn\\.com"
