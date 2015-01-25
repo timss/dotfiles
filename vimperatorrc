@@ -126,6 +126,7 @@
 """ }}}
 """ Vimperator
     " General settings
+    set complete="slS"
     set defsearch="google"
     set hintchars="qwertyasdfg"
     set status="input,location,bookmark,history,tabcount,ssl"
