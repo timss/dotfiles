@@ -71,7 +71,7 @@
     " - https://bugzilla.mozilla.org/show_bug.cgi?id=659285
     set! media.autoplay.enabled="false"
 
-    """ Userstyles, instead of Stylish/userChrome.css/user.css {{{
+    """ Userstyles {{{
         " Hide and tweak parts of Firefox tabs
         style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; }
 
