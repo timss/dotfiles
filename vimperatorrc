@@ -134,6 +134,15 @@
 
     " Commands
     command! backgroundimage :js let (doc = content.document) let (m = doc.defaultView.getComputedStyle(doc.body, '').backgroundImage.match(/url\s*\(\s*['"](.+)['"]\s*\)/)) m ? liberator.open(m[1], liberator.NEW_TAB) : liberator.echoerr('background image not found')
+
+    " Abbreviations
+    abbreviate enja https://translate.google.com/#en/ja/
+    abbreviate enno https://translate.google.com/#en/no/
+    abbreviate jaen https://translate.google.com/#ja/en/
+    abbreviate jano https://translate.google.com/#ja/no/
+    abbreviate noen https://translate.google.com/#no/en/
+    abbreviate noja https://translate.google.com/#no/ja/
+
 """ }}}
 """ Colorscheme based off darkness.vimp {{{
     highlight Bell border: 0 none; background-color: #191919;
