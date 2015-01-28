@@ -1,0 +1,10 @@
+" https://github.com/reedes/vim-lexical
+let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
+let g:lexical#thesaurus_key = '<leader>t'
+
+augroup lexical
+    autocmd!
+    autocmd FileType markdown call lexical#init({'spell': 0})
+    autocmd FileType tex call lexical#init({'spell': 0})
+augroup END
+
