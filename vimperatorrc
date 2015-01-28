@@ -143,6 +143,7 @@
     abbreviate jano https://translate.google.com/#ja/no/
     abbreviate noen https://translate.google.com/#no/en/
     abbreviate noja https://translate.google.com/#no/ja/
+    abbreviate webcache http://webcache.googleusercontent.com/search?q=cache:
 
 """ }}}
 """ Colorscheme based off darkness.vimp {{{
