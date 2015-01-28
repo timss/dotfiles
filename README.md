@@ -1,7 +1,6 @@
 Dotfiles
 ========
 Assorted dotfiles.   
-Install at your own risk using `install.sh` or symlinking manually.
 
 Vim
 ---
