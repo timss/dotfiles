@@ -48,6 +48,7 @@
     set! general.warnOnAboutConfig="false"
     set! geo.enabled="false"
     set! layout.spellcheckDefault=0
+    set! media.peerconnection.enabled="false"
     set! network.http.pipelining="true"
     set! network.http.proxy.pipelining="true"
     set! network.http.pipelining.ssl="true"
