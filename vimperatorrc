@@ -129,6 +129,7 @@
     " General settings
     set complete="slS"
     set defsearch="google"
+    set focuscontent
     set hintchars="qwertyasdfg"
     set status="input,location,bookmark,history,tabcount,ssl"
     set toolbars="nonavigation"
