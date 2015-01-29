@@ -1,0 +1,4 @@
+REMOTE_HOST="thevoid.no"
+REMOTE_PATH="/var/www/dump/"
+REMOTE_URL="http://r.thevoid.no/"
+CHMOD="--chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r"
