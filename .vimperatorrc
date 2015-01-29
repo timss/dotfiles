@@ -117,7 +117,7 @@
         set! noscript.showGlobal="false"
         set! noscript.showRecentlyBlocked="false"
         set! noscript.showRevokeTemp="false"
-        set! noscript.showTemp="false"
+        set! noscript.showTemp="true"
         set! noscript.showTempAllowPage="false"
         set! noscript.showTempToPerm="false"
         set! noscript.showUntrusted="false"
