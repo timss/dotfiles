@@ -15,7 +15,7 @@
     cursor_color = "#676767"
     foreground_color = "#d7d7d7"
     show_titlebar = False
-    font = DejaVu Sans Mono 9
+    font = Monospace 9
     background_color = "#191919"
 [layouts]
   [[default]]
