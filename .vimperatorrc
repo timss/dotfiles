@@ -102,7 +102,7 @@
         set! extensions.treestyletab.tabbar.autoHide.mode.toggle=1
         set! extensions.treestyletab.tabbar.fixed.vertical="true"
         set! extensions.treestyletab.tabbar.shrunkenWidth=24
-        set! extensions.treestyletab.tabbar.style="flat"
+        set! extensions.treestyletab.tabbar.style="mixed"
 
         " NoScript
         set! noscript.allowedMimeRegExp="FONT@https?://netdna\\.bootstrapcdn\\.com"
