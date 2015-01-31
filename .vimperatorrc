@@ -164,13 +164,13 @@
     highlight HintElem background-color: #191919; color: #f6e9e9;
     highlight InfoMsg color: #afafaf; background: #191919;
     highlight LineNr color: #afafaf; background: #191919;
-    highlight ModeMsg color: #afafaf; background: #191919; "CmdLine when Not in Use
+    highlight ModeMsg color: #afafaf; background: #191919;
     highlight MoreMsg color: #afafaf; background: #191919;
     highlight NonText color: lightblue; min-height: 16px; padding-left: 2px;
     highlight Normal color: #afafaf; background: #191919;
     highlight Number color: tan; background: #191919
     highlight Question color: #ffffff; background: #191919; font-weight: bold;
-    highlight StatusLine color: #F1F1E0; background: #191919; "font-size: 9pt;
+    highlight StatusLine color: #F1F1E0; background: #191919; font-size: 9pt;
     highlight String color: #191919; background: #afafaf;
     highlight Tag color: #191919; background: #afafaf;
     highlight Title color: #191919; background: #afafaf; font-weight: bold;
