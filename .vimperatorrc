@@ -29,6 +29,10 @@
 
     " Go to last used tab
     nnoremap gf <C-^>
+
+    " Sometimes links can't be clicked
+    " Open highlighted text/url as new tab
+    nmap gx YP
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
