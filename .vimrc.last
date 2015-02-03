@@ -8,7 +8,3 @@ augroup lexical
     autocmd FileType tex call lexical#init({'spell': 0})
 augroup END
 
-" lightline
-function! MyReadonly()
-    return &ft !~? 'help' && &readonly ? '⭤' : ''
-endfunction
