@@ -132,7 +132,8 @@
 """ Vimperator
     " General settings
     set complete="slS"
-    set defsearch="google"
+    set defsearch="ddg"
+    set suggestengines="ddg"
     set focuscontent
     set hintchars="qwertyasdfg"
     set status="input,location,bookmark,history,tabcount,ssl"
