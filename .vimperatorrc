@@ -42,6 +42,7 @@
     set! browser.newtabpage.enabled="true"
     set! browser.newtabpage.enhanced="false"
     set! browser.preferences.inContent="true"
+    set! browser.search.defaultenginename="DuckDuckGo"
     set! browser.sessionstore.restore_on_demand="false"
     set! browser.showQuitWarning="true"
     set! browser.startup.page=3
