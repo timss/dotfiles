@@ -134,6 +134,7 @@
     " General settings
     set complete="slS"
     set defsearch="ddg"
+    set editor="terminator -e vim"
     set suggestengines="ddg"
     set focuscontent
     set hintchars="qwertyasdfg"
