@@ -33,6 +33,9 @@
     " Sometimes links can't be clicked
     " Open highlighted text/url as new tab
     nmap gx YP
+
+    " Replace homepage with downloads for <C-j>
+    noremap <C-j> :downloads<CR>
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
