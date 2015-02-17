@@ -26,7 +26,6 @@ alias diff="colordiff"
 alias du="du -sh"
 alias myip="wget ipecho.net/plain -O - -q; echo"
 alias ping="ping -c 5"
-alias sudo="sudo "
 alias tree="tree -C"
 
 # Shorthand for editing dotfiles
