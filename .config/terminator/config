@@ -1,7 +1,9 @@
 [global_config]
-  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   handle_size = 1
   inactive_color_offset = 0.99
+  custom_url_handler = /usr/local/bin/soap
+  enabled_plugins = ,
+  use_custom_url_handler = True
   tab_position = hidden
 [keybindings]
 [profiles]
