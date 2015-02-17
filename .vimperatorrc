@@ -39,7 +39,7 @@
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
-    set! accessibility.blockautorefresh="true"
+    set! accessibility.blockautorefresh="false"
     set! browser.display.show_image_placeholders="false"
     set! browser.download.useDownloadDir="false"
     set! browser.newtabpage.enabled="true"
