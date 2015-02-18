@@ -32,7 +32,7 @@
 
     " Sometimes links can't be clicked
     " Open highlighted text/url as new tab
-    nmap gx YP
+    nmap gx :js soap()<CR>
 
     " Replace homepage with downloads for <C-j>
     noremap <C-j> :downloads<CR>
@@ -189,6 +189,39 @@
     highlight URL text-decoration: none; color: lightblue; background: inherit;
     highlight WarningMsg color: red; background: #191919;
 """ }}}
+
+" Functions
+:js << EOF
+
+// https://github.com/FRIGN/soap
+// let soap decide which application to run based off url
+// if query is not an url let firefox decide what do to
+function soap(query) {
+    selection = content.getSelection().toString()
+
+    if(selection.length < 1) {
+        query = buffer.URL;
+    } else {
+        query = selection;
+    }
+
+    if(!query.match(/^https?/)) {
+        liberator.open(selection, liberator.NEW_TAB);
+        return;
+    }
+
+    var file = Components.classes["@mozilla.org/file/local;1"]
+                            .createInstance(Components.interfaces.nsIFile);
+    var process = Components.classes["@mozilla.org/process/util;1"]
+                            .createInstance(Components.interfaces.nsIProcess);
+
+    file.initWithPath("/usr/local/bin/soap");
+    process.init(file);
+    process.run(false, [query], 1);
+}
+
+EOF
+
 
 source! $HOME/.vimperatorrc.local
 
