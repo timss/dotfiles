@@ -71,7 +71,7 @@ log.add_output = "debug","rtorrent"
 
 # system resources
 pieces.memory.max.set = 1000M
-network.max_open_files.set = 250
+network.max_open_files.set = 500
 network.http.max_open.set = 64
 
 # vim: ft=conf
