@@ -157,7 +157,6 @@
     abbreviate jano https://translate.google.com/#ja/no/
     abbreviate noen https://translate.google.com/#no/en/
     abbreviate noja https://translate.google.com/#no/ja/
-
 """ }}}
 """ Colorscheme based off darkness.vimp {{{
     highlight Bell border: 0 none; background-color: #191919;
@@ -221,7 +220,6 @@ function soap(query) {
 }
 
 EOF
-
 
 source! $HOME/.vimperatorrc.local
 
