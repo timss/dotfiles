@@ -12,8 +12,8 @@ fi
 export PS1='\[\033[0;36m\]\W\[\033[0;32m\]$(__git_ps1 " (%s)") \[\033[0;34m\]>\[\033[0m\] '
 
 # Autocomplete using tab
-if [ -f /etc/bash_completion ]; then
-    source /etc/bash_completion
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
     complete -W "+%H:%M +%d.%m.%y_%H:%M" date
     bind "set completion-ignore-case on"
 fi
