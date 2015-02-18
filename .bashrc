@@ -5,9 +5,6 @@ elif [ -f /etc/bash.bashrc ]; then
     source /etc/bash.bashrc
 fi
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
 # Bash prompt
 export PS1='\[\033[0;36m\]\W\[\033[0;32m\]$(__git_ps1 " (%s)") \[\033[0;34m\]>\[\033[0m\] '
 
