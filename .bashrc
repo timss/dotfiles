@@ -18,6 +18,13 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
     bind "set completion-ignore-case on"
 fi
 
+# bash git completion for rhel or debian based systems respectively
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
+elif [ -f /usr/lib/git-core/git-sh-prompt ]; then
+    source /usr/lib/git-core/git-sh-prompt
+fi
+
 # Always use UTF8
 export LANG=en_US.UTF-8
 
