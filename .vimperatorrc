@@ -38,7 +38,7 @@
     nmap gx :js soap()<CR>
 
     " Replace homepage with downloads for <C-j>
-    noremap <C-j> :downloads<CR>
+    noremap <C-j> :tabopen about:downloads<CR>
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
