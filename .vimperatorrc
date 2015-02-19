@@ -23,6 +23,9 @@
     noremap <C-c> <C-v><C-c>
     noremap <C-v> <C-v><C-v>
 
+    " Properly escape insert mode
+    inoremap <C-c> <C-c><Esc>
+
     " Rebind Ctrl+Shift+c as copy instead of firefox inspector
     " Same bind is used in most terminals, resulting in frequent misclicks
     map <C-S-c> <C-v><C-c>
