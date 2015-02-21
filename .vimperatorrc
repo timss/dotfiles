@@ -88,7 +88,7 @@
 
     """ Userstyles {{{
         " Hide and tweak parts of Firefox tabs
-        style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; }
+        style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; } statuspanel { display: none !important; }
 
         " Remove background for transparent images (.png)
         " http://rideag.uk/#tranbg
