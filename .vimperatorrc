@@ -39,6 +39,9 @@
 
     " Replace homepage with downloads for <C-j>
     noremap <C-j> :tabopen about:downloads<CR>
+
+    " Always start inserting at the end of input fields
+    noremap gi gi<End>
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
