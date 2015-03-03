@@ -25,9 +25,6 @@ directory = /mnt/media/torrent/complete
 # relative path?
 session = /mnt/media/torrent/session
 
-# Close torrents when diskspace is low.
-schedule = low_diskspace,5,60,close_low_diskspace=10000M
-
 # Filter active torrents tab to torrents which are actually seeding/leeching
 # https://wiki.archlinux.org/index.php/RTorrent#Displaying_active_torrents
 schedule = filter_active,30,30,"view_filter = active,\"or={d.get_up_rate=,d.get_down_rate=}\""
