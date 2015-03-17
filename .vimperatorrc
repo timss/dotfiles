@@ -39,6 +39,9 @@
 
     " Replace homepage with downloads for <C-j>
     noremap <C-j> :tabopen about:downloads<CR>
+
+    " Ctrl+a to select all text
+    inoremap <C-a> <C-Home><C-S-End>
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
