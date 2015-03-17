@@ -42,6 +42,9 @@
 
     " Ctrl+a to select all text
     inoremap <C-a> <C-Home><C-S-End>
+
+    " Always start inserting at the end of input fields
+    noremap gi gi<End>
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
