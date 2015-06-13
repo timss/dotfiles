@@ -47,15 +47,4 @@ state_line_color = "white"
 statusbar_color = "white"
 volume_color = "white"
 
-# Vim like bindings
-key_move_song_up = 'K'
-key_move_song_down = 'J'
-key_next_found_position = 'n'
-key_prev_found_position = 'N'
-key_prev_column = 260 'h'
-key_next_column = 261 'l'
-key_lyrics = '.'
-key_home = 262 'g'
-key_end = 360 'G'
-
 # vim: ft=config
