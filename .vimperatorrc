@@ -104,6 +104,10 @@
 
         " Remove Ekstra banner on diskusjon.no
         style -name diskusjon diskusjon.no .author_info .tekstra-banner.ipsUserPhoto { display: none!important; } body { font-family: arial!important; }
+
+        " uMatrix widget won't display while navigation is hidden
+        " https://github.com/gorhill/uBlock/issues/112#issuecomment-95848638
+        style -name umatrix * #nav-bar * { visibility: visible; }
     """ }}}
 
     """ Extensions {{{
@@ -126,11 +130,14 @@
         set! extensions.treestyletab.tabbar.style="mixed"
 
         " NoScript
+        " Scripts globally allowed, let uMatrix handle requests
+        " Keep NoScript for checking allowed requests, @font-face etc.
         set! noscript.allowedMimeRegExp="FONT@https?://netdna\\.bootstrapcdn\\.com"
         set! noscript.autoReload.allTabs="false"
         set! noscript.collapseObject="true"
         set! noscript.notify="false"
         set! noscript.doNotTrack.enabled="false"
+        set! noscript.global="true"
         set! noscript.showAbout="false"
         set! noscript.showAllowPage="false"
         set! noscript.showBlockedObjects="false"
