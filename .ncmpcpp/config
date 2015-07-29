@@ -2,7 +2,7 @@
 mpd_host = "localhost"
 mpd_port = "6600"
 mpd_music_dir = "~/music"
-mpd_crossfade_time = "1"
+mpd_crossfade_time = "0"
 
 # General
 mouse_support = "no"
