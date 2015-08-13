@@ -49,6 +49,8 @@
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
     set! accessibility.blockautorefresh="false"
+    set! browser.cache.memory.max_entry_size="-1"
+    set! browser.cache.disk.enable="false"
     set! browser.display.show_image_placeholders="false"
     set! browser.download.useDownloadDir="false"
     set! browser.newtabpage.enabled="true"
