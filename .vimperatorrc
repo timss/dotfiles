@@ -97,7 +97,9 @@
 
         " uMatrix widget won't display while navigation is hidden
         " https://github.com/gorhill/uBlock/issues/112#issuecomment-95848638
+        " https://github.com/vimperator/vimperator-labs/issues/218#issuecomment-130776682
         style -name umatrix * #nav-bar * { visibility: visible; }
+        autocmd LocationChange about:newtab <ESC>
     """ }}}
 
     """ Extensions {{{
