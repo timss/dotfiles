@@ -115,8 +115,7 @@
         set! extensions.imagesearchoptions.usesubmenuall=false
 
         " Imagus
-        set! extensions.Imagus.grants="[{'op':'!','url':'imgur.com'},{'op':'!','url':'goodreads.com'},{'op':'!','url':'dotabuff.com'}]"
-        set! extensions.Imagus.hz="{'deactivate':1,'actTrigger':'m2','delay':300,'delayOnIdle':true,'waitHide':false,'markOnHover':'dashed','zoomresized':25,'preload':2,'hiRes':true,'hiResOnFZ':3,'history':true,'pileWheel':1,'pileCycle':false,'capStyle':0,'capPos':0,'capText':true,'capLinkText':true,'capWH':true,'capNoSBar':false,'fzMode':1,'fzOnPress':2,'placement':0,'fullspace':true,'move':true,'follow':true,'minPopupDistance':20,'hideIdleCursor':500,'thumbAsBG':false,'thumbAsBGColor':'#c3c3c3','thumbAsBGOpacity':0.3,'css':'margin: 3px 3px 20px; background: #f8f8ff padding-box; border: 3px solid hsla(0,0%,95%,.6); border-radius: 2px; box-shadow: 0 0 3px #666','scOffInInput':true,'capFlashCount':1,'zoomFromFrame':false,'LDRsrc':'','LDRcss':'','LDRdelay':200,'LDRbgOpacity':100,'LDRanimate':true}"
+        set! extensions.Imagus.grants="[{\"op\":\"!\",\"url\":\"imgur.com\"},{\"op\":\"!\",\"url\":\"goodreads.com\"},{\"op\":\"!\",\"url\":\"dotabuff.com\"}]"
 
         " Tree Style Tab
         " http://piro.sakura.ne.jp/xul/xpi/nightly/treestyletab.xpi
