@@ -30,3 +30,9 @@
     scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
+  [[satori]]
+    palette = "#3f3f4c:#ac6a76:#7b8c58:#bc945a:#58698c:#7b5e8d:#82a1b2:#cccaca:#525263:#c47987:#90a366:#d4a765:#7086b2:#9572ab:#95b9cc:#edeff2"
+  [[jellybeans]]
+    palette = "#1c1c1c:#b85335:#799d6a:#ffb964:#667899:#8787af:#668799:#888888:#404040:#cf6a4c:#99ad6a:#fad07a:#8197bf:#c6b6ee:#8fbfdc:#e8e8d3"
+  [[colors-dark]]
+    palette = "#333333:#8c4665:#287373:#7e5d7a:#395573:#5e468c:#31658c:#899ca1:#3d3d3d:#bf4d80:#53a6a6:#a270a3:#477ab3:#7e62b3:#6096bf:#c0c0c0"
