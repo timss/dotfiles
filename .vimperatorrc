@@ -2,6 +2,9 @@
     " Unbind help
     nnoremap <F1> <Nop>
 
+    " Toggle navigation toolbar (
+    nnoremap <F2> :set toolbars=invnavigation<CR>
+
     " Disable Ctrl+q
     map <C-q> <Nop>
 
