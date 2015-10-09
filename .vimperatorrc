@@ -164,6 +164,7 @@
     set hintchars="qwertyasdfg"
     set status="input,location,bookmark,history,tabcount,ssl"
     set toolbars="nonavigation"
+    set titlestring=""
 
     " Commands
     command! backgroundimage :js let (doc = content.document) let (m = doc.defaultView.getComputedStyle(doc.body, '').backgroundImage.match(/url\s*\(\s*['"](.+)['"]\s*\)/)) m ? liberator.open(m[1], liberator.NEW_TAB) : liberator.echoerr('background image not found')
