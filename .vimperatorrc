@@ -19,8 +19,8 @@
     map s <C-u>
 
     " Pin tabs easily
-    nmap gp :set<Space>apptab<Return>
-    nmap gu :set<Space>noapptab<Return>
+    nmap gp :set apptab<CR>
+    nmap gu :set noapptab<CR>
 
     " Traditional copy/paste, no matter the mode
     noremap <C-c> <C-v><C-c>
