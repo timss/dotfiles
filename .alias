@@ -1,7 +1,6 @@
 # Programs
 alias cal="cal -m"
 alias g++="g++ -Wall -Wextra -pedantic -O3 -std=c++0x"
-alias ssh="cat $HOME/.ssh/config.d/* > $HOME/.ssh/config; ssh"
 alias vi="vim"
 alias xclip="xclip -selection c"
 
@@ -32,5 +31,10 @@ alias tree="tree -C"
 alias aliases="vim $HOME/.alias"
 alias bashrc="vim $HOME/.bashrc"
 alias vimrc="vim $HOME/.vimrc"
+
+# Merge multiple SSH configs
+if [ -d "$HOME/.ssh/config.d" ]; then
+    alias ssh="cat $HOME/.ssh/config.d/* > $HOME/.ssh/config; ssh"
+fi
 
 # vim: ft=sh
