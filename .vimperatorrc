@@ -182,7 +182,7 @@
     highlight CompResult width: 45%; overflow: hidden;font-size: 9pt; font-family: monospace; font-weight: normal;
     highlight CompTitle color: #afafaf; background: #191919; font-weight: bold;
     highlight CompTitle>* padding: 0 .5ex;
-    highlight ContentSeperator border-top: 1px solid #454545; display: -moz-box;
+    highlight ContentSeparator border-top: 1px solid #454545; display: -moz-box;
     highlight ErrorMsg color: #ffffff; background: red; font-weight: bold;
     highlight Filter font-weight: bold;color: #afafaf;
     highlight FrameIndicator background-color: #191919; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
