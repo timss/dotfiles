@@ -97,12 +97,6 @@
 
         " Remove Ekstra banner on diskusjon.no
         style -name diskusjon diskusjon.no .author_info .tekstra-banner.ipsUserPhoto { display: none!important; } body { font-family: arial!important; }
-
-        " uMatrix widget won't display while navigation is hidden
-        " https://github.com/gorhill/uBlock/issues/112#issuecomment-95848638
-        " https://github.com/vimperator/vimperator-labs/issues/218#issuecomment-130776682
-        style -name umatrix * #nav-bar * { visibility: visible; }
-        autocmd LocationChange about:newtab <ESC>
     """ }}}
 
     """ Extensions {{{
@@ -149,6 +143,11 @@
         set! noscript.showUntrusted="false"
         set! noscript.smartClickToPlay="false"
         set! noscript.stickyUI.liveReload="true"
+
+        " uMatrix
+        " https://github.com/gorhill/uBlock/issues/112
+        " https://github.com/gorhill/uMatrix/issues/288
+        set! extensions.umatrix.forceLegacyToolbarButton="true"
     """ }}}
 """ }}}
 """ Vimperator
