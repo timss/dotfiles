@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # source global definitions for rhel or debian based systems respectively
 if [ -f /etc/bashrc ]; then
     source /etc/bashrc
