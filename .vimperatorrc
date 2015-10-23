@@ -27,8 +27,8 @@
 
     " Rebind Ctrl+Shift+c as copy instead of firefox inspector
     " Same bind is used in most terminals, resulting in frequent misclicks
-    map <C-S-c> <C-v><C-c>
-    imap <C-S-c> <C-v><C-c>
+    map <C-S-c> <C-c>
+    imap <C-S-c> <C-c>
 
     " Go to last used tab
     nnoremap gf <C-^>
