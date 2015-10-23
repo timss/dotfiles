@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# source global definitions for rhel or debian based systems respectively
+# Source global definitions for rhel or debian based systems respectively
 if [ -f /etc/bashrc ]; then
     source /etc/bashrc
 elif [ -f /etc/bash.bashrc ]; then
@@ -18,7 +18,7 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
     bind "set completion-ignore-case on"
 fi
 
-# bash git completion for rhel or debian based systems respectively
+# Bash git completion for rhel or debian based systems respectively
 if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
     source /usr/share/git-core/contrib/completion/git-prompt.sh
 elif [ -f /usr/lib/git-core/git-sh-prompt ]; then
