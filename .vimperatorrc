@@ -158,7 +158,7 @@
     set suggestengines="ddg"
     set focuscontent
     set hintchars="qwertyasdfg"
-    set status="input,location,bookmark,history,tabcount,ssl"
+    set status="input,location,bookmark,tabcount,ssl"
     set toolbars="nonavigation"
     set titlestring=""
 
