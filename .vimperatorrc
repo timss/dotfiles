@@ -45,6 +45,13 @@
 
     " Always start inserting at the end of input fields
     noremap gi gi<End>
+
+    " Tree Style Tab
+    " Inspired by ntnn's vimperatorrc:
+    " - https://gist.github.com/ntnn/213f31f2fd0584b160bb#file-vimperatorrc-L41
+    " TODO: collapse/expand current subtree?
+    map < :js TreeStyleTabService.promoteCurrentTab()<CR>
+    map > :js TreeStyleTabService.demoteCurrentTab()<CR>
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
