@@ -152,6 +152,7 @@
 """ }}}
 """ Vimperator
     " General settings
+    set newtab=addons,downloads,extoptions,help,prefs
     set complete="slS"
     set defsearch="ddg"
     set editor="terminator -e vim"
