@@ -159,16 +159,16 @@
 """ }}}
 """ Vimperator
     " General settings
-    set newtab=addons,downloads,extoptions,help,prefs
     set complete="slS"
     set defsearch="ddg"
     set editor="terminator -e vim"
-    set suggestengines="ddg"
     set focuscontent
     set hintchars="qwertyasdfg"
+    set newtab=addons,downloads,extoptions,help,prefs
     set status="input,location,bookmark,tabcount,ssl"
-    set toolbars="nonavigation"
+    set suggestengines="ddg"
     set titlestring=""
+    set toolbars="nonavigation"
     set urlseparator=""
 
     " Commands
