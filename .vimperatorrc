@@ -30,6 +30,9 @@
     map <C-S-c> <C-c>
     imap <C-S-c> <C-c>
 
+    " Y = C-c, instead reuse Y for copying title of a buffer (page)
+    noremap Y :js util.copyToClipboard(buffer.title, true)<CR>
+
     " Go to last used tab
     nnoremap gf <C-^>
 
