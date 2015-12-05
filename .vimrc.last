@@ -16,3 +16,12 @@ function! FixSurround()
     %s/ )/)/
     %s/( /(/
 endfunction
+
+augroup RainbowParentheses
+    let blacklist = []
+    autocmd!
+    autocmd VimEnter * if index(blacklist, &ft) < 0 | RainbowParenthesesToggle
+    autocmd FileType * if index(blacklist, &ft) < 0 | RainbowParenthesesLoadRound
+    autocmd FileType * if index(blacklist, &ft) < 0 | RainbowParenthesesLoadSquare
+    autocmd FileType * if index(blacklist, &ft) < 0 | RainbowParenthesesLoadBraces
+augroup END
