@@ -226,12 +226,14 @@
 // let soap decide which application to run based off url
 // if query is not an url let firefox decide what do to
 function soap(query) {
-    selection = content.getSelection().toString()
+    if(typeof query === "undefined") {
+        selection = content.getSelection().toString()
 
-    if(selection.length < 1) {
-        query = buffer.URL;
-    } else {
-        query = selection;
+        if(selection.length < 1) {
+            query = buffer.URL;
+        } else {
+            query = selection;
+        }
     }
 
     if(!query.match(/^https?/)) {
@@ -239,15 +241,11 @@ function soap(query) {
         return;
     }
 
-    var file = Components.classes["@mozilla.org/file/local;1"]
-                            .createInstance(Components.interfaces.nsIFile);
-    var process = Components.classes["@mozilla.org/process/util;1"]
-                            .createInstance(Components.interfaces.nsIProcess);
-
-    file.initWithPath("/usr/local/bin/soap");
-    process.init(file);
-    process.run(false, [query], 1);
+    liberator.execute("silent !/usr/local/bin/soap " + query + " &", null, true);
 }
+
+// https://www.reddit.com/r/linux/comments/3xfcsb//cy5d4ek
+hints.addMode("P", "Open with SOAP:", (elem, loc) => soap(loc));
 
 EOF
 
