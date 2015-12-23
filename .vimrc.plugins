@@ -1,2 +1,3 @@
 Plugin 'reedes/vim-lexical'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'derekwyatt/vim-scala'
