@@ -115,6 +115,7 @@
 
     """ Extensions {{{
         set! extensions.update.autoUpdateDefault="false"
+        set! xpinstall.signatures.required="false"
 
         " Image Search Options (SauceNAO)
         set! extensions.imagesearchoptions.bgimagesearch="false"
