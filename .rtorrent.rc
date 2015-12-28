@@ -64,7 +64,17 @@ scgi_port = 127.0.0.1:5000
 
 # logging/debugging
 log.open_file = "rtorrent", /mnt/media/torrent/logs/rtorrent.log
-log.add_output = "debug","rtorrent"
+log.open_file = "tracker", /mnt/media/torrent/logs/tracker.log
+log.open_file = "storage", /mnt/media/torrent/logs/storage.log
+log.add_output = "info", "rtorrent"
+log.add_output = "critical", "rtorrent"
+log.add_output = "error", "rtorrent"
+log.add_output = "warn", "rtorrent"
+log.add_output = "notice", "rtorrent"
+# log.add_output = "debug", "rtorrent"
+# log.add_output = "dht_debug", "tracker"
+# log.add_output = "tracker_debug", "tracker"
+# log.add_output = "storage_debug", "storage"
 
 # system resources
 pieces.memory.max.set = 1000M
