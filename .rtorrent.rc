@@ -78,6 +78,6 @@ log.add_output = "notice", "rtorrent"
 
 # system resources
 pieces.memory.max.set = 1000M
-network.http.max_open.set = 64
+network.http.max_open.set = 128
 
 # vim: ft=conf
