@@ -108,9 +108,6 @@
         " http://rideag.uk/#tranbg
         " https://github.com/RiDeag/dotfiles/pull/1
         style -name transpng * body > img.decoded, body > img.transparent { background: none !important; } body > img.decoded:hover, body > img.transparent:hover { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABlBMVEV7e3sAAAD2vrKOAAAAAnRSTlM7O/sqyyQAAAAfSURBVHja1c6hAQAAAAFB9l9aYwGBj5ceie4bZ0ZaKKW0AMmwXSJmAAAAAElFTkSuQmCC) !important; }
-
-        " Remove Ekstra banner on diskusjon.no
-        style -name diskusjon diskusjon.no .author_info .tekstra-banner.ipsUserPhoto { display: none!important; } body { font-family: arial!important; }
     """ }}}
 
     """ Extensions {{{
