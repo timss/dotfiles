@@ -58,7 +58,7 @@
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
-    set! accessibility.blockautorefresh="false"
+    set! accessibility.blockautorefresh="true"
     set! browser.cache.memory.max_entry_size="-1"
     set! browser.cache.disk.enable="false"
     set! browser.display.show_image_placeholders="false"
