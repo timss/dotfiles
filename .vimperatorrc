@@ -95,8 +95,7 @@
 
     """ Userstyles {{{
         " Hide and tweak parts of Firefox tabs
-        style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; } statuspanel { display: none !important; }
-
+        style -name firefox_tabs chrome://* .tab-close-button { display: none !important; } .tab-text { font-size: 0.95em !important; } .tabbrowser-tabs[treestyletab-mode="vertical"] .tab-stack { min-height: 20px !important; } .tabs-newtab-button { display: none !important; }
         " Hide 1px border at top of window
         " https://github.com/vimperator/vimperator-labs/issues/182
         style -name top1px chrome://* #navigator-toolbox::after { height: 0 !important; }
