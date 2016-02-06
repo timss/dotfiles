@@ -186,35 +186,35 @@
     abbreviate noja https://translate.google.com/#no/ja/
 """ }}}
 """ Colorscheme based off darkness.vimp {{{
-    highlight Bell border: 0 none; background-color: #191919;
-    highlight CmdLine background: #191919; color: #afafaf; font-size: 9pt;
-    highlight CompDesc color: #c6c6c6; width: 50%; font-size: 9pt;
-    highlight CompItem[selected] background: #666666; color: #afafaf;
-    highlight CompResult width: 45%; overflow: hidden;font-size: 9pt; font-family: monospace; font-weight: normal;
-    highlight CompTitle color: #afafaf; background: #191919; font-weight: bold;
-    highlight CompTitle>* padding: 0 .5ex;
-    highlight ContentSeparator border-top: 1px solid #454545; display: -moz-box;
-    highlight ErrorMsg color: #ffffff; background: red; font-weight: bold;
-    highlight Filter font-weight: bold;color: #afafaf;
-    highlight FrameIndicator background-color: #191919; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
-    highlight Function color: lightgreen; background: #191919;
-    highlight Hint font-family: monospace; font-size: 14px; font-weight: bold; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px; 
-    highlight HintActive background: blue; color: #f6e9e9;
-    highlight HintElem background-color: #191919; color: #f6e9e9;
-    highlight InfoMsg color: #afafaf; background: #191919;
-    highlight LineNr color: #afafaf; background: #191919;
-    highlight ModeMsg color: #afafaf; background: #191919;
-    highlight MoreMsg color: #afafaf; background: #191919;
-    highlight NonText color: lightblue; min-height: 16px; padding-left: 2px;
-    highlight Normal color: #afafaf; background: #191919;
-    highlight Number color: tan; background: #191919
-    highlight Question color: #ffffff; background: #191919; font-weight: bold;
-    highlight StatusLine color: #F1F1E0; background: #191919; font-size: 9pt;
-    highlight String color: #191919; background: #afafaf;
-    highlight Tag color: #191919; background: #afafaf;
-    highlight Title color: #191919; background: #afafaf; font-weight: bold;
-    highlight URL text-decoration: none; color: lightblue; background: inherit;
-    highlight WarningMsg color: red; background: #191919;
+    highlight! Bell border: 0 none; background-color: #191919;
+    highlight! CmdLine background: #191919; color: #afafaf; font-size: 9pt;
+    highlight! CompDesc color: #c6c6c6; width: 50%; font-size: 9pt;
+    highlight! CompItem[selected] background: #666666; color: #afafaf;
+    highlight! CompResult width: 45%; overflow: hidden;font-size: 9pt; font-family: monospace; font-weight: normal;
+    highlight! CompTitle color: #afafaf; background: #191919; font-weight: bold;
+    highlight! CompTitle>* padding: 0 .5ex;
+    highlight! ContentSeparator border-top: 1px solid #454545; display: -moz-box;
+    highlight! ErrorMsg color: #ffffff; background: red; font-weight: bold;
+    highlight! Filter font-weight: bold;color: #afafaf;
+    highlight! FrameIndicator background-color: #191919; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+    highlight! Function color: lightgreen; background: #191919;
+    highlight! Hint font-family: monospace; font-size: 14px; font-weight: bold; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
+    highlight! HintActive background: blue; color: #f6e9e9;
+    highlight! HintElem background-color: #191919; color: #f6e9e9;
+    highlight! InfoMsg color: #afafaf; background: #191919;
+    highlight! LineNr color: #afafaf; background: #191919;
+    highlight! ModeMsg color: #afafaf; background: #191919;
+    highlight! MoreMsg color: #afafaf; background: #191919;
+    highlight! NonText color: lightblue; min-height: 16px; padding-left: 2px;
+    highlight! Normal color: #afafaf; background: #191919;
+    highlight! Number color: tan; background: #191919
+    highlight! Question color: #ffffff; background: #191919; font-weight: bold;
+    highlight! StatusLine color: #F1F1E0; background: #191919; font-size: 9pt;
+    highlight! String color: #191919; background: #afafaf;
+    highlight! Tag color: #191919; background: #afafaf;
+    highlight! Title color: #191919; background: #afafaf; font-weight: bold;
+    highlight! URL text-decoration: none; color: lightblue; background: inherit;
+    highlight! WarningMsg color: red; background: #191919;
 """ }}}
 
 " Functions
