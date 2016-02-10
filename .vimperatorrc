@@ -92,7 +92,7 @@
 
     " Does not work for everything, for example html5 videos using play()
     " - https://bugzilla.mozilla.org/show_bug.cgi?id=659285
-    set! media.autoplay.enabled="false"
+    set! media.autoplay.enabled="true"
 
     """ Userstyles {{{
         " Hide and tweak parts of Firefox tabs
