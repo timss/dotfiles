@@ -52,9 +52,9 @@
     " Tree Style Tab
     " Inspired by ntnn's vimperatorrc:
     " - https://gist.github.com/ntnn/213f31f2fd0584b160bb#file-vimperatorrc-L41
-    " TODO: collapse/expand current subtree?
     map < :js TreeStyleTabService.promoteCurrentTab()<CR>
     map > :js TreeStyleTabService.demoteCurrentTab()<CR>
+    map gz :js togglecollapse()<CR>
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
@@ -244,6 +244,15 @@ function soap(query) {
 
 // https://www.reddit.com/r/linux/comments/3xfcsb//cy5d4ek
 hints.addMode("P", "Open with SOAP:", (elem, loc) => soap(loc));
+
+// toggle Tree Style Tab subtree collapse
+function togglecollapse() {
+    if(gBrowser.treeStyleTab.isSubtreeCollapsed(TreeStyleTabService.getRootTab(gBrowser.selectedTab))) {
+        gBrowser.treeStyleTab.collapseExpandSubtree(TreeStyleTabService.getRootTab(gBrowser.selectedTab), false, true)
+    } else {
+        gBrowser.treeStyleTab.collapseExpandSubtree(TreeStyleTabService.getRootTab(gBrowser.selectedTab), true, true)
+    }
+}
 
 EOF
 
