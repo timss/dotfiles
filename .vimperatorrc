@@ -1,14 +1,19 @@
 """ Keybindings {{{
-    " Unbind help
+    " Disable help keybind
     map <F1> <Nop>
     imap <F1> <Nop>
+    cmap <F1> <Nop>
 
     " Toggle navigation toolbar (
     map <F2> :set toolbars=invnavigation<CR>
 
-    " Disable Ctrl+q
+    " Disable quit keybinds
     map <C-q> <Nop>
     imap <C-q> <Nop>
+    cmap <C-q> <Nop>
+    map <C-S-w> <Nop>
+    imap <C-S-w> <Nop>
+    cmap <C-S-w> <Nop>
 
     " Go back in history with backspace
     map <BS> :back<CR>
