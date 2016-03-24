@@ -54,6 +54,10 @@
     " Always start inserting at the end of input fields
     noremap gi gi<End>
 
+    " Open editor map for when <C-i> gets intercepted
+    " https://github.com/vimperator/vimperator-labs/issues/119#issuecomment-70961297
+    imap <C-S-i> <C-i>
+
     " Tree Style Tab
     " Inspired by ntnn's vimperatorrc:
     " - https://gist.github.com/ntnn/213f31f2fd0584b160bb#file-vimperatorrc-L41
