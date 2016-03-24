@@ -172,7 +172,7 @@
     set editor="terminator -e vim"
     set focuscontent
     set hintchars="qwertyasdfg"
-    set newtab=addons,downloads,extoptions,help,prefs
+    set newtab="addons,downloads,extoptions,help,prefs"
     set status="input,location,bookmark,tabcount,ssl"
     set suggestengines="ddg"
     set titlestring=""
