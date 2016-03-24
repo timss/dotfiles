@@ -1,5 +1,8 @@
 Plugin 'dag/vim-fish'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'jamshedvesuna/vim-markdown-preview'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'reedes/vim-lexical'
 Plugin 'vimperator/vimperator.vim'

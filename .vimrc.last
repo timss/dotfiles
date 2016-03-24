@@ -29,3 +29,8 @@ augroup END
 " Syntastic
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+
+" Vim Markdown Preview - requires 'grip' Python package
+let vim_markdown_preview_github = 1
+let vim_markdown_preview_hotkey = '<leader>m'
+let vim_markdown_preview_temp_file = 1
