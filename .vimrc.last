@@ -30,6 +30,9 @@ augroup END
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++0x'
 
+" vim-markdown
+let g:vim_markdown_new_list_item_indent = 0
+
 " Vim Markdown Preview - requires 'grip' Python package
 let vim_markdown_preview_github = 1
 let vim_markdown_preview_hotkey = '<leader>m'
