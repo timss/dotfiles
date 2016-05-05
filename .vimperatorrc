@@ -26,6 +26,9 @@
     noremap d <C-d>
     noremap s <C-u>
 
+    " Disable D to close tab
+    map D <Nop>
+
     " Pin tabs easily
     noremap gp :set apptab<CR>
     noremap gu :set noapptab<CR>
