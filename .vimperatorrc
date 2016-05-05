@@ -96,6 +96,8 @@
     set! layout.spellcheckDefault=0
     set! loop.enabled="false"
     set! media.peerconnection.enabled="false"
+    set! middlemouse.contentLoadURL="false"
+    set! middlemouse.paste="false"
     set! network.http.pipelining="true"
     set! network.http.proxy.pipelining="true"
     set! network.http.pipelining.ssl="true"
