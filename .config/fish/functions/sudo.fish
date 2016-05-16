@@ -5,6 +5,9 @@ function sudo --description "Execute a command as another user"
         if test $argv[1] = "!!"
             # evade recursive sudo function
             eval /usr/bin/sudo $history[1];
+        else if test $argv[1] = "vim"
+            # preserve env
+            command sudo -E $argv;
         else
             command sudo $argv;
         end
