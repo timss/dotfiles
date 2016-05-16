@@ -23,12 +23,14 @@
     background_darkness = 0.96
     background_image = None
     cursor_color = "#676767"
+    custom_command = /usr/bin/fish
     font = Monospace 9
     foreground_color = "#d7d7d7"
     palette = "#454545:#d45d55:#a0cb51:#d3c27a:#516c8e:#ba688b:#6ecbc1:#c5c5c5:#727272:#d4877f:#b5cb7a:#e6daaa:#6e95c9:#c478a0:#98cbc2:#cfcfcf"
     scrollback_lines = 5000
     scrollbar_position = hidden
     show_titlebar = False
+    use_custom_command = True
     use_system_font = False
   [[satori]]
     palette = "#3f3f4c:#ac6a76:#7b8c58:#bc945a:#58698c:#7b5e8d:#82a1b2:#cccaca:#525263:#c47987:#90a366:#d4a765:#7086b2:#9572ab:#95b9cc:#edeff2"
