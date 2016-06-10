@@ -71,8 +71,9 @@
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
     set! accessibility.blockautorefresh="true"
-    set! browser.cache.memory.max_entry_size="-1"
+    set! beacon.enabled="false"
     set! browser.cache.disk.enable="false"
+    set! browser.cache.memory.max_entry_size="-1"
     set! browser.display.show_image_placeholders="false"
     set! browser.download.useDownloadDir="false"
     set! browser.fixup.alternate.enabled="false"
@@ -88,21 +89,28 @@
     set! browser.showQuitWarning="true"
     set! browser.startup.page=3
     set! browser.tabs.insertRelatedAfterCurrent="false"
+    set! datareporting.policy.dataSubmissionEnabled="false"
     set! dom.event.clipboardevents.enabled="false"
+    set! experiments.enabled="false"
     set! general.autoScroll="true"
     set! general.smoothScroll="false"
     set! general.warnOnAboutConfig="false"
     set! geo.enabled="false"
     set! layout.spellcheckDefault=0
     set! loop.enabled="false"
+    set! media.navigator.enabled="false"
     set! media.peerconnection.enabled="false"
     set! middlemouse.contentLoadURL="false"
     set! middlemouse.paste="false"
+    set! network.http.pipelining.ssl="true"
     set! network.http.pipelining="true"
     set! network.http.proxy.pipelining="true"
-    set! network.http.pipelining.ssl="true"
+    set! network.proxy.socks_remote_dns="true"
     set! pdfjs.disabled="true"
     set! privacy.donottrackheader.enabled="false"
+    set! social.remote-install.enabled="false"
+    set! social.share.activationPanelEnabled="false"
+    set! social.whitelist=""
 
     " Does not work for everything, for example html5 videos using play()
     " - https://bugzilla.mozilla.org/show_bug.cgi?id=659285
