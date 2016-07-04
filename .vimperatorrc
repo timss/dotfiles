@@ -15,9 +15,6 @@
     imap <C-S-w> <Nop>
     cmap <C-S-w> <Nop>
 
-    " Go back in history with backspace
-    map <BS> :back<CR>
-
     " Disable highlighted search matches
     map <C-7> :noh<CR>
     imap <C-7> <ESC>:noh<CR>gi
