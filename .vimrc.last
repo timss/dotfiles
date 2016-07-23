@@ -1,3 +1,6 @@
+" quick throwaway macro
+nnoremap Q @q
+
 " https://github.com/reedes/vim-lexical
 let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
 let g:lexical#thesaurus_key = '<leader>t'
