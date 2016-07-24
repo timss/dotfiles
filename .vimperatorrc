@@ -88,6 +88,7 @@
     set! browser.startup.page=3
     set! browser.tabs.insertRelatedAfterCurrent="false"
     set! datareporting.policy.dataSubmissionEnabled="false"
+    set! devtools.chrome.enabled="true"
     set! dom.event.clipboardevents.enabled="false"
     set! experiments.enabled="false"
     set! general.autoScroll="true"
