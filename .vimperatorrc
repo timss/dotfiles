@@ -89,6 +89,7 @@
     set! browser.tabs.insertRelatedAfterCurrent="false"
     set! datareporting.policy.dataSubmissionEnabled="false"
     set! devtools.chrome.enabled="true"
+    set! devtools.fontinspector.enable="true"
     set! dom.event.clipboardevents.enabled="false"
     set! experiments.enabled="false"
     set! general.autoScroll="true"
