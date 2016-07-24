@@ -13,11 +13,11 @@ augroup END
 
 " replace horrible func( arg ) with func(arg) etc
 function! FixSurround()
-    %s/( \(.*\) )/(\1)
-    %s/< \(.*\) >/<\1>
-    %s/\[ \(.*\) \]/[\1]
-    %s/ )/)/
-    %s/( /(/
+    %s/( \(.*\) )/(\1)/e
+    %s/< \(.*\) >/<\1>/e
+    %s/\[ \(.*\) \]/[\1]/e
+    %s/ )/)/e
+    %s/( /(/e
 endfunction
 
 augroup RainbowParentheses
