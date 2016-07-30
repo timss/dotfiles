@@ -16,7 +16,6 @@ alias mkdir="mkdir -p"
 alias mv="mv -i"
 alias rm="rm -I"
 alias rsync="rsync --progress"
-alias sudoedit="sudoedit -E "
 alias unp="unp -u"
 
 # General
