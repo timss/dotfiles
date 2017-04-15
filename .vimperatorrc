@@ -105,6 +105,7 @@
     set! network.http.pipelining.ssl="true"
     set! network.http.pipelining="true"
     set! network.http.proxy.pipelining="true"
+    set! network.IDN_show_punycode="true"
     set! network.proxy.socks_remote_dns="true"
     set! pdfjs.disabled="true"
     set! privacy.donottrackheader.enabled="false"
