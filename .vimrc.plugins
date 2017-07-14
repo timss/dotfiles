@@ -1,9 +1,18 @@
-Plugin 'dag/vim-fish'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'godlygeek/tabular'
-Plugin 'jamshedvesuna/vim-markdown-preview'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'reedes/vim-lexical'
-Plugin 'vimperator/vimperator.vim'
+Plug 'dag/vim-fish'
+Plug 'derekwyatt/vim-scala'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'pearofducks/ansible-vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'reedes/vim-lexical'
+Plug 'vimperator/vimperator.vim'
+
+" pip install grip
+if executable('grip')
+    Plug 'godlygeek/tabular'
+    Plug 'jamshedvesuna/vim-markdown-preview'
+endif
+
+" installs jedi as a submodule automatically
+if has('python') || has('python3')
+    Plug 'davidhalter/jedi-vim'
+endif
