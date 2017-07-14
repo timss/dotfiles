@@ -65,6 +65,9 @@
     map < :js TreeStyleTabService.promoteCurrentTab()<CR>
     map > :js TreeStyleTabService.demoteCurrentTab()<CR>
     map gz :js togglecollapse()<CR>
+
+    " https://github.com/vimperator/vimperator-labs/issues/547
+    noremap gs :js togglestatusline()<CR>
 """ }}}
 """ Firefox settings {{{
     " General preferences, i.e. about:config entries
@@ -96,6 +99,7 @@
     set! general.smoothScroll="false"
     set! general.warnOnAboutConfig="false"
     set! geo.enabled="false"
+    set! layers.acceleration.force-enabled="true"
     set! layout.spellcheckDefault=0
     set! loop.enabled="false"
     set! media.navigator.enabled="false"
@@ -207,6 +211,8 @@
     abbreviate jano https://translate.google.com/#ja/no/
     abbreviate noen https://translate.google.com/#no/en/
     abbreviate noja https://translate.google.com/#no/ja/
+    abbreviate deen https://translate.google.com/#de/en/
+    abbreviate deno https://translate.google.com/#de/no/
 """ }}}
 """ Colorscheme based off darkness.vimp {{{
     highlight! Bell border: 0 none; background-color: #191919;
@@ -274,6 +280,15 @@ function togglecollapse() {
         gBrowser.treeStyleTab.collapseExpandSubtree(TreeStyleTabService.getRootTab(gBrowser.selectedTab), false, true)
     } else {
         gBrowser.treeStyleTab.collapseExpandSubtree(TreeStyleTabService.getRootTab(gBrowser.selectedTab), true, true)
+    }
+}
+
+function togglestatusline() {
+    if (['auto', 'visible'].indexOf(options['statuslinevisibility']) >= 0) {
+        options['statuslinevisibility'] = 'hidden'
+    } else {
+        // or 'visible'
+        options['statuslinevisibility'] = 'auto'
     }
 }
 
