@@ -1,3 +1,7 @@
+" always use curr. dir.
+"set autochdir
+"let g:netrw_keepdir=0
+
 " quick throwaway macro
 nnoremap Q @q
 
