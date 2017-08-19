@@ -41,7 +41,7 @@ export PAGER=vimpager
 export GIT_PAGER=less
 
 # Preserve environment when doing "sudo vim [..]"
-function sudo() {
+sudo() {
     case $* in
         vim* ) shift 1; command sudo -E vim "$@" ;;
         * ) command sudo "$@" ;;
