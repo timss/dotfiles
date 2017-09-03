@@ -1,9 +1,11 @@
 Plug 'dag/vim-fish'
 Plug 'derekwyatt/vim-scala'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'pearofducks/ansible-vim'
+Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.py' }
 Plug 'plasticboy/vim-markdown'
 Plug 'reedes/vim-lexical'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'vimperator/vimperator.vim'
 
