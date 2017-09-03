@@ -1,3 +1,3 @@
-function ll --description "List directory contents using a long listing format"
+function ll --description "List contents of directory using long format"
     ls -l $argv;
 end
