@@ -30,10 +30,10 @@ endfunction
 augroup RainbowParentheses
     let blacklist = []
     autocmd!
-    autocmd VimEnter * if index(blacklist, &ft) < 0 | RainbowParenthesesToggle
-    autocmd FileType * if index(blacklist, &ft) < 0 | RainbowParenthesesLoadRound
-    autocmd FileType * if index(blacklist, &ft) < 0 | RainbowParenthesesLoadSquare
-    autocmd FileType * if index(blacklist, &ft) < 0 | RainbowParenthesesLoadBraces
+    autocmd VimEnter * if index(blacklist, &ft) < 0 | silent! RainbowParenthesesToggle
+    autocmd FileType * if index(blacklist, &ft) < 0 | silent! RainbowParenthesesLoadRound
+    autocmd FileType * if index(blacklist, &ft) < 0 | silent! RainbowParenthesesLoadSquare
+    autocmd FileType * if index(blacklist, &ft) < 0 | silent! RainbowParenthesesLoadBraces
 augroup END
 
 " Syntastic
