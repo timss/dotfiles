@@ -1,8 +1,8 @@
-" always use curr. dir.
+" Always use curr. dir.
 set autochdir
 let g:netrw_keepdir=0
 
-" quick throwaway macro
+" Quick throwaway macro
 nnoremap Q @q
 
 " Y by default is alias for yy, make it consistent with C and D
@@ -18,7 +18,7 @@ augroup lexical
     autocmd FileType tex call lexical#init({'spell': 0})
 augroup END
 
-" replace horrible func( arg ) with func(arg) etc
+" Replace horrible func( arg ) with func(arg) etc
 function! FixSurround()
     %s/( \(.*\) )/(\1)/e
     %s/< \(.*\) >/<\1>/e
@@ -39,6 +39,8 @@ augroup END
 " Syntastic
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_vim_checkers = ['vint']
 
 " vim-markdown
 let g:vim_markdown_new_list_item_indent = 0
