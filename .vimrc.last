@@ -18,6 +18,11 @@ augroup lexical
     autocmd FileType tex call lexical#init({'spell': 0})
 augroup END
 
+augroup LocalFileTypeRules
+    autocmd!
+    autocmd BufNewFile,BufRead *.txt set ft=sh tw=79
+augroup END
+
 " Replace horrible func( arg ) with func(arg) etc
 function! FixSurround()
     %s/( \(.*\) )/(\1)/e
