@@ -1,0 +1,25 @@
+/* https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#hide-horizontal-tabs-at-the-top-of-the-window-1349 */
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+
+/* https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#hide-the-tree-style-tab-header-at-the-top-of-the-sidebar */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+    display: none;
+}
+
+.toolbarbutton-1 {
+    margin: -5px 0 -5px -5px !important;
+}
+
+#back-button,
+#forward-button,
+.tab-close-button,
+.tabs-newtab-button {
+    display: none !important;
+}
