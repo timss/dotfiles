@@ -8,6 +8,9 @@ nnoremap Q @q
 " Y by default is alias for yy, make it consistent with C and D
 map Y y$
 
+" Increase number of tabs opened using `vim -p` or `:tab all`
+set tabpagemax=100
+
 " https://github.com/reedes/vim-lexical
 let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
 let g:lexical#thesaurus_key = '<leader>t'
