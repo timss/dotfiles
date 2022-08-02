@@ -27,7 +27,7 @@ alias ping="ping -c 5"
 alias tree="tree -C"
 
 # Shorthand for editing dotfiles
-alias aliases="vim $HOME/.alias"
+alias aliases="vim $HOME/.bash_aliases"
 alias bashrc="vim $HOME/.bashrc"
 alias vimrc="vim $HOME/.vimrc"
 

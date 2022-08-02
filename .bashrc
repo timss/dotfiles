@@ -48,9 +48,9 @@ sudo() {
     esac
 }
 
-# Source additional files; alias + local non-git versions of bashrc/alias
-if [ -f $HOME/.alias ]; then source $HOME/.alias; fi
+# Source additional files; aliases + local non-git versions of bashrc/aliases
+if [ -f $HOME/.bash_aliases ]; then source $HOME/.bash_aliases; fi
+if [ -f $HOME/.bash_aliases.local ]; then source $HOME/.bash_aliases.local; fi
 if [ -f $HOME/.bashrc.local ]; then source $HOME/.bashrc.local; fi
-if [ -f $HOME/.alias.local ]; then source $HOME/.alias.local; fi
 
 # vim: ft=sh
