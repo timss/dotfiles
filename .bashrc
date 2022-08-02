@@ -29,8 +29,8 @@ fi
 export LANG=en_US.UTF-8
 
 # History, ignore duplicates, append
-export HISTSIZE="10000"
-export HISTFILESIZE="10000"
+export HISTSIZE="50000"
+export HISTFILESIZE="50000"
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+:}ignoredups
 shopt -s histappend
 
