@@ -1,6 +1,7 @@
 [core]
     editor = vim
     excludesfile = /home/tim/.gitignore_global
+    pager = less -F -X
 [user]
     name = timss
     email = timsateroy@gmail.com
