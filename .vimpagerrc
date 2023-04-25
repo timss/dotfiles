@@ -3,6 +3,8 @@ if isdirectory($HOME."/.vim/bundle/jellybeans.vim")
     colorscheme jellybeans
     highlight Normal ctermbg=NONE
     highlight NonText ctermbg=NONE
+    set ignorecase
+    set mouse=
 endif
 
 " vim: ft=vim
