@@ -25,9 +25,16 @@
     
     # fancy log views that'll blow your mind
     ls  = log --pretty=format:'%C(bold blue)%ad %C(bold magenta)%an %C(reset)%C(white)%s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --decorate --date=relative
-    lg  = log --graph --all --format=format:'%C(bold blue)%ad %C(bold magenta)%an %C(reset)%C(white)%s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --decorate --date=short
-    lg1 = log --graph --all --format=format:'%C(bold green)%h %C(bold blue)%ad %C(bold magenta)%an %C(reset)%C(white)%s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --decorate --date=short
-    lg2 = log --graph --all --format=format:'%C(bold green)%h%C(reset) %C(bold blue)%ad%C(bold white) %C(bold magenta)%an%C(reset)%C(bold yellow)%d%C(reset)%n''%w(79)%C(white)%s%C(reset) %C(reset)' --abbrev-commit --date=short
+
+    lg = lg-specific --all
+    lg1 = lg1-specific --all
+    lg2 = lg2-specific --all
+    lg3 = lg3-specific --all
+
+    lg-specific  = log --graph --format=format:'%C(bold blue)%ad %C(bold magenta)%an %C(reset)%C(white)%s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --decorate --date=short
+    lg1-specific = log --graph --format=format:'%C(bold green)%h %C(bold blue)%ad %C(bold magenta)%an %C(reset)%C(white)%s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --decorate --date=short
+    lg2-specific = log --graph --format=format:'%C(bold green)%h%C(reset) %C(bold blue)%ad%C(bold white) %C(bold magenta)%an%C(reset)%C(bold yellow)%d%C(reset)%n''%w(79)%C(white)%s%C(reset) %C(reset)' --abbrev-commit --date=short
+    lg3-specific = log --graph --format=format:'%C(bold green)%h%C(reset) %C(bold blue)%ad%C(bold white) %C(bold magenta)%an%C(reset)%C(bold yellow)%d%C(reset)%n''%w(79)%C(white)%B%C(reset) %C(reset)%n' --abbrev-commit --date=short
 
     # inspect last commit
     dl = "!git lg2 -1"
