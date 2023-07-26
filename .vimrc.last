@@ -21,9 +21,10 @@ augroup lexical
     autocmd FileType tex call lexical#init({'spell': 0})
 augroup END
 
+" .vim/syntax/notes.vim
 augroup LocalFileTypeRules
     autocmd!
-    autocmd BufNewFile,BufRead *.txt set ft=sh tw=79
+    autocmd BufNewFile,BufRead *.txt set ft=notes tw=79
 augroup END
 
 " Replace horrible func( arg ) with func(arg) etc
