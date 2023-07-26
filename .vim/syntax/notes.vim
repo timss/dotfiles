@@ -11,7 +11,7 @@ set commentstring=#%s
 
 syntax keyword notesTodo TODO FIXME NOTE README
 syntax keyword notesTodoComment contained TODO FIXME NOTE README
-syntax match notesComment "#.*$" contains=notesTodoComment
+syntax match notesComment "#.*$" contains=notesTodoComment,@notesInline
 syntax match notesNumber "\d\+"
 syntax region notesString start=+[uU]\=\z([`'"]\)+ end="\z1" skip="\\\\\|\\\z1"
 syntax match notesBlockquote ">\%(\s\|$\).*" contains=notesTodoComment,@notesInline
