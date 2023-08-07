@@ -78,3 +78,7 @@ if &term =~ '^screen'
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
 endif
+
+" Quickly switch between last active buffer
+" (Used to be part of timss/vimconf)
+nnoremap gf <C-^>
