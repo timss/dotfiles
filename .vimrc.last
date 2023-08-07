@@ -87,3 +87,6 @@ nnoremap gf <C-^>
 " a source of security/resource vulnerabilities and as such has been disabled
 " in some distributions such as Debian
 set modeline
+
+" Open all folds by default
+set nofoldenable
