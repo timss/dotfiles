@@ -82,3 +82,8 @@ endif
 " Quickly switch between last active buffer
 " (Used to be part of timss/vimconf)
 nnoremap gf <C-^>
+
+" While modeline used to often be enabled by default, it has historically been
+" a source of security/resource vulnerabilities and as such has been disabled
+" in some distributions such as Debian
+set modeline
