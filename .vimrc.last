@@ -66,6 +66,9 @@ let g:jedi#popup_on_dot = 0
 let g:goyo_width = 120
 let g:limelight_conceal_ctermfg = 'gray'
 
+" ansible-vim
+let g:ansible_extra_keywords_highlight = 1
+
 " Handle xterm keys even for screen-* TERM env (C-left, S-up etc.)
 " https://superuser.com/a/402084/107828
 if &term =~ '^screen'
