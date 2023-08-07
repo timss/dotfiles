@@ -1,4 +1,9 @@
 if isdirectory($HOME."/.vim/bundle/jellybeans.vim")
+    " https://stackoverflow.com/a/33380495/1076493
+    if !exists('g:syntax_on')
+        syntax enable
+    endif
+
     set rtp+=$HOME/.vim/bundle/jellybeans.vim
     colorscheme jellybeans
     highlight Normal ctermbg=NONE
