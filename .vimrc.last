@@ -90,3 +90,6 @@ set modeline
 
 " Open all folds by default
 set nofoldenable
+
+" Don't treat numbers starting with 0 as octal
+set nrformats-=octal
