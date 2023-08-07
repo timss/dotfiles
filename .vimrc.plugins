@@ -1,6 +1,7 @@
 Plug 'dag/vim-fish'
 Plug 'derekwyatt/vim-scala'
 Plug 'google/vim-searchindex'
+Plug 'junegunn/gv.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.py' }
 Plug 'plasticboy/vim-markdown'
