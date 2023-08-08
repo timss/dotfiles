@@ -6,6 +6,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.py' }
 Plug 'plasticboy/vim-markdown'
 Plug 'reedes/vim-lexical'
+Plug 'timss/notes.vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-unimpaired'
