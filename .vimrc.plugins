@@ -10,6 +10,7 @@ Plug 'timss/notes.vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-unimpaired'
+Plug 'unblevable/quick-scope'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'vimperator/vimperator.vim'
 
