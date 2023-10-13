@@ -24,6 +24,7 @@
       with_items:
         - .bash_aliases
         - .bashrc
+        - .config/bpython
         - .config/flake8
         - .gitconfig
         - .gitignore_global
