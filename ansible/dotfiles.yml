@@ -77,7 +77,7 @@
         # TODO: xdg-user-dirs-update will sort this out already, or?
         - name: Dotfiles | Delete unsued XDG user directories
           file:
-            path: "{{ ansible_env.HOME }}/"
+            path: "{{ ansible_env.HOME }}/{{ item }}"
             state: absent
           when: _xdg_user_dirs.changed
           with_items:
