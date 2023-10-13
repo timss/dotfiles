@@ -36,7 +36,7 @@
 
     - name: Desktop | Create symlinks for terminator
       file:
-        src: "{{ playbook_dir }}/../.config/terminator/config"
+        src: "{{ playbook_dir | dirname }}/.config/terminator/config"
         dest: "{{ ansible_env.HOME }}/.config/terminator/config"
         state: link
 

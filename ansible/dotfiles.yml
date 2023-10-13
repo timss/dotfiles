@@ -18,7 +18,7 @@
     # TODO: skip if already present
     - name: Dotfiles | Create symlinks for dotfiles
       file:
-        src: "{{ playbook_dir }}/../{{ item }}"
+        src: "{{ playbook_dir | dirname }}/{{ item }}"
         dest: "{{ ansible_env.HOME }}/{{ item }}"
         state: link
       with_items:
@@ -46,7 +46,7 @@
     # Overwrites existing empty default directories
     - name: Dotfiles | Create symlinks for fish <°))><
       file:
-        src: "{{ playbook_dir }}/../.config/fish/{{ item.item }}"
+        src: "{{ playbook_dir | dirname }}/.config/fish/{{ item.item }}"
         dest: "{{ ansible_env.HOME }}/.config/fish/{{ item.item }}"
         state: link
         force: "{{ 'yes' if item.match == 0 else 'no' }}"
@@ -67,7 +67,7 @@
 
         - name: Dotfiles | Configure XDG user directories
           file:
-            src: "{{ playbook_dir }}/../.config/user-dirs.dirs"
+            src: "{{ playbook_dir | dirname }}/.config/user-dirs.dirs"
             dest: "{{ ansible_env.HOME }}/.config/user-dirs.dirs"
             state: link
             force: yes
