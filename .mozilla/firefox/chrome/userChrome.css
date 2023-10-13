@@ -17,6 +17,15 @@
     margin: -5px 0 -5px -5px !important;
 }
 
+/* BEGIN Hide elements
+*
+*  - statuspanel[type="overLink"]  Hide URL notifications
+*  - #back-button                  Navbar previous page button
+*  - #forward-button               Navbar next page button
+*  - #PanelUI-menu-button          Hamburger menu
+*  - .tab-close-button             Tabbar tab close button
+*  - .tabs-newtab-button           Tabbar new tab button
+*/
 #back-button,
 #forward-button,
 .tab-close-button,
