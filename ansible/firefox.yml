@@ -1,0 +1,107 @@
+---
+# Either specify a host, or automatically use localhost
+# $ ansible-playbook -i myhost, <playbook>.yml
+# $ ansible-playbook <playbook>.yml
+- hosts: "{{ 'all' if ansible_play_hosts | length > 0 else 'localhost' }}"
+  connection: "{{ 'ssh' if ansible_play_hosts | length > 0 else 'local' }}"
+
+  vars:
+    # Requires manual installation:
+    # - frankerfacez (https://www.frankerfacez.com/)
+    addons:
+      - betterttv
+      - googlepanicimages
+      - imagus
+      - localcdn-fork-of-decentraleyes
+      - old-reddit-redirect
+      - privacy-badger17
+      - reddit-enhancement-suite
+      - redirector
+      - reload-discarded-tabs
+      - sky-history-export
+      - tab-counter-plus
+      - tab-session-manager
+      - tree-style-tab
+      - tridactyl-vim
+      - ublock-origin
+      - web-scrobbler
+
+  tasks:
+    # TODO: check if present in $PATH or something to account for installations outside of apt?
+    - name: Firefox | Install package
+      apt:
+        name: "{{ firefox_package | default('firefox-esr') }}"
+      become: yes
+
+    - name: Firefox | Check profile
+      block:
+        - name: Firefox | Install xvfb
+          apt:
+            name: xvfb
+          become: yes
+
+        - name: Firefox | Check if default profile exists
+          command: xvfb-run /usr/bin/firefox --CreateProfile default
+          args:
+            creates: '{{ ansible_env.HOME }}/.mozilla/firefox/profiles.ini'
+
+        - name: Firefox | Get list of profiles
+          set_fact:
+            _ff_profiles: "{{ lookup('file', ansible_env.HOME + '/.mozilla/firefox/profiles.ini') | regex_findall('Path=(.*)', '\\1') }}"
+
+        - name: Firefox | Select profile
+          pause:
+            prompt: "{% for p in _ff_profiles %}{{ loop.index }}) {{ p }}\n{% endfor %}"
+          register: _ff_profile
+
+        - name: Firefox | Finding selected profile
+          set_fact:
+            firefox_profile: "{{ _ff_profiles[(_ff_profile.user_input | int) - 1] }}"
+      when: firefox_profile is not defined
+      tags: always
+
+    - pause:
+        prompt: "Configuring '{{ firefox_profile }}', continue or Ctrl-C"
+      tags: always
+
+    - name: Firefox | Configure user preferences
+      file:
+        src: "{{ playbook_dir }}/../.mozilla/firefox/user.js"
+        dest: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/user.js"
+        state: link
+
+    - name: Firefox | Create user stylesheets directory
+      file:
+        path: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/chrome"
+        state: directory
+
+    - name: Firefox | Configure user stylesheets
+      file:
+        src: "{{ playbook_dir }}/../.mozilla/firefox/chrome/userChrome.css"
+        dest: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/chrome/userChrome.css"
+        state: link
+
+    - name: Firefox | Configure addons
+      block:
+        - name: Firefox | Get addons information
+          uri:
+            url: https://addons.mozilla.org/api/v3/addons/addon/{{ item }}/
+          with_items: '{{ addons | default([]) }}'
+          register: _ff_api
+
+        - name: Firefox | Create addons directory
+          file:
+            path: '{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/extensions'
+            state: directory
+
+        # NOTE: Requires enabling the newly installed addon(s) on next restart
+        - name: Firefox | Install addons
+          get_url:
+            url: '{{ item.json.current_version.files.0.url }}'
+            dest: '{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/extensions/{{ item.json.guid }}.xpi'
+          with_items: '{{ _ff_api.results }}'
+          loop_control:
+            label: "{{ item.url }}"
+      tags: addons
+
+# vim: ft=yaml.ansible

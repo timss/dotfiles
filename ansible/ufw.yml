@@ -1,0 +1,46 @@
+---
+# Either specify a host, or automatically use localhost
+# $ ansible-playbook -i myhost, <playbook>.yml
+# $ ansible-playbook <playbook>.yml
+- hosts: "{{ 'all' if ansible_play_hosts | length > 0 else 'localhost' }}"
+  connection: "{{ 'ssh' if ansible_play_hosts | length > 0 else 'local' }}"
+
+  gather_facts: no
+  become: yes
+
+  tasks:
+    - name: UFW | Install package
+      apt:
+        install_recommends: no
+        cache_valid_time: 3600
+        name: ufw
+
+    - name: UFW | Set default incoming policy
+      ufw:
+        default: deny
+        direction: incoming
+        state: enabled
+
+    - name: UFW | Set default outgoing policy
+      ufw:
+        default: deny
+        direction: outgoing
+        state: enabled
+
+    - name: UFW | Allow standard outgoing ports
+      ufw:
+        rule: allow
+        port: "{{ item.port }}"
+        proto: "{{ item.proto }}"
+        direction: out
+      with_items:
+        - port: 22
+          proto: tcp
+        - port: 53
+          proto: udp
+        - port: 80
+          proto: tcp
+        - port: 443
+          proto: tcp
+
+# vim: ft=yaml.ansible

@@ -1,0 +1,233 @@
+---
+# Either specify a host, or automatically use localhost
+# $ ansible-playbook -i myhost, <playbook>.yml
+# $ ansible-playbook <playbook>.yml
+- hosts: "{{ 'all' if ansible_play_hosts | length > 0 else 'localhost' }}"
+  connection: "{{ 'ssh' if ansible_play_hosts | length > 0 else 'local' }}"
+
+  tasks:
+    - name: Base | Configure repo source list
+      replace:
+        path: /etc/apt/sources.list
+        regexp: '^(deb(-src)? .*{{ ansible_distribution_release }}(-\w+)?).*'
+        replace: '\1 main contrib non-free non-free-firmware'
+        backup: yes
+      become: yes
+
+    - name: Base | Update all packages
+      apt:
+        upgrade: dist
+        cache_valid_time: 3600
+      when: upgrade | default('no') | bool
+      become: yes
+
+    - name: Base | Install base packages
+      apt:
+        install_recommends: no
+        cache_valid_time: 3600
+        name:
+          - amd64-microcode
+          - blktrace
+          - bpython
+          - btop
+          - build-essential
+          - cmake
+          - colordiff
+          - curl
+          - datamash
+          - dfc
+          - dstat
+          - ethtool
+          - fatrace
+          - firmware-linux
+          - fish
+          - flake8
+          - fping
+          - gdb
+          - git
+          - gnome-disk-utility
+          - gnuplot
+          - htop
+          - iftop
+          - intel-microcode
+          - iotop
+          - iperf3
+          - iptraf
+          - iwatch
+          - jq
+          - libssl-dev
+          - linux-doc
+          - lshw
+          - lsscsi
+          - man
+          - molly-guard
+          - mtr
+          - ncat
+          - nmap
+          - openssl
+          - pandoc
+          - plocate
+          - powertop
+          - python3-apt
+          - python3-bashate
+          - python3-dev
+          - python3-pip
+          - python3-pygments
+          - python3-venv
+          - qalc
+          - screenfetch
+          - smartmontools
+          - socat
+          - sudo
+          - sysstat
+          - tcpdump
+          - telnet
+          - tmux
+          - traceroute
+          - tree
+          - tshark
+          - unp
+          - unzip
+          - vim-gtk3
+          - wamerican
+          - xkcdpass
+          - xtail
+      become: yes
+
+    # TODO: https://bugs.launchpad.net/ubuntu/+source/unattended-upgrades/+bug/1624644
+    # - name: Base | Configure unattended-upgrades
+
+    - name: Base | Create journald config dir
+      file:
+        path: /etc/systemd/journald.conf.d
+        state: directory
+      become: yes
+
+    # Yields "System Journal (/var/log/journal/<hash>) is 40.0M, max 20.0G, 19.9G free."
+    - name: Base | Configure journald
+      copy:
+        dest: /etc/systemd/journald.conf.d/99-max-size.conf
+        content: |
+          [Journal]
+          SystemMaxUse=20G
+          SystemMaxFileSize=20G
+          SystemMaxFiles=1000
+      become: yes
+      notify: restart journald
+
+    - name: Base | Create code directory for user
+      file:
+        path: "{{ ansible_env.HOME }}/code"
+        state: directory
+
+    - name: Base | Create bin directory for user
+      file:
+        path: "{{ ansible_env.HOME }}/bin"
+        state: directory
+
+    - name: Base | Add bin to fish $PATH
+      shell: "fish_add_path {{ ansible_env.HOME }}/bin"
+      args:
+        executable: /usr/bin/fish
+      register: _fish_path
+      changed_when: _fish_path.rc == 0
+      failed_when:
+        - _fish_path.rc != 0
+        - _fish_path.stderr_lines | length > 0
+
+    # Equals `sudo passwd -l root`
+    # Shouldn't need to set user expiration as that can break sudo
+    # Prefixes hashed password in /etc/shadow with !
+    - name: Base | Lock root user
+      user:
+        name: root
+        password_lock: yes
+      become: yes
+
+    # TODO: broken, doesn't find correct line, adds "key X" and "value Y" lines
+    # - name: Base | Configure sshd
+    #   lineinfile:
+    #     path: /etc/ssh/sshd_config
+    #     regexp: "^(#)?{{item.key}}"
+    #     line: "{{item.key}} {{item.value}}"
+    #     state: present
+    #   become: yes
+    #   with_dict:
+    #     - { key: "PermitRootLogin", value: "no" }
+    #     - { key: "PasswordAuthentication", value: "no" }
+    #   notify:
+    #     - restart sshd
+
+    - name: Base | Ensure trim is enabled
+      systemd:
+        name: fstrim.timer
+        enabled: yes
+      become: yes
+
+    # NOTE: some duplicates with list above as reference
+    - name: Rust | Install dependencies
+      apt:
+        name:
+          - acl
+          - build-essential
+          - curl
+          - libssl-dev
+          - libxcb-render0-dev
+          - libxcb-shape0-dev
+          - libxcb-xfixes0-dev
+          - libxcb1-dev
+          - pkg-config
+      become: yes
+
+    - name: Rust | Create Cargo directory
+      file:
+        dest: "{{ ansible_env.HOME }}/.cargo"
+        state: directory
+
+    - name: Rust | Configure Cargo
+      copy:
+        dest: "{{ ansible_env.HOME }}/.cargo/config"
+        content: |
+          [source]
+
+          [net]
+          git-fetch-with-cli = true
+
+    - name: Rust | Rustup install
+      shell: |
+        set -o pipefail
+        curl https://sh.rustup.rs -sSf | sh -s -- -y
+      args:
+        creates: "{{ ansible_env.HOME }}/.cargo/bin/rustup"
+        executable: /bin/bash
+
+    - name: Rust | Add to fish $PATH
+      shell: "fish_add_path {{ ansible_env.HOME }}/.cargo/bin"
+      args:
+        executable: /usr/bin/fish
+      register: _fish_path
+      changed_when: _fish_path.rc == 0
+      failed_when:
+        - _fish_path.rc != 0
+        - _fish_path.stderr_lines | length > 0
+
+    # Inspiration: https://github.com/hurricanehrndz/ansible-rustup
+    - name: Rust | Install packages
+      shell: |
+        set -o pipefail
+        cargo install --list | \
+        awk 'BEGIN{ code=1 } {if ($1 == "{{ item }}"){ code=0 }} END{ exit code }' || \
+        cargo install {{ item }}
+      args:
+        executable: /bin/bash
+      environment:
+        PATH: "{{ ansible_env.PATH}}:{{ ansible_env.HOME }}/.cargo/bin"
+      register: _crate_install
+      changed_when: "'Installed package' in _crate_install.stderr"
+      with_items:
+        - cargo-download
+        - fd-find
+        - jless
+        - ripgrep
+
+# vim: ft=yaml.ansible

@@ -1,0 +1,126 @@
+---
+# Either specify a host, or automatically use localhost
+# $ ansible-playbook -i myhost, <playbook>.yml
+# $ ansible-playbook <playbook>.yml
+- hosts: "{{ 'all' if ansible_play_hosts | length > 0 else 'localhost' }}"
+  connection: "{{ 'ssh' if ansible_play_hosts | length > 0 else 'local' }}"
+
+  tasks:
+    - name: Dotfiles | Create config directories
+      file:
+        path: "{{ ansible_env.HOME }}/{{ item }}"
+        state: directory
+      with_items:
+        - .config
+        - .config/fish
+        - .ssh/config.d
+
+    # TODO: skip if already present
+    - name: Dotfiles | Create symlinks for dotfiles
+      file:
+        src: "{{ playbook_dir }}/../{{ item }}"
+        dest: "{{ ansible_env.HOME }}/{{ item }}"
+        state: link
+      with_items:
+        - .bash_aliases
+        - .bashrc
+        - .config/flake8
+        - .gitconfig
+        - .gitignore_global
+        - .screenrc
+        - .ssh/config.d/default
+        - .tmux.conf
+        - .vimpagerrc
+        - .vimrc.last
+        - .vimrc.plugins
+
+    - name: Dotfiles | Check if default fish directories are empty
+      find:
+        paths: "{{ ansible_env.HOME }}/.config/fish/{{ item }}"
+      register: _fish_dirs
+      with_items:
+        - completions
+        - conf.d
+        - functions
+
+    # Overwrites existing empty default directories
+    - name: Dotfiles | Create symlinks for fish <°))><
+      file:
+        src: "{{ playbook_dir }}/../.config/fish/{{ item.item }}"
+        dest: "{{ ansible_env.HOME }}/.config/fish/{{ item.item }}"
+        state: link
+        force: "{{ 'yes' if item.match == 0 else 'no' }}"
+      with_items: "{{ _fish_dirs.results }}"
+      loop_control:
+        label: "{{ item.item }}"
+
+    - name: Dotfiles | Gather package facts
+      ansible.builtin.package_facts:
+        manager: apt
+
+    - name: Configure XDG user directories
+      block:
+        - name: Dotfiles | Create desktop directory
+          file:
+            path: "{{ ansible_env.HOME }}/.desktop"
+            state: directory
+
+        - name: Dotfiles | Configure XDG user directories
+          file:
+            src: "{{ playbook_dir }}/../.config/user-dirs.dirs"
+            dest: "{{ ansible_env.HOME }}/.config/user-dirs.dirs"
+            state: link
+            force: yes
+          register: _xdg_user_dirs
+
+        # TODO: xdg-user-dirs-update will sort this out already, or?
+        - name: Dotfiles | Delete unsued XDG user directories
+          file:
+            path: "{{ ansible_env.HOME }}/"
+            state: absent
+          when: _xdg_user_dirs.changed
+          with_items:
+            - Templates
+            - Public
+
+        - name: Dotfiles | Update configured XDG user directories
+          command: xdg-user-dirs-update
+          when: _xdg_user_dirs.changed
+      when: "'xdg-user-dirs' in ansible_facts.packages"
+
+    - name: Dotfiles | Clone timss/vimconf
+      git:
+        repo: https://github.com/timss/vimconf.git
+        dest: "{{ ansible_env.HOME }}/config/vimconf"
+        update: no
+
+    - name: Dotfiles | Symlink vimrc
+      file:
+        src: "{{ ansible_env.HOME}}/config/vimconf/.vimrc"
+        dest: "{{ ansible_env.HOME }}/.vimrc"
+        state: link
+
+    - name: Dotfiles | Initialize Vim plugins
+      command: vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa
+      args:
+        creates: "{{ ansible_env.HOME }}/.vim/autoload/plug.vim"
+      ignore_errors: yes
+
+    - name: Dotfiles | Clone vimpager
+      git:
+        repo: https://github.com/rkitover/vimpager.git
+        dest: "{{ ansible_env.HOME }}/downloads/vimpager"
+        update: no
+      register: _vimpager_cloned
+
+    # Automatically registers as a pager using the alternatives system
+    # See ./debian/postinst for more details
+    # $ update-alternatives --list pager
+    - name: Dotfiles | Build and install vimpager
+      make:
+        chdir: "{{ ansible_env.HOME }}/downloads/vimpager"
+        target: install-deb
+      become: yes
+      when: _vimpager_cloned.changed
+
+# vim: ft=yaml.ansible

@@ -1,0 +1,43 @@
+---
+# Either specify a host, or automatically use localhost
+# $ ansible-playbook -i myhost, <playbook>.yml
+# $ ansible-playbook <playbook>.yml
+- hosts: "{{ 'all' if ansible_play_hosts | length > 0 else 'localhost' }}"
+  connection: "{{ 'ssh' if ansible_play_hosts | length > 0 else 'local' }}"
+
+  tasks:
+    - name: Desktop | Install packages
+      apt:
+        install_recommends: no
+        cache_valid_time: 3600
+        name:
+          - filelight
+          - fonts-inconsolata
+          - gimp
+          - gimp-plugin-registry
+          - imagemagick
+          - kde-spectacle
+          - kwrite
+          - libnss3-tools
+          - ocrmypdf
+          - okular
+          - terminator
+          - wireshark
+          - xclip
+          - xdotool
+      become: yes
+
+    - name: Desktop | Create config directories
+      file:
+        path: "{{ ansible_env.HOME }}/{{ item }}"
+        state: directory
+      with_items:
+        - .config/terminator
+
+    - name: Desktop | Create symlinks for terminator
+      file:
+        src: "{{ playbook_dir }}/../.config/terminator/config"
+        dest: "{{ ansible_env.HOME }}/.config/terminator/config"
+        state: link
+
+# vim: ft=yaml.ansible
