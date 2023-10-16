@@ -11,6 +11,7 @@
         install_recommends: no
         cache_valid_time: 3600
         name:
+          - ark
           - filelight
           - fonts-inconsolata
           - gimp
