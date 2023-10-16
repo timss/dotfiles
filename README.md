@@ -29,7 +29,7 @@ $ source path/to/venv/bin/activate # or activate.fish
 # Initial setup
 $ cd ansible/
 $ pip install -U pip
-$ pip install requirements.txt
+$ pip install -r requirements.txt
 $ sudo mkdir /var/log/ansible
 
 # Either specify a host, or automatically use localhost
