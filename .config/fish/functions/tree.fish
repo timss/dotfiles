@@ -1,3 +1,3 @@
 function tree --description "List contents of directories in a tree-like format"
-    command tree -C $argv;
+    command tree -C --dirsfirst -F -l $argv;
 end
