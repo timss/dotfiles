@@ -1,3 +1,4 @@
+Plug 'andymass/vim-matchup'
 Plug 'dag/vim-fish'
 Plug 'derekwyatt/vim-scala'
 Plug 'google/vim-searchindex'
