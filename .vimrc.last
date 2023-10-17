@@ -24,7 +24,8 @@ augroup END
 " .vim/syntax/notes.vim
 augroup LocalFileTypeRules
     autocmd!
-    autocmd BufNewFile,BufRead *.txt set ft=notes tw=79
+    autocmd BufNewFile,BufRead *.txt set ft=notes tw=120
+    autocmd BufNewFile,BufRead */ansible/*.yml set ft=yaml.ansible
 augroup END
 
 " Replace horrible func( arg ) with func(arg) etc
