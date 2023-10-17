@@ -26,6 +26,7 @@
         install_recommends: no
         cache_valid_time: 3600
         name:
+          - acl
           - amd64-microcode
           - blktrace
           - bpython
@@ -45,7 +46,7 @@
           - fping
           - gdb
           - git
-          - gnome-disk-utility
+          - git-quick-stats
           - gnuplot
           - htop
           - iftop

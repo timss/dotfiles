@@ -16,6 +16,7 @@
           - fonts-inconsolata
           - gimp
           - gimp-plugin-registry
+          - gnome-disk-utility
           - imagemagick
           - kde-spectacle
           - kwrite
