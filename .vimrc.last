@@ -97,3 +97,11 @@ set nofoldenable
 
 " Don't treat numbers starting with 0 as octal
 set nrformats-=octal
+
+" Enabled together with number to show current line number
+" Set vim default numberwidth
+set relativenumber
+set numberwidth=4
+
+" Quickly toggle sidebar stuff to make remote line copying easier
+nnoremap <silent> <Leader>t :set relativenumber!<CR> <bar> :set number!<CR> <bar> :SignifyToggle<CR>
