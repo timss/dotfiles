@@ -10,6 +10,10 @@ function fish_prompt --description 'Write out the prompt'
     echo -n (prompt_pwd)
     set_color normal
 
+    set -g __fish_git_prompt_showupstream informative
+    set -g __fish_git_prompt_use_informative_chars 1
+    set -g __fish_git_prompt_char_upstream_prefix ""
+
     printf '%s ' (__fish_git_prompt)
 
     if not test $last_status -eq 0
