@@ -1,0 +1,11 @@
+[Desktop Entry]
+Categories=Utility;
+Comment=A X compositor
+Exec=compton
+GenericName=X compositor
+Icon=compton
+Keywords=x;x11;compositor;
+Name=compton
+TryExec=compton
+Type=Application
+Version=1.0

@@ -42,4 +42,41 @@
         dest: "{{ ansible_env.HOME }}/.config/terminator/config"
         state: link
 
+    # Used for clean shadows on borderldess KDE windows (X11)
+    - name: Desktop | Configure Compton
+      block:
+        - name: Desktop | Fail if trying to install while using Wayland
+          fail:
+            msg: "Compton only supports X11, not Wayland"
+          when: ansible_env.XDG_SESSION_TYPE == "wayland"
+
+        - name: Desktop | Install compton
+          apt:
+            name: compton
+          become: yes
+
+        - name: Desktop | Ensure autostart directory exists
+          file:
+            path: "{{ ansible_env.HOME }}/.config/autostart"
+            state: directory
+
+        - name: Desktop | Configure compton
+          file:
+            src: "{{ playbook_dir | dirname }}/.config/compton.conf"
+            dest: "{{ ansible_env.HOME }}/.config/compton.conf"
+            state: link
+
+        - name: Desktop | Add compton to autostart
+          file:
+            src: "{{ playbook_dir | dirname }}/.config/autostart/compton.desktop"
+            dest: "{{ ansible_env.HOME }}/.config/autostart/compton.desktop"
+            state: link
+          register: _compton_autostart
+
+        - name: Desktop | Disable KDE compositing
+          pause:
+            prompt: "Make sure KDE compositing is disabled"
+          when: _compton_autostart.changed
+      when: configure_compton | default('no') | bool
+
 # vim: ft=yaml.ansible
