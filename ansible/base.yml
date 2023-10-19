@@ -237,7 +237,7 @@
       args:
         executable: /bin/bash
       environment:
-        PATH: "{{ ansible_env.PATH}}:{{ ansible_env.HOME }}/.cargo/bin"
+        PATH: "{{ ansible_env.PATH }}:{{ ansible_env.HOME }}/.cargo/bin"
       register: _crate_install
       changed_when: "'Installed package' in _crate_install.stderr"
       with_items:
