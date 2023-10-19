@@ -6,13 +6,14 @@
   connection: "{{ 'ssh' if ansible_play_hosts | length > 0 else 'local' }}"
 
   tasks:
-    - name: Base | Configure repo source list
+    - name: Base | Configure repo source list (Debian)
       replace:
         path: /etc/apt/sources.list
         regexp: '^(deb(-src)? .*{{ ansible_distribution_release }}(-\w+)?).*'
         replace: '\1 main contrib non-free non-free-firmware'
         backup: yes
       become: yes
+      when: ansible_distribution == 'Debian'
 
     - name: Base | Update all packages
       apt:
@@ -40,7 +41,7 @@
           - dstat
           - ethtool
           - fatrace
-          - firmware-linux
+          - "{% if linux_distribution == 'Debian' %}firmware-linux{% else %}linux-firmware{% endif %}"
           - fish
           - flake8
           - fping
