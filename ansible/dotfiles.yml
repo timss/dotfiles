@@ -102,7 +102,7 @@
         state: link
 
     - name: Dotfiles | Initialize Vim plugins
-      command: vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa
+      command: vim -E -s -c "source ~/.vimrc" -c PlugInstall -c qa
       args:
         creates: "{{ ansible_env.HOME }}/.vim/autoload/plug.vim"
       ignore_errors: yes
