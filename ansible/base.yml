@@ -168,6 +168,7 @@
     # NOTE: some duplicates with list above as reference
     - name: Rust | Install dependencies
       apt:
+        cache_valid_time: 3600
         name:
           - acl
           - build-essential

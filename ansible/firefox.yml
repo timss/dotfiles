@@ -30,6 +30,7 @@
     # TODO: check if present in $PATH or something to account for installations outside of apt?
     - name: Firefox | Install package
       apt:
+        cache_valid_time: 3600
         name: "{{ firefox_package | default('firefox-esr') }}"
       become: yes
 
@@ -37,6 +38,7 @@
       block:
         - name: Firefox | Install xvfb
           apt:
+            cache_valid_time: 3600
             name: xvfb
           become: yes
 
