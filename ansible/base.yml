@@ -5,6 +5,19 @@
 - hosts: "{{ 'all' if ansible_play_hosts | length > 0 else 'localhost' }}"
   connection: "{{ 'ssh' if ansible_play_hosts | length > 0 else 'local' }}"
 
+  handlers:
+    - name: restart journald
+      service:
+        name: systemd-journald
+        state: restarted
+      become: yes
+
+    - name: restart sshd
+      service:
+        name: sshd
+        state: restarted
+      become: yes
+
   tasks:
     - name: Base | Configure repo source list (Debian)
       replace:
