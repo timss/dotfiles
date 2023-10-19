@@ -27,12 +27,19 @@
       - web-scrobbler
 
   tasks:
-    # TODO: check if present in $PATH or something to account for installations outside of apt?
+    - name: Firefox | Check if installed
+      shell: firefox --version
+      register: _ff_installed
+      check_mode: no
+      changed_when: no
+      failed_when: _ff_installed.rc != 0 and _ff_installed.rc != 127
+
     - name: Firefox | Install package
       apt:
         cache_valid_time: 3600
-        name: "{{ firefox_package | default('firefox-esr') }}"
+        name: "{{ 'firefox-esr' if linux_distribution == 'Debian' else firefox_package | default('firefox') }}"
       become: yes
+      when: "'command not found' in _ff_installed.stdout"
 
     - name: Firefox | Check profile
       block:
