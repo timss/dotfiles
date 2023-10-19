@@ -25,10 +25,10 @@ Automated installation of dotfiles and other stuff.
 $ apt install python3-venv
 $ python3 -m venv path/to/venv
 $ source path/to/venv/bin/activate # or activate.fish
+$ pip install -U pip
 
 # Initial setup
 $ cd ansible/
-$ pip install -U pip
 $ pip install -r requirements.txt
 $ sudo mkdir /var/log/ansible
 $ sudo chown $USER:$USER /var/log/ansible
