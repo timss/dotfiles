@@ -54,7 +54,7 @@
           - dstat
           - ethtool
           - fatrace
-          - "{% if linux_distribution == 'Debian' %}firmware-linux{% else %}linux-firmware{% endif %}"
+          - "{% if ansible_distribution == 'Debian' %}firmware-linux{% else %}linux-firmware{% endif %}"
           - fish
           - flake8
           - fping
