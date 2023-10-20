@@ -11,6 +11,7 @@
     addons:
       - betterttv
       - googlepanicimages
+      - image-reverse-search
       - imagus
       - localcdn-fork-of-decentraleyes
       - old-reddit-redirect
