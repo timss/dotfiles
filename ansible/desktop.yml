@@ -42,6 +42,39 @@
         dest: "{{ ansible_env.HOME }}/.config/terminator/config"
         state: link
 
+    - name: Desktop | Gather package facts
+      ansible.builtin.package_facts:
+        manager: apt
+
+    - name: Desktop | Configure XDG user directories
+      block:
+        - name: Desktop | Create desktop directory
+          file:
+            path: "{{ ansible_env.HOME }}/.desktop"
+            state: directory
+
+        - name: Desktop | Configure XDG user directories
+          file:
+            src: "{{ playbook_dir | dirname }}/.config/user-dirs.dirs"
+            dest: "{{ ansible_env.HOME }}/.config/user-dirs.dirs"
+            state: link
+            force: yes
+          register: _xdg_user_dirs
+
+        - name: Desktop | Delete unused XDG user directories
+          file:
+            path: "{{ ansible_env.HOME }}/{{ item }}"
+            state: absent
+          when: _xdg_user_dirs.changed
+          with_items:
+            - Templates
+            - Public
+
+        - name: Desktop | Update configured XDG user directories
+          command: xdg-user-dirs-update
+          when: _xdg_user_dirs.changed
+      when: "'xdg-user-dirs' in ansible_facts.packages"
+
     # Used for clean shadows on borderldess KDE windows (X11)
     - name: Desktop | Configure Compton
       block:

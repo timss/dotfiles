@@ -55,40 +55,6 @@
       loop_control:
         label: "{{ item.item }}"
 
-    - name: Dotfiles | Gather package facts
-      ansible.builtin.package_facts:
-        manager: apt
-
-    - name: Configure XDG user directories
-      block:
-        - name: Dotfiles | Create desktop directory
-          file:
-            path: "{{ ansible_env.HOME }}/.desktop"
-            state: directory
-
-        - name: Dotfiles | Configure XDG user directories
-          file:
-            src: "{{ playbook_dir | dirname }}/.config/user-dirs.dirs"
-            dest: "{{ ansible_env.HOME }}/.config/user-dirs.dirs"
-            state: link
-            force: yes
-          register: _xdg_user_dirs
-
-        # TODO: xdg-user-dirs-update will sort this out already, or?
-        - name: Dotfiles | Delete unsued XDG user directories
-          file:
-            path: "{{ ansible_env.HOME }}/{{ item }}"
-            state: absent
-          when: _xdg_user_dirs.changed
-          with_items:
-            - Templates
-            - Public
-
-        - name: Dotfiles | Update configured XDG user directories
-          command: xdg-user-dirs-update
-          when: _xdg_user_dirs.changed
-      when: "'xdg-user-dirs' in ansible_facts.packages"
-
     - name: Dotfiles | Clone timss/vimconf
       git:
         repo: https://github.com/timss/vimconf.git
