@@ -30,8 +30,8 @@ $ pip install -U pip
 # Initial setup
 $ cd ansible/
 $ pip install -r requirements.txt
-$ sudo mkdir /var/log/ansible
-$ sudo chown $USER:$USER /var/log/ansible
+$ sudo mkdir -p /var/log/ansible/dotfiles
+$ sudo chown -R $USER:$USER /var/log/ansible
 
 # Either specify a host, or automatically use localhost
 # Playbook names should be self-explanatory
