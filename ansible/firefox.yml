@@ -38,9 +38,10 @@
     - name: Firefox | Install package
       apt:
         cache_valid_time: 3600
-        name: "{{ 'firefox-esr' if linux_distribution == 'Debian' else firefox_package | default('firefox') }}"
+        name: "{{ 'firefox-esr' if ansible_distribution == 'Debian' else firefox_package | default('firefox') }}"
       become: yes
-      when: "'command not found' in _ff_installed.stdout"
+      when: ("'command not found' in _ff_installed.stdout") or
+            ("'requires the firefox snap to be installed' in _ff_installed.stdout")
 
     - name: Firefox | Check profile
       block:
