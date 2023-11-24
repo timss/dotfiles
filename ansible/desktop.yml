@@ -61,14 +61,10 @@
             force: yes
           register: _xdg_user_dirs
 
-        - name: Desktop | Delete unused XDG user directories
-          file:
-            path: "{{ ansible_env.HOME }}/{{ item }}"
-            state: absent
+        - name: Desktop | Confirm deletion of unused XDG user directories
+          pause:
+            prompt: "Remember to delete unused XDG user directories (~/Templates + ~/Public)"
           when: _xdg_user_dirs.changed
-          with_items:
-            - Templates
-            - Public
 
         - name: Desktop | Update configured XDG user directories
           command: xdg-user-dirs-update
