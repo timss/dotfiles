@@ -46,6 +46,7 @@
           - bpython
           - btop
           - build-essential
+          - cloc
           - cmake
           - colordiff
           - curl
