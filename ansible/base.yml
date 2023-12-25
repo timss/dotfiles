@@ -66,7 +66,6 @@
           - git
           - git-quick-stats
           - gnuplot
-          - grip
           - htop
           - iftop
           - intel-microcode
@@ -88,7 +87,7 @@
           - pandoc
           - pdfcrack
           - plocate
-          - pnginfo
+          - pngtools
           - powertop
           - python3-apt
           - python3-bashate
@@ -104,6 +103,7 @@
           - sysstat
           - tcpdump
           - telnet
+          - tldr
           - tmux
           - traceroute
           - tree
