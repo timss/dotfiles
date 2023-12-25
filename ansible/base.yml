@@ -40,9 +40,12 @@
         install_recommends: no
         cache_valid_time: 3600
         name:
+          - "{% if ansible_distribution == 'Debian' %}firmware-linux{% else %}linux-firmware{% endif %}"
+          - ack
           - acl
           - amd64-microcode
           - blktrace
+          - bmon
           - bpython
           - btop
           - build-essential
@@ -54,8 +57,8 @@
           - dfc
           - dstat
           - ethtool
+          - ewf-tools
           - fatrace
-          - "{% if ansible_distribution == 'Debian' %}firmware-linux{% else %}linux-firmware{% endif %}"
           - fish
           - flake8
           - fping
@@ -63,6 +66,7 @@
           - git
           - git-quick-stats
           - gnuplot
+          - grip
           - htop
           - iftop
           - intel-microcode
@@ -82,7 +86,9 @@
           - nmap
           - openssl
           - pandoc
+          - pdfcrack
           - plocate
+          - pnginfo
           - powertop
           - python3-apt
           - python3-bashate

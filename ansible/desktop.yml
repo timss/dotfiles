@@ -15,8 +15,13 @@
           - filelight
           - fonts-inconsolata
           - gimp
+          - gimp-data-extras
+          - gimp-dcraw
           - gimp-plugin-registry
+          - gimp-texturize
+          - gimp-ufraw
           - gnome-disk-utility
+          - handbrake
           - imagemagick
           - kde-spectacle
           - kwrite
