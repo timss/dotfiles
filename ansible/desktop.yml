@@ -19,6 +19,7 @@
           - gimp-plugin-registry
           - gimp-texturize
           - gnome-disk-utility
+          - gwenview
           - handbrake
           - imagemagick
           - kde-spectacle
