@@ -108,3 +108,6 @@ set numberwidth=4
 
 " Quickly toggle sidebar stuff to make remote line copying easier
 nnoremap <silent> <Leader>t :set relativenumber!<CR> <bar> :set number!<CR> <bar> :SignifyToggle<CR>
+
+set wildignore-=*.bak
+set wildignorecase
