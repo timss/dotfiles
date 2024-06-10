@@ -25,9 +25,14 @@
           - kde-spectacle
           - kwrite
           - libnss3-tools
+          - libreoffice-calc
+          - libreoffice-kf5
+          - libreoffice-writer
+          - mpv
           - ocrmypdf
           - okular
           - terminator
+          - vlc
           - wireshark
           - xclip
           - xdotool

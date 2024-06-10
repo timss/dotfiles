@@ -44,6 +44,7 @@
           - ack
           - acl
           - amd64-microcode
+          - bat
           - blktrace
           - bmon
           - bpython
@@ -79,16 +80,20 @@
           - lshw
           - lsscsi
           - man
+          - mediainfo
           - molly-guard
           - mtr
           - ncat
+          - nethogs
           - nmap
           - openssl
           - pandoc
+          - parallel
           - pdfcrack
           - plocate
           - pngtools
           - powertop
+          - pv
           - python3-apt
           - python3-bashate
           - python3-dev
@@ -99,6 +104,7 @@
           - screenfetch
           - smartmontools
           - socat
+          - sshpass
           - sudo
           - sysstat
           - tcpdump
