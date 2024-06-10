@@ -124,6 +124,11 @@
 
     # TODO: https://bugs.launchpad.net/ubuntu/+source/unattended-upgrades/+bug/1624644
     # - name: Base | Configure unattended-upgrades
+    #   apt:
+    #     install_recommends: no
+    #     cache_valid_time: 3600
+    #     name: unattended-upgrades
+    #   become: yes
 
     - name: Base | Create journald config dir
       file:
