@@ -40,15 +40,15 @@
 
     - name: Desktop | Create config directories
       file:
-        path: "{{ ansible_env.HOME }}/{{ item }}"
+        path: "{{ ansible_env.HOME }}/{{ item }}"
         state: directory
       with_items:
         - .config/terminator
 
     - name: Desktop | Create symlinks for terminator
       file:
-        src: "{{ playbook_dir | dirname }}/.config/terminator/config"
-        dest: "{{ ansible_env.HOME }}/.config/terminator/config"
+        src: "{{ playbook_dir | dirname }}/.config/terminator/config"
+        dest: "{{ ansible_env.HOME }}/.config/terminator/config"
         state: link
 
     - name: Desktop | Gather package facts
@@ -59,7 +59,7 @@
       block:
         - name: Desktop | Create desktop directory
           file:
-            path: "{{ ansible_env.HOME }}/.desktop"
+            path: "{{ ansible_env.HOME }}/.desktop"
             state: directory
 
         - name: Desktop | Configure XDG user directories
@@ -95,19 +95,19 @@
 
         - name: Desktop | Ensure autostart directory exists
           file:
-            path: "{{ ansible_env.HOME }}/.config/autostart"
+            path: "{{ ansible_env.HOME }}/.config/autostart"
             state: directory
 
         - name: Desktop | Configure compton
           file:
-            src: "{{ playbook_dir | dirname }}/.config/compton.conf"
-            dest: "{{ ansible_env.HOME }}/.config/compton.conf"
+            src: "{{ playbook_dir | dirname }}/.config/compton.conf"
+            dest: "{{ ansible_env.HOME }}/.config/compton.conf"
             state: link
 
         - name: Desktop | Add compton to autostart
           file:
-            src: "{{ playbook_dir | dirname }}/.config/autostart/compton.desktop"
-            dest: "{{ ansible_env.HOME }}/.config/autostart/compton.desktop"
+            src: "{{ playbook_dir | dirname }}/.config/autostart/compton.desktop"
+            dest: "{{ ansible_env.HOME }}/.config/autostart/compton.desktop"
             state: link
           register: _compton_autostart
 

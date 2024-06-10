@@ -8,7 +8,7 @@
   tasks:
     - name: Dotfiles | Create config directories
       file:
-        path: "{{ ansible_env.HOME }}/{{ item }}"
+        path: "{{ ansible_env.HOME }}/{{ item }}"
         state: directory
       with_items:
         - .config
@@ -18,8 +18,8 @@
     # TODO: skip if already present
     - name: Dotfiles | Create symlinks for dotfiles
       file:
-        src: "{{ playbook_dir | dirname }}/{{ item }}"
-        dest: "{{ ansible_env.HOME }}/{{ item }}"
+        src: "{{ playbook_dir | dirname }}/{{ item }}"
+        dest: "{{ ansible_env.HOME }}/{{ item }}"
         state: link
       with_items:
         - .bash_aliases
@@ -37,7 +37,7 @@
 
     - name: Dotfiles | Check if default fish directories are empty
       find:
-        paths: "{{ ansible_env.HOME }}/.config/fish/{{ item }}"
+        paths: "{{ ansible_env.HOME }}/.config/fish/{{ item }}"
       register: _fish_dirs
       with_items:
         - completions
@@ -47,8 +47,8 @@
     # Overwrites existing empty default directories
     - name: Dotfiles | Create symlinks for fish <°))><
       file:
-        src: "{{ playbook_dir | dirname }}/.config/fish/{{ item.item }}"
-        dest: "{{ ansible_env.HOME }}/.config/fish/{{ item.item }}"
+        src: "{{ playbook_dir | dirname }}/.config/fish/{{ item.item }}"
+        dest: "{{ ansible_env.HOME }}/.config/fish/{{ item.item }}"
         state: link
         force: "{{ 'yes' if item.matched == 0 else 'no' }}"
       with_items: "{{ _fish_dirs.results }}"
@@ -63,7 +63,7 @@
 
     - name: Dotfiles | Symlink vimrc
       file:
-        src: "{{ ansible_env.HOME}}/config/vimconf/.vimrc"
+        src: "{{ ansible_env.HOME}}/config/vimconf/.vimrc"
         dest: "{{ ansible_env.HOME }}/.vimrc"
         state: link
 

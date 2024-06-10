@@ -82,18 +82,18 @@
     - name: Firefox | Configure user preferences
       file:
         src: "{{ playbook_dir | dirname }}/.mozilla/firefox/user.js"
-        dest: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/user.js"
+        dest: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/user.js"
         state: link
 
     - name: Firefox | Create user stylesheets directory
       file:
-        path: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/chrome"
+        path: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/chrome"
         state: directory
 
     - name: Firefox | Configure user stylesheets
       file:
         src: "{{ playbook_dir | dirname }}/.mozilla/firefox/chrome/userChrome.css"
-        dest: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/chrome/userChrome.css"
+        dest: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/chrome/userChrome.css"
         state: link
 
     - name: Firefox | Configure addons
