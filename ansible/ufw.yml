@@ -42,5 +42,7 @@
           proto: tcp
         - port: 443
           proto: tcp
+        - port: 123
+          proto: udp
 
 # vim: ft=yaml.ansible
