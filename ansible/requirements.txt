@@ -1,4 +1,15 @@
+# Required for this repo
 ansible
-bpython
 dnspython
 netaddr
+
+# Other useful packages
+ansible-parallel
+beeprint
+bpython
+click
+pipdeptree
+requests
+showcert
+tuna
+xkcdpass
