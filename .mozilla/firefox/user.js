@@ -20,8 +20,8 @@ user_pref("browser.startup.page", 3);
 // Disable spell checking
 user_pref("layout.spellcheckDefault", 0);
 
-// Open ctrl+clicked tab in background when diverted(?)
-user_pref("browser.tabs.loadDivertedInBackground", true);
+// Affects new windows that instead were diverted to a new tab
+user_pref("browser.tabs.loadDivertedInBackground", false);
 
 // Disable backspace as back button (default)
 user_pref("browser.backspace_action", 2);
