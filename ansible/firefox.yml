@@ -9,22 +9,26 @@
     # Requires manual installation:
     # - frankerfacez (https://www.frankerfacez.com/)
     addons:
-      - betterttv
+      # Base
       - googlepanicimages
       - image-reverse-search
       - imagus
       - localcdn-fork-of-decentraleyes
-      - old-reddit-redirect
       - privacy-badger17
-      - reddit-enhancement-suite
       - redirector
       - reload-discarded-tabs
+      - singlefile
       - sky-history-export
       - tab-counter-plus
       - tab-session-manager
       - tree-style-tab
       - tridactyl-vim
       - ublock-origin
+
+      # Extras
+      - betterttv
+      - old-reddit-redirect
+      - reddit-enhancement-suite
       - web-scrobbler
 
   tasks:
