@@ -165,6 +165,7 @@
         name: root
         password_lock: yes
       become: yes
+      when: "'microsoft' not in ansible_kernel" # WSL
 
     # TODO: broken, doesn't find correct line, adds "key X" and "value Y" lines
     # - name: Base | Configure sshd
