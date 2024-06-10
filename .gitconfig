@@ -12,6 +12,8 @@
     helper = cache --timeout=3600
 [push]
     default = simple
+[rebase]
+    autoStash = true
 [diff]
     tool = vimdiff
 [difftool]
