@@ -111,3 +111,7 @@ nnoremap <silent> <Leader>t :set relativenumber!<CR> <bar> :set number!<CR> <bar
 
 set wildignore-=*.bak
 set wildignorecase
+
+" https://en.wikipedia.org/wiki/Non-breaking_space
+set listchars=tab:>\ ,nbsp:⎵
+highlight SpecialKey ctermbg=red guibg=red
