@@ -251,6 +251,7 @@
       with_items:
         - cargo-download
         - fd-find
+        - git-delta
         - jless
         - ripgrep
 
