@@ -237,16 +237,6 @@
         creates: "{{ ansible_env.HOME }}/.cargo/bin/rustup"
         executable: /bin/bash
 
-    - name: Rust | Add to fish $PATH
-      shell: "fish_add_path {{ ansible_env.HOME }}/.cargo/bin"
-      args:
-        executable: /usr/bin/fish
-      register: _fish_path
-      changed_when: _fish_path.rc == 0
-      failed_when:
-        - _fish_path.rc != 0
-        - _fish_path.stderr_lines | length > 0
-
     # Inspiration: https://github.com/hurricanehrndz/ansible-rustup
     - name: Rust | Install packages
       shell: |
