@@ -7,7 +7,7 @@
 
   vars:
     # Requires manual installation:
-    # - frankerfacez (https://www.frankerfacez.com/)
+    # - frankerfacez (https://www.frankerfacez.com/), remember to enable 7TV emotes
     addons:
       # Base
       - googlepanicimages
