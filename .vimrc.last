@@ -11,14 +11,16 @@ map Y y$
 " Increase number of tabs opened using `vim -p` or `:tab all`
 set tabpagemax=100
 
-" https://github.com/reedes/vim-lexical
-let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
-let g:lexical#thesaurus_key = '<leader>t'
+" https://github.com/preservim/vim-lexical
+" Also see simple dictionary completion in main vimconf
+let g:lexical#thesaurus = ['~/.vim/thesaurus/moby.txt',]
+let g:lexical#thesaurus_key = '<leader>x'
 
 augroup lexical
     autocmd!
     autocmd FileType markdown call lexical#init({'spell': 0})
     autocmd FileType tex call lexical#init({'spell': 0})
+    autocmd FileType notes call lexical#init({'spell': 0})
 augroup END
 
 " .vim/syntax/notes.vim

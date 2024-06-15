@@ -14,6 +14,7 @@
         - .config
         - .config/fish
         - .ssh/config.d
+        - .vim
 
     # TODO: skip if already present
     - name: Dotfiles | Create symlinks for dotfiles
@@ -54,6 +55,11 @@
       with_items: "{{ _fish_dirs.results }}"
       loop_control:
         label: "{{ item.item }}"
+
+    - name: Dotfiles | Download the Moby Thesaurus
+      get_url:
+        url: https://raw.githubusercontent.com/zeke/moby/master/words.txt
+        dest: "{{ ansible_env.HOME }}/.vim/thesaurus/moby.txt"
 
     - name: Dotfiles | Clone timss/vimconf
       git:
