@@ -17,7 +17,7 @@
       - privacy-badger17
       - redirector
       - reload-discarded-tabs
-      - singlefile
+      - single-file
       - sky-history-export
       - tab-counter-plus
       - tab-session-manager
@@ -103,6 +103,7 @@
             url: https://addons.mozilla.org/api/v3/addons/addon/{{ item }}/
           with_items: "{{ addons | default([]) }}"
           register: _ff_api
+          check_mode: no
 
         - name: Firefox | Create addons directory
           file:
