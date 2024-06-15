@@ -22,8 +22,8 @@
     - name: Base | Configure repo source list (Debian)
       replace:
         path: /etc/apt/sources.list
-        regexp: '^(deb(-src)? .*{{ ansible_distribution_release }}(-\w+)?).*'
-        replace: '\1 main contrib non-free non-free-firmware'
+        regexp: "^(deb(-src)? .*{{ ansible_distribution_release }}(-\w+)?).*"
+        replace: "\1 main contrib non-free non-free-firmware"
         backup: yes
       become: yes
       when: ansible_distribution == 'Debian'

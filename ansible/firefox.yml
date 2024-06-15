@@ -58,7 +58,7 @@
         - name: Firefox | Check if default profile exists
           command: xvfb-run /usr/bin/firefox --CreateProfile default
           args:
-            creates: '{{ ansible_env.HOME }}/.mozilla/firefox/profiles.ini'
+            creates: "{{ ansible_env.HOME }}/.mozilla/firefox/profiles.ini"
 
         - name: Firefox | Get list of profiles
           set_fact:
@@ -101,20 +101,20 @@
         - name: Firefox | Get addons information
           uri:
             url: https://addons.mozilla.org/api/v3/addons/addon/{{ item }}/
-          with_items: '{{ addons | default([]) }}'
+          with_items: "{{ addons | default([]) }}"
           register: _ff_api
 
         - name: Firefox | Create addons directory
           file:
-            path: '{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/extensions'
+            path: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/extensions"
             state: directory
 
         # NOTE: Requires enabling the newly installed addon(s) on next restart
         - name: Firefox | Install addons
           get_url:
-            url: '{{ item.json.current_version.files.0.url }}'
-            dest: '{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/extensions/{{ item.json.guid }}.xpi'
-          with_items: '{{ _ff_api.results }}'
+            url: "{{ item.json.current_version.files.0.url }}"
+            dest: "{{ ansible_env.HOME }}/.mozilla/firefox/{{ firefox_profile }}/extensions/{{ item.json.guid }}.xpi"
+          with_items: "{{ _ff_api.results }}"
           loop_control:
             label: "{{ item.url }}"
       tags: addons
