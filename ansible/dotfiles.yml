@@ -60,6 +60,7 @@
       get_url:
         url: https://raw.githubusercontent.com/zeke/moby/master/words.txt
         dest: "{{ ansible_env.HOME }}/.vim/thesaurus/moby.txt"
+      when: not ansible_check_mode
 
     - name: Dotfiles | Clone timss/vimconf
       git:
@@ -79,6 +80,8 @@
         creates: "{{ ansible_env.HOME }}/.vim/autoload/plug.vim"
       ignore_errors: yes
 
+    # TODO: vimpager uses wrong background when printing to stdout
+    # https://github.com/rkitover/vimpager/issues/203
     - name: Dotfiles | Clone vimpager
       git:
         repo: https://github.com/rkitover/vimpager.git
@@ -89,6 +92,8 @@
     # Automatically registers as a pager using the alternatives system
     # See ./debian/postinst for more details
     # $ update-alternatives --list pager
+    #
+    # TODO: dumps builds in vimpager/../
     - name: Dotfiles | Build and install vimpager
       make:
         chdir: "{{ ansible_env.HOME }}/downloads/vimpager"
