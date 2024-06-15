@@ -61,7 +61,6 @@ let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_folding_disabled = 1
 
 " Vim Markdown Preview - requires 'grip' Python package
-let vim_markdown_preview_github = 1
 let vim_markdown_preview_hotkey = '<leader>m'
 let vim_markdown_preview_temp_file = 1
 
