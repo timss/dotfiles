@@ -14,7 +14,7 @@
         - .config
         - .config/fish
         - .ssh/config.d
-        - .vim
+        - .vim/thesaurus
 
     # TODO: skip if already present
     - name: Dotfiles | Create symlinks for dotfiles
