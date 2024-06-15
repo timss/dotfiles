@@ -40,6 +40,9 @@ export EDITOR=vim
 export PAGER=vimpager
 export GIT_PAGER=less
 
+# Rust
+source "$HOME/.cargo/env"
+
 # Preserve environment when doing "sudo vim [..]"
 sudo() {
     case $* in
