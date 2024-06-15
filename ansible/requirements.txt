@@ -3,6 +3,9 @@ ansible
 dnspython
 netaddr
 
+# For vimconf customizations
+vim-vint
+
 # Other useful packages
 ansible-parallel
 beeprint
