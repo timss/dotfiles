@@ -29,6 +29,7 @@
       - betterttv
       - old-reddit-redirect
       - reddit-enhancement-suite
+      - return-youtube-dislikes
       - web-scrobbler
 
   tasks:
