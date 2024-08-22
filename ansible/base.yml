@@ -44,6 +44,7 @@
           - ack
           - acl
           - amd64-microcode
+          - aptitude
           - bat
           - blktrace
           - bmon
