@@ -57,7 +57,6 @@
           - curl
           - datamash
           - dfc
-          - dstat
           - ethtool
           - ewf-tools
           - fatrace
