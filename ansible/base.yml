@@ -85,6 +85,7 @@
           - molly-guard
           - mtr
           - ncat
+          - ncdu
           - nethogs
           - nmap
           - openssl
