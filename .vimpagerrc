@@ -9,6 +9,7 @@ if isdirectory($HOME."/.vim/bundle/jellybeans.vim")
     highlight Normal ctermbg=NONE
     highlight NonText ctermbg=NONE
     set ignorecase
+    set smartcase
     set mouse=
 endif
 
