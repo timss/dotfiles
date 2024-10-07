@@ -28,6 +28,12 @@
       become: yes
       when: ansible_distribution == 'Debian'
 
+    - name: Base | Add fish-shell PPA
+      apt_repository:
+        repo: 'ppa:fish-shell/release-3'
+      become: yes
+      when: ansible_distribution == 'Ubuntu'
+
     - name: Base | Update all packages
       apt:
         upgrade: dist
