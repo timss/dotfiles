@@ -128,6 +128,7 @@
           - wamerican
           - xkcdpass
           - xtail
+          - xxd
       become: yes
 
     # TODO: https://bugs.launchpad.net/ubuntu/+source/unattended-upgrades/+bug/1624644
