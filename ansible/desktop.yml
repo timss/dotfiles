@@ -7,6 +7,7 @@
 
   vars:
     configure_compton: no
+    disable_thumbnails: no
 
   tasks:
     - name: Desktop | Install packages
@@ -120,5 +121,15 @@
             prompt: "Make sure KDE compositing is disabled"
           when: _compton_autostart.changed
       when: configure_compton | bool
+
+    - name: Desktop | Disable thumbnail directories
+      file:
+        src: "{{ ansible_env.HOME }}/{{ item }}"
+        dest: /dev/null
+        state: link
+      with_items:
+        - .thumbnails
+        - .cache/vlc/art/arturl
+      when: disable_thumbnails | bool
 
 # vim: ft=yaml.ansible
