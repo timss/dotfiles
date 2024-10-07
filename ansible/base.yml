@@ -5,6 +5,9 @@
 - hosts: "{{ 'all' if ansible_play_hosts | length > 0 else 'localhost' }}"
   connection: "{{ 'ssh' if ansible_play_hosts | length > 0 else 'local' }}"
 
+  vars:
+    upgrade_packages: no
+
   handlers:
     - name: restart journald
       service:
@@ -38,7 +41,7 @@
       apt:
         upgrade: dist
         cache_valid_time: 3600
-      when: upgrade | default('no') | bool
+      when: upgrade_packages | bool
       become: yes
 
     - name: Base | Install base packages

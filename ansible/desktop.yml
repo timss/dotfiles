@@ -5,6 +5,9 @@
 - hosts: "{{ 'all' if ansible_play_hosts | length > 0 else 'localhost' }}"
   connection: "{{ 'ssh' if ansible_play_hosts | length > 0 else 'local' }}"
 
+  vars:
+    configure_compton: no
+
   tasks:
     - name: Desktop | Install packages
       apt:
@@ -116,6 +119,6 @@
           pause:
             prompt: "Make sure KDE compositing is disabled"
           when: _compton_autostart.changed
-      when: configure_compton | default('no') | bool
+      when: configure_compton | bool
 
 # vim: ft=yaml.ansible
