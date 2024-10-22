@@ -54,7 +54,6 @@
           - acl
           - amd64-microcode
           - aptitude
-          - bat
           - blktrace
           - bmon
           - bpython
@@ -233,10 +232,8 @@
 
     - name: Rust | Configure Cargo
       copy:
-        dest: "{{ ansible_env.HOME }}/.cargo/config"
+        dest: "{{ ansible_env.HOME }}/.cargo/config.toml"
         content: |
-          [source]
-
           [net]
           git-fetch-with-cli = true
 
@@ -262,10 +259,12 @@
       register: _crate_install
       changed_when: "'Installed package' in _crate_install.stderr"
       with_items:
+        - bat
         - cargo-download
         - fd-find
         - git-delta
         - jless
         - ripgrep
+        - "--git https://github.com/astral-sh/uv.git uv"
 
 # vim: ft=yaml.ansible
