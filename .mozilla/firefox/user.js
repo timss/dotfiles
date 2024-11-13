@@ -29,3 +29,7 @@ user_pref("browser.backspace_action", 2);
 // https://news.ycombinator.com/item?id=41311479
 // Introduced in Firefox version 128
 user_pref("dom.private-attribution.submission.enabled", false);
+
+// https://wiki.archlinux.org/title/Firefox#KDE_integration
+// Requires 'xdg-desktop-portal-kde' package
+user_pref("widget.use-xdg-desktop-portal.file-picker", 1)
