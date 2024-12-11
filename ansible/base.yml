@@ -64,6 +64,7 @@
           - colordiff
           - curl
           - datamash
+          - dateutils
           - dfc
           - ethtool
           - ewf-tools
@@ -76,6 +77,7 @@
           - git
           - git-quick-stats
           - gnuplot
+          - gron
           - htop
           - iftop
           - intel-microcode
