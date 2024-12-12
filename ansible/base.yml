@@ -53,6 +53,7 @@
           - ack
           - acl
           - amd64-microcode
+          - apache2-utils
           - aptitude
           - blktrace
           - bmon
