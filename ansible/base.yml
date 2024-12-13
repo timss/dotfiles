@@ -53,7 +53,6 @@
           - ack
           - acl
           - amd64-microcode
-          - apache2-utils
           - aptitude
           - blktrace
           - bmon
@@ -86,6 +85,7 @@
           - iperf3
           - iptraf
           - iwatch
+          - jdresolve
           - jq
           - libssl-dev
           - linux-doc
