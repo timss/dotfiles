@@ -72,6 +72,7 @@
           - fish
           - flake8
           - fping
+          - fq
           - fzf
           - gdb
           - git
