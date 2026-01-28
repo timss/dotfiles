@@ -35,10 +35,13 @@
           - mpv
           - ocrmypdf
           - okular
+          - pdfcrack
+          - pngtools
           - simplescreenrecorder
           - terminator
           - vlc
           - wireshark
+          - wxhexeditor
           - xclip
           - xdotool
       become: yes

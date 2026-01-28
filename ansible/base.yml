@@ -44,12 +44,18 @@
       when: upgrade_packages | bool
       become: yes
 
+    # Other interesting packages:
+    # - atop
+    # - ewf-tools
+    # - pandoc
+    # - powertop
     - name: Base | Install base packages
       apt:
         install_recommends: no
         cache_valid_time: 3600
         name:
           - "{% if ansible_distribution == 'Debian' %}firmware-linux{% else %}linux-firmware{% endif %}"
+          - "{% if ansible_distribution == 'Debian' %}linux-perf{% else %}linux-tools-common{% endif %}"
           - "{% if 'AuthenticAMD' in ansible_processor %}amd64-microcode{% endif %}"
           - "{% if 'GenuineIntel' in ansible_processor %}intel-microcode{% endif %}"
           - ack
@@ -57,6 +63,7 @@
           - aptitude
           - blktrace
           - bmon
+          - bpfcc-tools
           - bpython
           - btop
           - build-essential
@@ -68,7 +75,6 @@
           - dateutils
           - dfc
           - ethtool
-          - ewf-tools
           - fatrace
           - fish
           - flake8
@@ -95,18 +101,14 @@
           - man
           - mediainfo
           - molly-guard
-          - mtr
+          - mtr-tiny
           - ncat
           - ncdu
           - nethogs
           - nmap
           - openssl
-          - pandoc
           - parallel
-          - pdfcrack
           - plocate
-          - pngtools
-          - powertop
           - pv
           - python3-apt
           - python3-bashate
