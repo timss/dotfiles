@@ -50,9 +50,10 @@
         cache_valid_time: 3600
         name:
           - "{% if ansible_distribution == 'Debian' %}firmware-linux{% else %}linux-firmware{% endif %}"
+          - "{% if 'AuthenticAMD' in ansible_processor %}amd64-microcode{% endif %}"
+          - "{% if 'GenuineIntel' in ansible_processor %}intel-microcode{% endif %}"
           - ack
           - acl
-          - amd64-microcode
           - aptitude
           - blktrace
           - bmon
@@ -81,7 +82,6 @@
           - gron
           - htop
           - iftop
-          - intel-microcode
           - iotop
           - iperf3
           - iptraf
