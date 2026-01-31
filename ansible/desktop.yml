@@ -65,10 +65,17 @@
 
     - name: Desktop | Configure XDG user directories
       block:
-        - name: Desktop | Create desktop directory
+        - name: Desktop | Create XDG user directories
           file:
-            path: "{{ ansible_env.HOME }}/.desktop"
+            path: "{{ ansible_env.HOME }}/{{ item }}"
             state: directory
+          with_items:
+            - .desktop
+            - documents
+            - downloads
+            - music
+            - pictures
+            - videos
 
         - name: Desktop | Configure XDG user directories
           file:
