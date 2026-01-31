@@ -1,0 +1,71 @@
+---
+# https://wiki.debian.org/Steam
+# https://wiki.debian.org/NvidiaGraphicsDrivers
+#
+# Either specify a host, or automatically use localhost
+# $ ansible-playbook -i myhost, <playbook>.yml
+# $ ansible-playbook <playbook>.yml
+- hosts: "{{ 'all' if ansible_play_hosts | length > 0 else 'localhost' }}"
+  connection: "{{ 'ssh' if ansible_play_hosts | length > 0 else 'local' }}"
+
+  tasks:
+    - name: Gaming | Fail if not running Debian
+      fail:
+        msg: This playbook currently only supports Debian
+      when: ansible_distribution != 'Debian'
+
+    - name: Gaming | Add backports repo
+      apt_repository:
+        repo: deb http://ftp.no.debian.org/debian {{ ansible_distribution_release }}-backports main contrib non-free non-free-firmware
+        filename: "{{ ansible_distribution_release }}-backports"
+      become: yes
+
+    - name: Gaming | Check if multi-arch is configured
+      command: dpkg --print-foreign-architectures
+      changed_when: no
+      register: _dpkg_foreign_arch
+
+    - name: Gaming | Enable multi-arch (i386)
+      command: dpkg --add-architecture i386
+      become: yes
+      when: '"i386" not in _dpkg_foreign_arch.stdout'
+
+    - name: Gaming | Install backports packages
+      apt:
+        cache_valid_time: 3600
+        default_release: "{{ ansible_distribution_release }}-backports"
+        name:
+          - linux-headers-amd64
+          - linux-image-amd64
+          - firmware-linux
+          - nvidia-driver
+      become: yes
+
+    - name: Gaming | Install packages
+      apt:
+        cache_valid_time: 3600
+        name:
+          - flatpak
+          - plasma-discover-backend-flatpak
+          - steam-installer
+      become: yes
+
+    - name: Gaming | Add Flathub
+      flatpak_remote:
+        method: user
+        name: flathub
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+    # NOTE: Might not be available for use before reboot
+    - name: Gaming | Install flatpaks
+      flatpak:
+        method: user
+        name:
+          - com.discordapp.Discord
+          - org.prismlauncher.PrismLauncher
+
+    # TODO: Get latest version? Will it update cleanly?
+    - name: Gaming | Install Faugus launcher
+      apt:
+        deb: https://github.com/Faugus/faugus-launcher/releases/download/1.13.11/faugus-launcher_1.13.11-1_all.deb
+      become: yes
