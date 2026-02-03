@@ -28,6 +28,18 @@
           - non-free-firmware
       become: yes
 
+    # Backported 'nvidia-driver' is unfortunately also quite stale
+    # If not using Ansible, see `extrepo enable nvidia-cuda`
+    # https://docs.nvidia.com/datacenter/tesla/driver-installation-guide/debian.html
+    - name: Gaming | Add Nvidia CUDA repo
+      deb822_repository:
+        name: nvidia
+        uris: https://developer.download.nvidia.com/compute/cuda/repos/debian{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/
+        signed_by: https://developer.download.nvidia.com/compute/cuda/repos/debian13/x86_64/8793F200.pub
+        types: deb
+        suites: "/"
+      become: yes
+
     # https://www.spotify.com/us/download/linux/
     - name: Gaming | Add Spotify repo
       deb822_repository:
@@ -69,7 +81,6 @@
           - linux-headers-amd64
           - linux-image-amd64
           - firmware-linux
-          - nvidia-driver
       become: yes
       register: _backported_packages
 
@@ -85,6 +96,7 @@
           - flatpak
           - gamemode
           - mangohud
+          - nvidia-open # NOTE: requires Geforce Turing or newer (>= 16xx)
           - obs-studio
           - plasma-discover-backend-flatpak
           - signal-desktop
