@@ -1,6 +1,18 @@
 ---
-# https://wiki.debian.org/Steam
-# https://wiki.debian.org/NvidiaGraphicsDrivers
+# Setup:
+# - Debian 13 (trixie) with KDE on Wayland
+# - Updated kernel through backports
+# - Latest official "open" Nvidia driver
+# - Game tuning (Gamemode, Mangohud, NTSYNC)
+# - Game launchers (Steam, Faugus, Prism)
+# - Other misc applications (Discord, Signal, Spotify, OBS, ..)
+#
+# References:
+# - https://wiki.debian.org/Backports
+# - https://wiki.debian.org/NvidiaGraphicsDrivers
+# - https://wiki.debian.org/Steam
+# - https://github.com/nulls0x0/debian-setup/blob/master/debian-13-nvidia-gaming-setup-guide.md
+# - https://github.com/muhrizali/faugus-launcher/blob/add-new-user-guide/GUIDE.md
 #
 # Either specify a host, or automatically use localhost
 # $ ansible-playbook -i myhost, <playbook>.yml
