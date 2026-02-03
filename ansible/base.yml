@@ -56,8 +56,7 @@
         name:
           - "{% if ansible_distribution == 'Debian' %}firmware-linux{% else %}linux-firmware{% endif %}"
           - "{% if ansible_distribution == 'Debian' %}linux-perf{% else %}linux-tools-common{% endif %}"
-          - "{% if 'AuthenticAMD' in ansible_processor %}amd64-microcode{% endif %}"
-          - "{% if 'GenuineIntel' in ansible_processor %}intel-microcode{% endif %}"
+          - "{% if 'AuthenticAMD' in ansible_processor %}amd64-microcode{% elif 'GenuineIntel' in ansible_processor %}intel-microcode{% endif %}"
           - ack
           - acl
           - aptitude
