@@ -104,6 +104,14 @@
           - steam-installer
       become: yes
 
+    # https://wiki.debian.org/Wine/NtsyncHowto
+    # If not using backported kernel; verify availability using `modinfo ntsync`
+    - name: Gaming | Enable NTSYNC kernel module
+      modprobe:
+        name: ntsync
+        persistent: present
+      become: yes
+
     - name: Gaming | Add Flathub
       flatpak_remote:
         method: user
