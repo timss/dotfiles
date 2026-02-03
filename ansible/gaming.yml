@@ -126,8 +126,13 @@
           - com.discordapp.Discord
           - org.prismlauncher.PrismLauncher
 
-    # TODO: Get latest version? Will it update cleanly?
+    - name: Gaming | Get Faugus launcher release info
+      uri:
+        url: https://api.github.com/repos/Faugus/faugus-launcher/releases/latest
+      check_mode: no
+      register: _faugus_release
+
     - name: Gaming | Install Faugus launcher
       apt:
-        deb: https://github.com/Faugus/faugus-launcher/releases/download/1.13.11/faugus-launcher_1.13.11-1_all.deb
+        deb: "{{ (_faugus_release.json.assets | selectattr('content_type', 'eq', 'application/vnd.debian.binary-package') | first).browser_download_url }}"
       become: yes
