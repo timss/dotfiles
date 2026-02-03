@@ -15,9 +15,18 @@
       when: ansible_distribution != 'Debian'
 
     - name: Gaming | Add backports repo
-      apt_repository:
-        repo: deb http://ftp.no.debian.org/debian {{ ansible_distribution_release }}-backports main contrib non-free non-free-firmware
-        filename: "{{ ansible_distribution_release }}-backports"
+      deb822_repository:
+        name: "{{ ansible_distribution_release }}-backports"
+        uris: http://ftp.no.debian.org/debian
+        signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
+        types: deb
+        suites: "{{ ansible_distribution_release }}-backports"
+        components:
+          - main
+          - contrib
+          - non-free
+          - non-free-firmware
+      become: yes
 
     # https://www.spotify.com/us/download/linux/
     - name: Gaming | Add Spotify repo
@@ -62,6 +71,12 @@
           - firmware-linux
           - nvidia-driver
       become: yes
+      register: _backported_packages
+
+    - name: Gaming | Notify to reboot after backported kernel installed
+      pause:
+        prompt: "Backported kernel installed – you should probably reboot before continuing"
+      when: _backported_packages.changed
 
     - name: Gaming | Install packages
       apt:
