@@ -18,6 +18,28 @@
       apt_repository:
         repo: deb http://ftp.no.debian.org/debian {{ ansible_distribution_release }}-backports main contrib non-free non-free-firmware
         filename: "{{ ansible_distribution_release }}-backports"
+
+    # https://www.spotify.com/us/download/linux/
+    - name: Gaming | Add Spotify repo
+      deb822_repository:
+        name: spotify
+        uris: https://repository.spotify.com
+        signed_by: https://download.spotify.com/debian/pubkey_5384CE82BA52C83A.asc
+        types: deb
+        suites: stable
+        components: non-free
+        architectures: amd64
+      become: yes
+
+    # https://signal.org/download/linux/
+    - name: Gaming | Add Signal repo
+      deb822_repository:
+        name: signal
+        uris: https://updates.signal.org/desktop/apt
+        signed_by: https://updates.signal.org/desktop/apt/keys.asc
+        types: deb
+        suites: xenial
+        components: main
       become: yes
 
     - name: Gaming | Check if multi-arch is configured
@@ -46,7 +68,12 @@
         cache_valid_time: 3600
         name:
           - flatpak
+          - gamemode
+          - mangohud
+          - obs-studio
           - plasma-discover-backend-flatpak
+          - signal-desktop
+          - spotify-client
           - steam-installer
       become: yes
 
