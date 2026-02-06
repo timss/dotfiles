@@ -3,9 +3,9 @@
 # - Debian 13 (trixie) with KDE on Wayland
 # - Updated kernel through backports
 # - Latest official "open" Nvidia driver
-# - Game tuning (Gamemode, Mangohud, NTSYNC)
+# - Gaming tools (Gamemode, Mangohud, NTSYNC, Nvidia SMI Prometheus exporter)
 # - Game launchers (Steam, Faugus, Prism)
-# - Other misc applications (Discord, Signal, Spotify, OBS, ..)
+# - Other misc applications (Discord, Signal, Spotify, OBS)
 #
 # References:
 # - https://wiki.debian.org/Backports
@@ -148,4 +148,15 @@
     - name: Gaming | Install Faugus launcher
       apt:
         deb: "{{ (_faugus_release.json.assets | selectattr('content_type', 'eq', 'application/vnd.debian.binary-package') | first).browser_download_url }}"
+      become: yes
+
+    - name: Gaming | Get Nvidia GPU exporter release info
+      uri:
+        url: https://api.github.com/repos/utkuozdemir/nvidia_gpu_exporter/releases/latest
+      check_mode: no
+      register: _gpu_exporter_release
+
+    - name: Gaming | Install Nvidia GPU exporter
+      apt:
+        deb: "{{ (_gpu_exporter_release.json.assets | selectattr('content_type', 'eq', 'application/vnd.debian.binary-package') | first).browser_download_url }}"
       become: yes
