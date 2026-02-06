@@ -106,6 +106,7 @@
         cache_valid_time: 3600
         name:
           - flatpak
+          - flatseal
           - gamemode
           - mangohud
           - nvidia-open # NOTE: requires Geforce Turing or newer (>= 16xx)
