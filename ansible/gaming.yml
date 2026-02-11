@@ -4,7 +4,7 @@
 # - Updated kernel through backports
 # - Latest official "open" Nvidia driver
 # - Gaming tools (Gamemode, Mangohud, NTSYNC, Nvidia SMI Prometheus exporter)
-# - Game launchers (Steam, Faugus, Prism)
+# - Game launchers/modders (Steam, Faugus, Prism, CurseForge)
 # - Other misc applications (Discord, Signal, Spotify, OBS)
 #
 # References:
@@ -159,4 +159,9 @@
     - name: Gaming | Install Nvidia GPU exporter
       apt:
         deb: "{{ (_gpu_exporter_release.json.assets | selectattr('content_type', 'eq', 'application/vnd.debian.binary-package') | first).browser_download_url }}"
+      become: yes
+
+    - name: Gaming | Install CurseForge App
+      apt:
+        deb: "https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb"
       become: yes
