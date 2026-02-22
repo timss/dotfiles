@@ -26,11 +26,12 @@
           - gwenview
           - handbrake
           - imagemagick
+          - kclock
           - kde-spectacle
           - kwrite
           - libnss3-tools
           - libreoffice-calc
-          - libreoffice-kf5
+          - libreoffice-kf{{ KDE_SESSION_VERSION }}
           - libreoffice-writer
           - mpv
           - ocrmypdf
