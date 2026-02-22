@@ -4,7 +4,7 @@
 # - Updated kernel through backports
 # - Latest official "open" Nvidia driver
 # - Gaming tools (Gamemode, Mangohud, NTSYNC, Nvidia SMI Prometheus exporter)
-# - Game launchers/modders (Steam, Faugus, Prism, CurseForge)
+# - Game launchers/modders (Steam, Faugus, Prism, CurseForge, Warcraft Logs uploader)
 # - Other misc applications (Discord, Signal, Spotify, OBS)
 #
 # References:
@@ -165,3 +165,27 @@
       apt:
         deb: "https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb"
       become: yes
+
+    - name: Gaming | Get Warcraft Logs uploader release info
+      uri:
+        url: https://api.github.com/repos/RPGLogs/Uploaders-warcraftlogs/releases/latest
+      check_mode: no
+      register: _wcl_release
+
+    - name: Gaming | Install Wacraft Logs uploader
+      get_url:
+        url: "{{ (_wcl_release.json.assets | selectattr('name', 'contains', 'AppImage') | first).browser_download_url }}"
+        dest: "{{ ansible_env.HOME }}/downloads/"
+        mode: '0755'
+      register: _wcl_binary
+
+    - name: Gaming | Add Wacraft Logs uploader desktop entry
+      copy:
+        dest: "{{ ansible_env.HOME }}/.local/share/applications/wcl.desktop"
+        content: |
+          [Desktop Entry]
+          Name=Wacraft Logs uploader
+          Exec={{ _wcl_binary.dest }}
+          Icon=folder-chart-symbolic
+          Type=Application
+          Categories=Game;
