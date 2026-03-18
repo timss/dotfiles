@@ -172,19 +172,19 @@
       check_mode: no
       register: _wcl_release
 
-    - name: Gaming | Install Wacraft Logs uploader
+    - name: Gaming | Install Warcraft Logs uploader
       get_url:
         url: "{{ (_wcl_release.json.assets | selectattr('name', 'contains', 'AppImage') | first).browser_download_url }}"
         dest: "{{ ansible_env.HOME }}/downloads/"
         mode: '0755'
       register: _wcl_binary
 
-    - name: Gaming | Add Wacraft Logs uploader desktop entry
+    - name: Gaming | Add Warcraft Logs uploader desktop entry
       copy:
         dest: "{{ ansible_env.HOME }}/.local/share/applications/wcl.desktop"
         content: |
           [Desktop Entry]
-          Name=Wacraft Logs uploader
+          Name=Warcraft Logs uploader
           Exec={{ _wcl_binary.dest }}
           Icon=folder-chart-symbolic
           Type=Application
