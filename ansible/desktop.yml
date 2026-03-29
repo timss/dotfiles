@@ -31,7 +31,7 @@
           - kwrite
           - libnss3-tools
           - libreoffice-calc
-          - libreoffice-kf{{ KDE_SESSION_VERSION }}
+          - libreoffice-kf{{ ansible_env.KDE_SESSION_VERSION }}
           - libreoffice-writer
           - mpv
           - ocrmypdf
