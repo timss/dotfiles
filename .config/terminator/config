@@ -3,7 +3,6 @@
   handle_size = 1
   inactive_color_offset = 0.99
   scroll_tabbar = True
-  tab_position = hidden
 [keybindings]
 [layouts]
   [[default]]
