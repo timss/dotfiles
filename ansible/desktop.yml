@@ -95,7 +95,7 @@
           when: _xdg_user_dirs.changed
       when: "'xdg-user-dirs' in ansible_facts.packages"
 
-    # Used for clean shadows on borderldess KDE windows (X11)
+    # Used for clean shadows on borderless KDE windows (X11)
     - name: Desktop | Configure Compton
       block:
         - name: Desktop | Fail if trying to install while using Wayland
