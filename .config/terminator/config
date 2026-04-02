@@ -1,11 +1,9 @@
 [global_config]
-  custom_url_handler = /usr/local/bin/soap
   enabled_plugins = ,
   handle_size = 1
   inactive_color_offset = 0.99
   scroll_tabbar = True
   tab_position = hidden
-  use_custom_url_handler = True
 [keybindings]
 [layouts]
   [[default]]
