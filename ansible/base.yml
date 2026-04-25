@@ -22,27 +22,61 @@
       become: yes
 
   tasks:
-    - name: Base | Configure repo source list (Debian)
-      replace:
-        path: /etc/apt/sources.list
-        regexp: '^(deb(-src)? .*{{ ansible_distribution_release }}(-\w+)?).*'
-        replace: '\1 main contrib non-free non-free-firmware'
-        backup: yes
-      become: yes
+    - name: Base | Configure Debian repo sources
+      block:
+        # NOTE: Only changes non-commented out lines
+        - name: Base | Configure one-line repo sources
+          replace:
+            path: /etc/apt/sources.list
+            regexp: '^(deb(-src)? .*{{ ansible_distribution_release }}(-\w+)?).*'
+            replace: '\1 main contrib non-free non-free-firmware'
+            backup: yes
+          become: yes
+          register: _deb_repo_list
+
+        # Default in Debian 12 (Bookworm) or 13 (Trixie), depending on build (cloud, server, ..)
+        - name: Base | Check for deb822 formatted repo sources
+          stat:
+            path: /etc/apt/sources.list.d/debian.sources
+          register: _deb822_repo
+
+        # Ideally would like to use 'deb822_repository' here, but it:
+        # - Is not able to change only specific fields of a configured repo, e.g. Components, while keeping others intact
+        # - Does not support multiple repos in the same file, which is the default for certain Debian builds (#84465, #84060)
+        # - Does not support backups (#86433)
+        - name: Base | Configure deb822 repo sources
+          replace:
+            path: "{{ _deb822_repo.stat.path }}"
+            regexp: '^Components: main$'
+            replace: '^Components: main contrib non-free non-free-firmware'
+            backup: yes
+          become: yes
+          register: _deb_repo_sources
+          when: _deb822_repo.stat.exists
       when: ansible_distribution == 'Debian'
 
     - name: Base | Add fish-shell PPA
-      apt_repository:
-        repo: 'ppa:fish-shell/release-3'
+      deb822_repository:
+        name: fish
+        uris: https://ppa.launchpad.net/fish-shell/release-{{ '3' if (ansible_distribution_major_version | int < 24) else '4' }}/ubuntu
+        signed_by: https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x88421e703edc7af54967ded473c9fcc9e2bb48da
+        suites: "{{ ansible_distribution_release }}"
+        components: main
       become: yes
       when: ansible_distribution == 'Ubuntu'
 
+    - name: Base | Update repo cache
+      apt:
+        update_cache: yes
+      become: yes
+      when: _deb_repo_list.changed or _deb_repo_sources.changed
+
     - name: Base | Update all packages
       apt:
+        update_cache: yes
         upgrade: dist
-        cache_valid_time: 3600
-      when: upgrade_packages | bool
       become: yes
+      when: upgrade_packages | bool
 
     # Other interesting packages:
     # - atop
