@@ -166,26 +166,26 @@
         deb: "https://curseforge.overwolf.com/downloads/curseforge-latest-linux.deb"
       become: yes
 
-    - name: Gaming | Get Warcraft Logs uploader release info
+    - name: Gaming | Get Archon lite uploader release info
       uri:
-        url: https://api.github.com/repos/RPGLogs/Uploaders-warcraftlogs/releases/latest
+        url: https://api.github.com/repos/RPGLogs/Uploaders-archon-lite/releases/latest
       check_mode: no
-      register: _wcl_release
+      register: _archon_release
 
-    - name: Gaming | Install Warcraft Logs uploader
+    - name: Gaming | Install Archon lite uploader
       get_url:
-        url: "{{ (_wcl_release.json.assets | selectattr('name', 'contains', 'AppImage') | first).browser_download_url }}"
+        url: "{{ (_archon_release.json.assets | selectattr('name', 'contains', 'AppImage') | first).browser_download_url }}"
         dest: "{{ ansible_env.HOME }}/downloads/"
         mode: '0755'
-      register: _wcl_binary
+      register: _archon_binary
 
-    - name: Gaming | Add Warcraft Logs uploader desktop entry
+    - name: Gaming | Add Archon lite uploader desktop entry
       copy:
-        dest: "{{ ansible_env.HOME }}/.local/share/applications/wcl.desktop"
+        dest: "{{ ansible_env.HOME }}/.local/share/applications/archon.desktop"
         content: |
           [Desktop Entry]
-          Name=Warcraft Logs uploader
-          Exec={{ _wcl_binary.dest }}
+          Name=Archon lite uploader
+          Exec={{ _archon_binary.dest }}
           Icon=folder-chart-symbolic
           Type=Application
           Categories=Game;
