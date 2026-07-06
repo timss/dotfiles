@@ -32,4 +32,4 @@ user_pref("dom.private-attribution.submission.enabled", false);
 
 // https://wiki.archlinux.org/title/Firefox#KDE_integration
 // Requires 'xdg-desktop-portal-kde' package
-user_pref("widget.use-xdg-desktop-portal.file-picker", 1)
+user_pref("widget.use-xdg-desktop-portal.file-picker", 1);
