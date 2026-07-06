@@ -16,6 +16,7 @@
         cache_valid_time: 3600
         name:
           - ark
+          - ffmpeg
           - filelight
           - fonts-inconsolata
           - gimp
@@ -26,6 +27,7 @@
           - gwenview
           - handbrake
           - imagemagick
+          - kalk
           - kclock
           - kde-spectacle
           - kwrite
@@ -39,6 +41,7 @@
           - pdfcrack
           - pngtools
           - terminator
+          - tesseract-ocr-nor
           - vlc
           - wireshark
           - wxhexeditor
